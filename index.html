@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rahul Adinath Gaikwad | Projects</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9fc;
+            color: #172033;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: linear-gradient(
+                135deg,
+                #0b1f3a,
+                #173f73
+            );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 28px 20px 55px;
+        }
+
+        header h1 {
+            font-size: clamp(25px, 4vw, 36px);
+            margin-bottom: 7px;
+        }
+
+        header p {
+            color: #dbe7f5;
+            font-size: 14px;
+        }
+
+        .header-line {
+            width: 75px;
+            height: 3px;
+            background: #d4a72c;
+            margin: 13px auto 0;
+            border-radius: 20px;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            width: min(850px, calc(100% - 25px));
+
+            margin: -30px auto 40px;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            background: white;
+
+            padding: 20px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            border: 1px solid #e5eaf1;
+
+            box-shadow:
+                0 7px 22px rgba(11, 31, 58, 0.08);
+
+            margin-bottom: 17px;
+
+            animation: fadeDown 0.6s ease;
+        }
+
+        .intro h2 {
+            color: #0b1f3a;
+
+            font-size: clamp(22px, 3vw, 29px);
+
+            margin-bottom: 6px;
+        }
+
+        .intro p {
+            color: #68758a;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           PROJECT LIST
+        ========================= */
+
+        .projects {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+
+        /* =========================
+           PROJECT CARD
+        ========================= */
+
+        .project-card {
+            background: white;
+
+            border: 1px solid #e5eaf1;
+
+            border-radius: 16px;
+
+            padding: 18px;
+
+            box-shadow:
+                0 6px 18px
+                rgba(11, 31, 58, 0.065);
+
+            opacity: 0;
+
+            animation: cardIn 0.6s ease forwards;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .project-card:nth-child(1) {
+            animation-delay: 0.15s;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.30s;
+        }
+
+
+        .project-card:hover {
+            transform: translateY(-3px);
+
+            border-color: #d4a72c;
+
+            box-shadow:
+                0 12px 27px
+                rgba(11, 31, 58, 0.11);
+        }
+
+
+        /* =========================
+           PROJECT HEADER
+        ========================= */
+
+        .project-header {
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .project-icon {
+            width: 52px;
+
+            min-width: 52px;
+
+            height: 52px;
+
+            border-radius: 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 23px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1d4ed8,
+                    #2563eb
+                );
+
+            box-shadow:
+                0 5px 12px
+                rgba(37, 99, 235, 0.18);
+        }
+
+
+        .project-header h3 {
+            color: #172033;
+
+            font-size: 19px;
+
+            line-height: 1.25;
+        }
+
+
+        /* =========================
+           TECHNOLOGIES
+        ========================= */
+
+        .technologies {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-bottom: 13px;
+        }
+
+        .tech {
+            background: #e8f0ff;
+
+            color: #1d4ed8;
+
+            border-radius: 20px;
+
+            padding: 5px 9px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           PROJECT DETAILS
+        ========================= */
+
+        .project-details {
+            color: #596579;
+
+            font-size: 13px;
+
+            line-height: 1.65;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           PROJECT INFO
+        ========================= */
+
+        .project-info {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            padding: 11px 0;
+
+            margin-bottom: 13px;
+
+            border-top: 1px solid #edf0f5;
+
+            border-bottom: 1px solid #edf0f5;
+
+            color: #596579;
+
+            font-size: 11px;
+        }
+
+        .project-info strong {
+            color: #172033;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .project-links {
+            display: flex;
+
+            gap: 9px;
+
+            flex-wrap: wrap;
+        }
+
+        .project-button {
+            text-decoration: none;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 10px 15px;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .live-button {
+            background:
+                linear-gradient(
+                    135deg,
+                    #1d4ed8,
+                    #2563eb
+                );
+
+            color: white;
+
+            box-shadow:
+                0 5px 13px
+                rgba(37, 99, 235, 0.18);
+        }
+
+
+        .github-button {
+            background: #0b1f3a;
+
+            color: white;
+        }
+
+
+        .project-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 17px
+                rgba(11, 31, 58, 0.18);
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-container {
+            text-align: center;
+
+            margin-top: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #1d4ed8;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            padding: 9px 15px;
+
+            border: 1px solid #dbe4f2;
+
+            border-radius: 10px;
+
+            background: white;
+
+            transition: 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: #e8f0ff;
+
+            border-color: #2563eb;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes fadeDown {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(-12px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes cardIn {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 23px 14px 50px;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            header p {
+                font-size: 12px;
+            }
+
+            .container {
+                width: calc(100% - 16px);
+
+                margin-top: -27px;
+            }
+
+            .intro {
+                padding: 17px 13px;
+            }
+
+            .intro h2 {
+                font-size: 22px;
+            }
+
+            .intro p {
+                font-size: 12px;
+            }
+
+            .project-card {
+                padding: 14px;
+
+                border-radius: 15px;
+            }
+
+            .project-header {
+                gap: 10px;
+            }
+
+            .project-icon {
+                width: 49px;
+
+                min-width: 49px;
+
+                height: 49px;
+
+                font-size: 21px;
+            }
+
+            .project-header h3 {
+                font-size: 16px;
+            }
+
+            .project-details {
+                font-size: 12px;
+
+                line-height: 1.6;
+            }
+
+            .project-info {
+                font-size: 10px;
+
+                gap: 9px;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .project-button {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <h1>
+            Rahul Adinath Gaikwad
+        </h1>
+
+        <p>
+            Projects &amp; Development Work
+        </p>
+
+        <div class="header-line"></div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="container">
+
+
+        <section class="intro">
+
+            <h2>
+                My Projects
+            </h2>
+
+            <p>
+                A collection of my development projects
+                and practical work
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROJECTS
+        ========================= -->
+
+        <section class="projects">
+
+
+            <!-- RESTAURANT PROJECT -->
+
+            <article class="project-card">
+
+                <div class="project-header">
+
+                    <div class="project-icon">
+                        🍽️
+                    </div>
+
+                    <h3>
+                        Restaurant Management System
+                    </h3>
+
+                </div>
+
+
+                <div class="technologies">
+
+                    <span class="tech">
+                        Java
+                    </span>
+
+                    <span class="tech">
+                        Spring Boot
+                    </span>
+
+                    <span class="tech">
+                        Spring JDBC
+                    </span>
+
+                    <span class="tech">
+                        MySQL
+                    </span>
+
+                    <span class="tech">
+                        REST API
+                    </span>
+
+                    <span class="tech">
+                        JWT
+                    </span>
+
+                </div>
+
+
+                <p class="project-details">
+
+                    Developed a Restaurant Management System
+                    for menu, customer, order, billing, and
+                    report management. Built REST APIs and
+                    CRUD operations using Spring Boot,
+                    Spring JDBC, and MySQL.
+
+                </p>
+
+
+                <div class="project-info">
+
+                    <span>
+                        <strong>Duration:</strong>
+                        4 Months
+                    </span>
+
+                    <span>
+                        <strong>Team:</strong>
+                        Individual
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="#"
+                        class="project-button live-button"
+                        target="_blank">
+
+                        🚀 Live Project →
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="project-button github-button"
+                        target="_blank">
+
+                        GitHub →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- HOSPITAL PROJECT -->
+
+            <article class="project-card">
+
+                <div class="project-header">
+
+                    <div class="project-icon">
+                        🏥
+                    </div>
+
+                    <h3>
+                        Hospital Management System
+                    </h3>
+
+                </div>
+
+
+                <div class="technologies">
+
+                    <span class="tech">
+                        Java
+                    </span>
+
+                    <span class="tech">
+                        Spring Boot
+                    </span>
+
+                    <span class="tech">
+                        Spring MVC
+                    </span>
+
+                    <span class="tech">
+                        Spring Data JPA
+                    </span>
+
+                    <span class="tech">
+                        Hibernate
+                    </span>
+
+                    <span class="tech">
+                        Spring Security
+                    </span>
+
+                    <span class="tech">
+                        REST APIs
+                    </span>
+
+                    <span class="tech">
+                        JWT
+                    </span>
+
+                    <span class="tech">
+                        MySQL
+                    </span>
+
+                    <span class="tech">
+                        React.js
+                    </span>
+
+                    <span class="tech">
+                        Tailwind CSS
+                    </span>
+
+                </div>
+
+
+                <p class="project-details">
+
+                    Engineered a Hospital Management System
+                    for patient, doctor, appointment, medical
+                    record, billing, and laboratory management.
+
+                </p>
+
+
+                <div class="project-info">
+
+                    <span>
+                        <strong>Duration:</strong>
+                        4 Months
+                    </span>
+
+                    <span>
+                        <strong>Team:</strong>
+                        Individual
+                    </span>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="#"
+                        class="project-button live-button"
+                        target="_blank">
+
+                        🚀 Live Project →
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="project-button github-button"
+                        target="_blank">
+
+                        GitHub →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             BACK
+        ========================= -->
+
+        <div class="back-container">
+
+            <a
+                href="certificates.html"
+                class="back-button">
+
+                ← Back to Certificates
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>
