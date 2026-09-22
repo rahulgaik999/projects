@@ -986,6 +986,11 @@ footer {
 .name-header-inner {
     position: relative;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
 }
 
 .name-badge {
@@ -1024,12 +1029,12 @@ footer {
 }
 
 .my-name span {
-    color: #ffffff;
+    color: #5b8cff;
 }
 
 .my-name strong {
     font-weight: 800;
-    background: linear-gradient(90deg, #5b8cff, #9a7cff, #5b8cff);
+    background: linear-gradient(90deg, #ffffff, #dc2626);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -1038,8 +1043,8 @@ footer {
 }
 
 .name-subtitle {
-    margin: 11px 0 0;
-    color: #8997ab;
+    margin: 0;
+    color: #ffffff;
     font-size: 12px;
     letter-spacing: .8px;
     animation: nameReveal .8s .15s ease both;
@@ -1078,11 +1083,11 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 30px auto;
-    margin-left: auto;
-    margin-right: 0;
-    padding: 12px 18px;
-    min-height: 44px;
+    margin: 0 0 24px 0;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 9px 14px;
+    min-height: 38px;
 
     border: 1px solid rgba(91,140,255,.45);
     border-radius: 11px;
@@ -1090,7 +1095,7 @@ footer {
     background: linear-gradient(135deg, #2563eb 0%, #ffffff 50%, #dc2626 100%);
 
     color: #0b1220;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: .1px;
 
@@ -1123,10 +1128,11 @@ footer {
 
 @media (max-width: 720px) {
     .back-btn {
-        margin-left: auto;
-        padding: 11px 16px;
-        min-height: 42px;
-        font-size: 12px;
+        margin-left: 0;
+        margin-right: auto;
+        padding: 8px 12px;
+        min-height: 36px;
+        font-size: 11px;
     }
 }
 
@@ -1169,6 +1175,10 @@ footer {
 @media (max-width: 720px) {
     .name-header {
         padding: 28px 14px 22px;
+    }
+
+    .name-header-inner {
+        gap: 12px;
     }
 
     .my-name {
