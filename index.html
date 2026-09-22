@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rahul Gaikwad | Projects</title>
+<title>Rahul Gaikwad | Project Portfolio</title>
 
 <meta name="description"
       content="Professional software project showcase and project library">
@@ -312,108 +312,7 @@ img {
 }
 
 
-/* =========================================================
-   TOOLBAR
-========================================================= */
 
-.toolbar {
-    margin: 25px 0 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.search-box {
-    position: relative;
-
-    flex: 1;
-
-    min-width: 240px;
-    max-width: 420px;
-}
-
-.search-box input {
-    width: 100%;
-    height: 46px;
-
-    padding: 0 15px 0 42px;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    outline: none;
-
-    background: var(--surface);
-    color: var(--text);
-
-    font-size: 13px;
-
-    transition: .2s;
-}
-
-.search-box input:focus {
-    border-color: var(--accent);
-
-    box-shadow:
-        0 0 0 3px var(--accent-soft);
-}
-
-.search-icon {
-    position: absolute;
-
-    left: 15px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: var(--muted);
-}
-
-.filters {
-    display: flex;
-    gap: 7px;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
-}
-
-.filters::-webkit-scrollbar {
-    display: none;
-}
-
-.filter-btn {
-    white-space: nowrap;
-
-    padding: 9px 13px;
-
-    border: 1px solid var(--border);
-    border-radius: 8px;
-
-    background: var(--surface);
-    color: var(--muted);
-
-    font-size: 12px;
-    font-weight: 600;
-
-    transition: .2s;
-}
-
-.filter-btn:hover {
-    background: var(--surface-2);
-    color: var(--text);
-}
-
-.filter-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
-}
 
 
 /* =========================================================
@@ -1090,6 +989,147 @@ footer {
     line-height: 1.75;
 }
 
+
+/* RESPONSIVE PROJECT NAVBAR */
+.navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(7,11,18,.96);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(0,0,0,.18);
+}
+
+.nav-inner {
+    width: min(100% - 32px, var(--max-width));
+    min-height: 68px;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    min-width: 0;
+}
+
+.nav-link {
+    position: relative;
+    padding: 9px 12px;
+    white-space: nowrap;
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    transition: .2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text);
+    background: var(--surface-2);
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--accent);
+}
+
+@media (max-width: 760px) {
+    .nav-inner {
+        width: min(100% - 24px, var(--max-width));
+        min-height: 62px;
+        gap: 10px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .brand-mark {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .brand span:last-child {
+        font-size: 14px;
+    }
+
+    .nav-right {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        justify-content: flex-start;
+        flex: 1;
+    }
+
+    .nav-right::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-link {
+        flex: 0 0 auto;
+        padding: 8px 9px;
+        font-size: 11px;
+    }
+
+    .nav-link.active::after {
+        left: 9px;
+        right: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-inner {
+        width: calc(100% - 16px);
+        gap: 6px;
+    }
+
+    .brand-mark {
+        width: 30px;
+        height: 30px;
+    }
+
+    .brand span:last-child {
+        font-size: 13px;
+    }
+
+    .nav-link {
+        padding: 7px 7px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .brand span:last-child {
+        display: none;
+    }
+
+    .nav-link {
+        font-size: 10px;
+        padding-inline: 6px;
+    }
+}
+
 </style>
 </head>
 
@@ -1108,9 +1148,7 @@ footer {
 
         <div class="nav-right">
             <a href="#" class="nav-link" onclick="showLibrary(); return false;">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#technologies" class="nav-link">Technologies</a>
-            <a href="#projects" class="nav-link active">Projects</a>
+            <a href="#projects" class="nav-link active" onclick="showLibrary(); return false;">Projects</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
 
@@ -1129,58 +1167,12 @@ footer {
 >
 
 
-<section class="about-projects" id="about">
-    <div class="container">
-        <div class="about-box">
-            <span class="details-label">About</span>
-            <h2>Rahul Gaikwad — Project Showcase</h2>
-            <p>
-                A collection of software projects covering web development,
-                application development, databases, APIs and responsive interfaces.
-            </p>
-        </div>
-    </div>
-</section>
-
-    <!-- PROJECT SECTION -->
+<!-- PROJECT SECTION -->
 
     <section id="projects">
 
         <div class="container">
-
-
-            <!-- SEARCH + FILTER -->
-
-            <div class="toolbar" id="technologies">
-
-
-                <div class="search-box" id="search">
-
-                    <span class="search-icon">
-                        ⌕
-                    </span>
-
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Search projects..."
-                        oninput="renderProjects()"
-                    >
-
-                </div>
-
-
-                <div
-                    class="filters"
-                    id="filterContainer"
-                ></div>
-
-
-            </div>
-
-
-
-            <!-- SECTION TITLE -->
+<!-- SECTION TITLE -->
 
             <div class="section-header">
 
@@ -1578,81 +1570,8 @@ const projects = [
    STATE
 ========================================================= */
 
-let activeFilter = "All";
 
 
-/* =========================================================
-   GET TECHNOLOGIES
-========================================================= */
-
-function getTechnologies() {
-
-    const technologies = new Set();
-
-    projects.forEach(project => {
-
-        project.technologies.forEach(technology => {
-
-            technologies.add(technology);
-
-        });
-
-    });
-
-    return [...technologies].sort();
-
-}
-
-
-/* =========================================================
-   CREATE FILTERS
-========================================================= */
-
-function createFilters() {
-
-    const container =
-        document.getElementById("filterContainer");
-
-    container.innerHTML = "";
-
-    const filters = [
-        "All",
-        ...getTechnologies()
-    ];
-
-
-    filters.forEach(filter => {
-
-        const button =
-            document.createElement("button");
-
-        button.className =
-            "filter-btn" +
-            (
-                filter === activeFilter
-                    ? " active"
-                    : ""
-            );
-
-        button.textContent = filter;
-
-
-        button.onclick = function() {
-
-            activeFilter = filter;
-
-            createFilters();
-
-            renderProjects();
-
-        };
-
-
-        container.appendChild(button);
-
-    });
-
-}
 
 
 /* =========================================================
@@ -1667,54 +1586,7 @@ function renderProjects() {
     const empty =
         document.getElementById("emptyState");
 
-    const search =
-        document
-            .getElementById("searchInput")
-            .value
-            .toLowerCase()
-            .trim();
-
-
-    const filtered =
-        projects.filter(project => {
-
-
-            const searchMatch =
-
-                project.name
-                    .toLowerCase()
-                    .includes(search)
-
-                ||
-
-                project.description
-                    .toLowerCase()
-                    .includes(search)
-
-                ||
-
-                project.technologies.some(
-                    tech =>
-                        tech
-                            .toLowerCase()
-                            .includes(search)
-                );
-
-
-            const filterMatch =
-
-                activeFilter === "All"
-
-                ||
-
-                project.technologies.includes(
-                    activeFilter
-                );
-
-
-            return searchMatch && filterMatch;
-
-        });
+    const filtered = projects;
 
 
     grid.innerHTML = "";
@@ -2078,8 +1950,6 @@ function showLibrary() {
 /* =========================================================
    INITIALIZE
 ========================================================= */
-
-createFilters();
 
 renderProjects();
 
