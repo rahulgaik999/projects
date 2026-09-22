@@ -482,6 +482,13 @@ body.details-open .name-header {
     text-transform: uppercase;
 }
 
+.details-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
 .details-title {
     margin-bottom: 15px;
 
@@ -1078,11 +1085,10 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 30px auto;
-    margin-left: auto;
-    margin-right: 0;
-    padding: 8px 12px;
-    min-height: 36px;
+    flex-shrink: 0;
+    margin: 0 0 15px auto;
+    padding: 7px 11px;
+    min-height: 34px;
 
     border: 1px solid rgba(91,140,255,.45);
     border-radius: 11px;
@@ -1122,10 +1128,15 @@ footer {
 }
 
 @media (max-width: 720px) {
+    .details-title-row {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
     .back-btn {
-        margin-left: auto;
-        padding: 7px 10px;
-        min-height: 34px;
+        margin: 0 0 15px auto;
+        padding: 6px 9px;
+        min-height: 32px;
         font-size: 10px;
     }
 }
@@ -1286,14 +1297,6 @@ footer {
 >
 
     <div class="container">
-
-
-        <button
-            class="back-btn"
-            onclick="showLibrary()"
-        >
-            Back to Projects ×
-        </button>
 
 
         <div id="detailsContent"></div>
@@ -1797,10 +1800,20 @@ function openDetails(id) {
                 Project Details
             </div>
 
+            <div class="details-title-row">
 
-            <h1 class="details-title">
-                ${project.name}
-            </h1>
+                <h1 class="details-title">
+                    ${project.name}
+                </h1>
+
+                <button
+                    class="back-btn"
+                    onclick="showLibrary()"
+                >
+                    Back to Projects ×
+                </button>
+
+            </div>
 
 
             <p class="details-description">
