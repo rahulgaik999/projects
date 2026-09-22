@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Project Library</title>
+<title>Rahul Gaikwad | Projects</title>
 
 <meta name="description"
       content="Professional software project showcase and project library">
@@ -22,51 +22,23 @@
 ========================================================= */
 
 :root {
-    --bg: #f7f8fa;
-    --surface: #ffffff;
-    --surface-2: #f2f4f7;
-
-    --text: #101828;
-    --muted: #667085;
-
-    --border: #e4e7ec;
-
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-    --accent-soft: #eff6ff;
-
-    --success: #16a34a;
-    --success-soft: #ecfdf3;
-
-    --shadow: 0 10px 30px rgba(16,24,40,.07);
-
+    --bg: #070b12;
+    --surface: #0d131c;
+    --surface-2: #151d29;
+    --text: #f5f7fb;
+    --muted: #9aa7b8;
+    --border: #253044;
+    --accent: #5b8cff;
+    --accent-hover: #79a2ff;
+    --accent-soft: rgba(91,140,255,.14);
+    --success: #4ade80;
+    --success-soft: rgba(74,222,128,.12);
+    --shadow: 0 18px 45px rgba(0,0,0,.35);
     --radius: 16px;
-
     --max-width: 1280px;
 }
 
 
-/* DARK THEME */
-
-body.dark {
-    --bg: #0b0f14;
-    --surface: #11161d;
-    --surface-2: #181e27;
-
-    --text: #f5f7fa;
-    --muted: #98a2b3;
-
-    --border: #252d38;
-
-    --accent: #4f8cff;
-    --accent-hover: #6b9cff;
-    --accent-soft: rgba(79,140,255,.12);
-
-    --success: #4ade80;
-    --success-soft: rgba(74,222,128,.10);
-
-    --shadow: 0 18px 45px rgba(0,0,0,.28);
-}
 
 
 /* =========================================================
@@ -139,15 +111,12 @@ img {
 
     border-bottom: 1px solid var(--border);
 
-    background: rgba(255,255,255,.88);
+    background: rgba(7,11,18,.92);
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 }
 
-body.dark .navbar {
-    background: rgba(11,15,20,.88);
-}
 
 .nav-inner {
     min-height: 72px;
@@ -173,7 +142,7 @@ body.dark .navbar {
 }
 
 .brand-mark {
-    width: 34px;
+    width: 38px;
     height: 34px;
 
     display: grid;
@@ -240,7 +209,7 @@ body.dark .navbar {
 ========================================================= */
 
 .hero {
-    padding: 72px 0 36px;
+    padding: 28px 0 10px;
 }
 
 .hero-content {
@@ -976,8 +945,14 @@ footer {
         padding: 0 16px;
     }
 
+    .nav-right {
+        gap: 4px;
+    }
+
     .nav-link {
-        display: none;
+        display: block;
+        padding: 8px 7px;
+        font-size: 11px;
     }
 
     .hero {
@@ -1058,53 +1033,19 @@ footer {
 <body>
 
 
-<!-- =========================================================
-     NAVBAR
-========================================================= -->
-
+<!-- NAVBAR -->
 <nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="brand" onclick="showLibrary();return false;" aria-label="Rahul Gaikwad Projects">
+      <span class="brand-mark">RG</span>
+      <span>Rahul Gaikwad</span>
+    </a>
 
-    <div class="nav-inner">
-
-        <a
-            href="#"
-            class="brand"
-            onclick="showLibrary();return false;"
-        >
-
-            <div class="brand-mark">
-                P
-            </div>
-
-            <span>
-                Project Library
-            </span>
-
-        </a>
-
-
-        <div class="nav-right">
-
-            <a
-                href="#projects"
-                class="nav-link"
-                onclick="showLibrary()"
-            >
-                Projects
-            </a>
-
-            <button
-                class="theme-btn"
-                id="themeButton"
-                onclick="toggleTheme()"
-            >
-                ☾
-            </button>
-
-        </div>
-
+    <div class="nav-right">
+      <a href="#projects" class="nav-link" onclick="showLibrary()">Projects</a>
+      <a href="#search" class="nav-link" onclick="showLibrary();setTimeout(()=>document.getElementById('searchInput')?.focus(),100)">Search Projects</a>
     </div>
-
+  </div>
 </nav>
 
 
@@ -1118,49 +1059,6 @@ footer {
     id="libraryPage"
 >
 
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="container">
-
-            <div class="hero-content">
-
-                <div class="eyebrow">
-
-                    <span class="eyebrow-dot"></span>
-
-                    Software Project Library
-
-                </div>
-
-
-                <h1>
-
-                    Projects built with
-                    <span>purpose.</span>
-
-                </h1>
-
-
-                <p class="hero-description">
-
-                    Explore a curated collection of software
-                    projects, applications and experiments.
-                    Discover the technologies, features and
-                    development details behind each project.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
     <!-- PROJECT SECTION -->
 
     <section id="projects">
@@ -1173,7 +1071,7 @@ footer {
             <div class="toolbar">
 
 
-                <div class="search-box">
+                <div class="search-box" id="search">
 
                     <span class="search-icon">
                         ⌕
@@ -1291,7 +1189,7 @@ footer {
     <div class="footer-inner">
 
         <span>
-            © 2026 Project Library
+            © 2026 Rahul Gaikwad • Project Library
         </span>
 
         <span>
@@ -2092,61 +1990,11 @@ function showLibrary() {
 }
 
 
-/* =========================================================
-   DARK / LIGHT MODE
-========================================================= */
-
-function toggleTheme() {
-
-    document.body.classList.toggle("dark");
-
-
-    const dark =
-        document.body.classList.contains("dark");
-
-
-    document.getElementById("themeButton")
-        .textContent =
-            dark ? "☀" : "☾";
-
-
-    localStorage.setItem(
-        "projectLibraryTheme",
-        dark ? "dark" : "light"
-    );
-
-}
-
-
-/* =========================================================
-   LOAD THEME
-========================================================= */
-
-function loadTheme() {
-
-    const saved =
-        localStorage.getItem(
-            "projectLibraryTheme"
-        );
-
-
-    if(saved === "dark") {
-
-        document.body.classList.add("dark");
-
-        document.getElementById("themeButton")
-            .textContent = "☀";
-
-    }
-
-}
 
 
 /* =========================================================
    INITIALIZE
 ========================================================= */
-
-loadTheme();
 
 createFilters();
 
