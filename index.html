@@ -469,6 +469,17 @@ body.details-open .name-header {
     margin-bottom: 30px;
 }
 
+.details-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.details-title-row .details-title {
+    margin-bottom: 15px;
+}
+
 .details-label {
     margin-bottom: 10px;
 
@@ -986,6 +997,11 @@ footer {
 .name-header-inner {
     position: relative;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
 }
 
 .name-badge {
@@ -1024,12 +1040,12 @@ footer {
 }
 
 .my-name span {
-    color: #ffffff;
+    color: #5b8cff;
 }
 
 .my-name strong {
     font-weight: 800;
-    background: linear-gradient(90deg, #5b8cff, #9a7cff, #5b8cff);
+    background: linear-gradient(90deg, #ffffff, #dc2626);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -1038,8 +1054,8 @@ footer {
 }
 
 .name-subtitle {
-    margin: 11px 0 0;
-    color: #8997ab;
+    margin: 0;
+    color: #ffffff;
     font-size: 12px;
     letter-spacing: .8px;
     animation: nameReveal .8s .15s ease both;
@@ -1078,19 +1094,18 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 30px auto;
-    margin-left: auto;
-    margin-right: 0;
-    padding: 12px 18px;
-    min-height: 44px;
+    flex-shrink: 0;
+    margin: 0 0 15px auto;
+    padding: 7px 11px;
+    min-height: 34px;
 
     border: 1px solid rgba(91,140,255,.45);
-    border-radius: 11px;
+    border-radius: 9px;
 
     background: linear-gradient(135deg, #2563eb 0%, #ffffff 50%, #dc2626 100%);
 
     color: #0b1220;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 800;
     letter-spacing: .1px;
 
@@ -1107,26 +1122,27 @@ footer {
 }
 
 .back-btn:hover {
-    transform: translateX(-5px);
+    transform: translateX(-3px);
     background: linear-gradient(135deg, #1d4ed8 0%, #ffffff 50%, #b91c1c 100%);
     border-color: rgba(255,255,255,.9);
     color: #0b1220;
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,.28),
-        0 0 22px rgba(91,140,255,.18);
 }
 
 .back-btn:active {
-    transform: translateX(-2px) scale(.98);
+    transform: translateX(-1px) scale(.98);
 }
 
 @media (max-width: 720px) {
+    .details-title-row {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
     .back-btn {
-        margin-left: auto;
-        padding: 11px 16px;
-        min-height: 42px;
-        font-size: 12px;
+        margin: 0 0 15px auto;
+        padding: 6px 9px;
+        min-height: 32px;
+        font-size: 10px;
     }
 }
 
@@ -1169,6 +1185,10 @@ footer {
 @media (max-width: 720px) {
     .name-header {
         padding: 28px 14px 22px;
+    }
+
+    .name-header-inner {
+        gap: 12px;
     }
 
     .my-name {
@@ -1286,14 +1306,6 @@ footer {
 >
 
     <div class="container">
-
-
-        <button
-            class="back-btn"
-            onclick="showLibrary()"
-        >
-            Back to Projects
-        </button>
 
 
         <div id="detailsContent"></div>
@@ -1798,9 +1810,20 @@ function openDetails(id) {
             </div>
 
 
-            <h1 class="details-title">
-                ${project.name}
-            </h1>
+            <div class="details-title-row">
+
+                <h1 class="details-title">
+                    ${project.name}
+                </h1>
+
+                <button
+                    class="back-btn"
+                    onclick="showLibrary()"
+                >
+                    Back to Projects ×
+                </button>
+
+            </div>
 
 
             <p class="details-description">
