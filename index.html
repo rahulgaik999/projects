@@ -943,11 +943,238 @@ footer {
     }
 }
 
+
+/* =========================================================
+   RAHUL GAikwad — ATTRACTIVE PROJECT HEADER
+========================================================= */
+
+.name-header {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 20px 28px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background:
+        radial-gradient(circle at 50% 0%, rgba(91,140,255,.18), transparent 48%),
+        linear-gradient(180deg, #0b1220 0%, #070b12 100%);
+}
+
+.name-header-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.name-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 11px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(91,140,255,.28);
+    border-radius: 999px;
+    background: rgba(91,140,255,.08);
+    color: #9db9ff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    animation: badgeFloat 3s ease-in-out infinite;
+}
+
+.name-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5b8cff;
+    box-shadow: 0 0 12px rgba(91,140,255,.9);
+    animation: dotPulse 1.8s ease-in-out infinite;
+}
+
+.my-name {
+    margin: 0;
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1;
+    letter-spacing: -2.5px;
+    font-weight: 800;
+    color: #f5f7fb;
+    animation: nameReveal .8s ease both;
+}
+
+.my-name span {
+    color: #ffffff;
+}
+
+.my-name strong {
+    font-weight: 800;
+    background: linear-gradient(90deg, #5b8cff, #9a7cff, #5b8cff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientMove 4s linear infinite;
+}
+
+.name-subtitle {
+    margin: 11px 0 0;
+    color: #8997ab;
+    font-size: 12px;
+    letter-spacing: .8px;
+    animation: nameReveal .8s .15s ease both;
+}
+
+.name-glow {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    filter: blur(65px);
+    opacity: .14;
+    pointer-events: none;
+}
+
+.glow-one {
+    top: -150px;
+    left: 18%;
+    background: #5b8cff;
+    animation: glowMoveOne 7s ease-in-out infinite alternate;
+}
+
+.glow-two {
+    top: -130px;
+    right: 15%;
+    background: #9a7cff;
+    animation: glowMoveTwo 8s ease-in-out infinite alternate;
+}
+
+/* =========================================================
+   PROFESSIONAL BACK BUTTON
+========================================================= */
+
+.back-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(13,19,28,.85);
+    color: #c5cfdd;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+    transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-4px);
+    background: var(--surface-2);
+    border-color: rgba(91,140,255,.5);
+    color: #fff;
+}
+
+.back-btn:active {
+    transform: translateX(-2px) scale(.98);
+}
+
+@keyframes nameReveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes dotPulse {
+    0%, 100% { transform: scale(1); opacity: .8; }
+    50% { transform: scale(1.35); opacity: 1; }
+}
+
+@keyframes glowMoveOne {
+    from { transform: translate(-30px, 0); }
+    to { transform: translate(80px, 20px); }
+}
+
+@keyframes glowMoveTwo {
+    from { transform: translate(30px, 10px); }
+    to { transform: translate(-80px, 25px); }
+}
+
+@media (max-width: 720px) {
+    .name-header {
+        padding: 28px 14px 22px;
+    }
+
+    .my-name {
+        font-size: 34px;
+        letter-spacing: -1.5px;
+    }
+
+    .name-subtitle {
+        font-size: 10px;
+        letter-spacing: .5px;
+    }
+
+    .back-btn {
+        margin-bottom: 22px;
+        padding: 9px 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .my-name {
+        font-size: 29px;
+    }
+
+    .name-badge {
+        font-size: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .name-header *,
+    .name-header::before,
+    .name-header::after {
+        animation: none !important;
+    }
+}
+
 </style>
 </head>
 
 
 <body>
+
+
+<!-- ATTRACTIVE NAME HEADER -->
+<header class="name-header">
+    <div class="name-glow glow-one"></div>
+    <div class="name-glow glow-two"></div>
+    <div class="name-header-inner">
+        <div class="name-badge">
+            <span class="name-dot"></span>
+            SOFTWARE PROJECTS
+        </div>
+        <h1 class="my-name">
+            <span>Rahul</span> <strong>Gaikwad</strong>
+        </h1>
+        <p class="name-subtitle">Projects • Applications • Development</p>
+    </div>
+</header>
+
 
 
 <!-- =========================================================
@@ -1016,7 +1243,7 @@ footer {
             class="back-btn"
             onclick="showLibrary()"
         >
-            ← Back to projects
+            ← Back to Projects
         </button>
 
 
@@ -1039,10 +1266,6 @@ footer {
 
         <span>
             © 2026 Rahul Gaikwad • Project Library
-        </span>
-
-        <span>
-            Built with HTML, CSS & JavaScript
         </span>
 
     </div>
