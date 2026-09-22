@@ -506,9 +506,11 @@ body.details-open .name-header {
 /* DETAILS IMAGE */
 
 .details-preview {
+    width: 100%;
+    max-width: 900px;
     overflow: hidden;
 
-    margin-bottom: 35px;
+    margin: 0 0 35px;
 
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -517,9 +519,12 @@ body.details-open .name-header {
 }
 
 .details-preview img {
+    display: block;
     width: 100%;
+    height: auto;
+    max-height: 450px;
 
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 16 / 8;
 
     object-fit: cover;
 }
@@ -918,6 +923,16 @@ footer {
     .hero {
         padding: 22px 0 8px;
     }
+
+    .details-preview {
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .details-preview img {
+        max-height: 260px;
+        aspect-ratio: 16 / 9;
+    }
 }
 
 @media (max-width: 420px) {
@@ -1200,10 +1215,6 @@ footer {
     <div class="name-glow glow-one"></div>
     <div class="name-glow glow-two"></div>
     <div class="name-header-inner">
-        <div class="name-badge">
-            <span class="name-dot"></span>
-            SOFTWARE PROJECTS
-        </div>
         <h1 class="my-name">
             <span>Rahul</span> <strong>Gaikwad</strong>
         </h1>
@@ -1692,12 +1703,14 @@ function renderProjects() {
                 <div class="actions">
 
 
-                    <button
+                    <a
+                        href="${project.live}"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="btn primary"
-                        onclick="openDetails('${project.id}')"
                     >
-                        Visit Project
-                    </button>
+                        Visit Project ↗
+                    </a>
 
 
                     <button
