@@ -644,6 +644,10 @@ body.details-open .name-header {
     font-weight: 700;
 }
 
+.info-value.status-completed {
+    color: #22c55e;
+}
+
 .detail-techs {
     display: flex;
     flex-wrap: wrap;
@@ -1083,11 +1087,9 @@ footer {
     border: 1px solid rgba(91,140,255,.45);
     border-radius: 11px;
 
-    background:
-        linear-gradient(135deg, rgba(91,140,255,.18), rgba(154,124,255,.12)),
-        var(--surface);
+    background: linear-gradient(135deg, #2563eb 0%, #ffffff 50%, #dc2626 100%);
 
-    color: #dce6ff;
+    color: #0b1220;
     font-size: 13px;
     font-weight: 800;
     letter-spacing: .1px;
@@ -1106,11 +1108,9 @@ footer {
 
 .back-btn:hover {
     transform: translateX(-5px);
-    background:
-        linear-gradient(135deg, rgba(91,140,255,.27), rgba(154,124,255,.19)),
-        var(--surface-2);
-    border-color: rgba(125,158,255,.8);
-    color: #fff;
+    background: linear-gradient(135deg, #1d4ed8 0%, #ffffff 50%, #b91c1c 100%);
+    border-color: rgba(255,255,255,.9);
+    color: #0b1220;
 
     box-shadow:
         0 12px 30px rgba(0,0,0,.28),
@@ -1898,7 +1898,7 @@ function openDetails(id) {
                             Status
                         </span>
 
-                        <span class="info-value">
+                        <span class="info-value status-completed">
                             ${project.status}
                         </span>
 
