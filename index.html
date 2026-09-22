@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,7 +7,7 @@
 <title>Rahul Gaikwad | Project Portfolio</title>
 
 <meta name="description"
-   content="Professional software project showcase and project library">
+      content="Professional software project showcase and project library">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,4 +24,1992 @@
 :root {
     --bg: #070b12;
     --surface: #0d131c;
-    --surface-2: #151
+    --surface-2: #151d29;
+    --text: #f5f7fb;
+    --muted: #9aa7b8;
+    --border: #253044;
+    --accent: #5b8cff;
+    --accent-hover: #79a2ff;
+    --accent-soft: rgba(91,140,255,.14);
+    --success: #4ade80;
+    --success-soft: rgba(74,222,128,.12);
+    --shadow: 0 18px 45px rgba(0,0,0,.35);
+    --radius: 16px;
+    --max-width: 1280px;
+}
+
+
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    padding: 28px 0 10px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px 10px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    background: var(--surface);
+
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: .6px;
+}
+
+.eyebrow-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+}
+
+.hero h1 {
+    font-size: clamp(38px,5vw,64px);
+
+    line-height: 1.04;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 700px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 22px;
+
+    padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-card {
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.03);
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--accent) 35%,
+            var(--border)
+        );
+}
+
+
+/* PROJECT IMAGE */
+
+.project-image {
+    position: relative;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: var(--surface-2);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .35s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.025);
+}
+
+.status {
+    position: absolute;
+
+    top: 13px;
+    left: 13px;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    background: rgba(0,0,0,.7);
+
+    color: white;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* PROJECT CONTENT */
+
+.project-content {
+    padding: 21px;
+}
+
+.project-title {
+    margin-bottom: 7px;
+
+    font-size: 17px;
+
+    line-height: 1.3;
+
+    letter-spacing: -.4px;
+}
+
+.project-description {
+    min-height: 47px;
+
+    margin-bottom: 17px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* TECHNOLOGY BADGES */
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-bottom: 20px;
+}
+
+.tech {
+    padding: 5px 8px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: var(--surface-2);
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    min-height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 0 13px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: .18s;
+}
+
+.primary {
+    flex: 1;
+
+    background: var(--accent);
+    border: 1px solid var(--accent);
+
+    color: white;
+}
+
+.primary:hover {
+    background: var(--accent-hover);
+}
+
+.secondary {
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+    color: var(--text);
+}
+
+.secondary:hover {
+    background: var(--surface-2);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty {
+    display: none;
+
+    padding: 70px 20px;
+
+    margin-bottom: 70px;
+
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+.empty.show {
+    display: block;
+}
+
+.empty h3 {
+    margin-bottom: 6px;
+
+    color: var(--text);
+
+    font-size: 17px;
+}
+
+.empty p {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DETAILS PAGE
+========================================================= */
+
+.details-page {
+    display: none;
+
+    padding: 20px 0 90px;
+}
+
+.details-page.active {
+    display: block;
+}
+
+.library-page.hidden {
+    display: none;
+}
+
+/* Hide the name header while viewing project details */
+body.details-open .name-header {
+    display: none;
+}
+
+.back-btn {
+    border: 0;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    margin: 0 0 32px auto;
+
+    padding: 5px 0;
+
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    color: var(--text);
+}
+
+.details-header {
+    max-width: 900px;
+
+    margin-bottom: 30px;
+}
+
+.details-label {
+    margin-bottom: 10px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.details-title {
+    margin-bottom: 15px;
+
+    font-size: clamp(34px,5vw,56px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+}
+
+.details-description {
+    max-width: 760px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* DETAILS IMAGE */
+
+.details-preview {
+    width: 100%;
+    max-width: 720px;
+    overflow: hidden;
+
+    margin: 0 auto 35px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+}
+
+.details-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+
+    aspect-ratio: 16 / 8;
+
+    object-fit: cover;
+}
+
+
+/* DETAILS LAYOUT */
+
+.details-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0,1.5fr)
+        minmax(260px,.7fr);
+
+    gap: 50px;
+}
+
+.details-main h2,
+.details-sidebar h2 {
+    margin-bottom: 13px;
+
+    font-size: 17px;
+}
+
+.details-main p {
+    margin-bottom: 32px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+
+/* FEATURES */
+
+.features {
+    list-style: none;
+
+    display: grid;
+
+    gap: 11px;
+
+    margin-bottom: 35px;
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.check {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--success-soft);
+
+    color: var(--success);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* SIDEBAR */
+
+.sidebar-box {
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: var(--surface);
+}
+
+.info {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 13px;
+}
+
+.info:last-child {
+    border-bottom: 0;
+}
+
+.info-label {
+    color: var(--muted);
+}
+
+.info-value {
+    text-align: right;
+
+    font-weight: 700;
+}
+
+.info-value.status-completed {
+    color: #22c55e;
+}
+
+.detail-techs {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 5px;
+}
+
+.detail-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 22px;
+}
+
+.detail-actions .btn {
+    flex: 1;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 26px 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 0 28px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1050px) {
+
+    .project-grid {
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .details-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:720px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 32px),
+                var(--max-width)
+            );
+    }
+
+    .hero {
+        padding: 48px 0 28px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .toolbar {
+        align-items: stretch;
+    }
+
+    .search-box {
+        max-width: none;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .details-title {
+        letter-spacing: -1.5px;
+    }
+
+    .details-preview img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .footer-inner {
+        padding: 0 16px;
+
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:420px) {
+
+    .brand span {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .detail-actions {
+        flex-direction: column;
+    }
+
+}
+
+
+.about-projects {
+    padding: 34px 0 8px;
+}
+
+.about-box {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.about-box h2 {
+    margin: 5px 0 8px;
+    font-size: 22px;
+    letter-spacing: -.6px;
+}
+
+.about-box p {
+    max-width: 760px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+
+
+/* MOBILE PROJECT CARD FIX */
+.project-card,
+.project-content,
+.project-title,
+.project-description,
+.technologies,
+.actions {
+    min-width: 0;
+}
+
+.project-title,
+.project-description,
+.details-title,
+.details-description,
+.details-main p,
+.info-value {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.project-title {
+    font-size: 17px;
+}
+
+.project-description {
+    min-height: 0;
+}
+
+@media (max-width: 720px) {
+    .container {
+        width: calc(100% - 24px);
+        max-width: 100%;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding-bottom: 45px;
+    }
+
+    .project-card {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .project-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-content {
+        padding: 16px;
+    }
+
+    .project-title {
+        font-size: 15px;
+        line-height: 1.3;
+        letter-spacing: -.25px;
+        margin-bottom: 6px;
+    }
+
+    .project-description {
+        font-size: 12px;
+        line-height: 1.55;
+        margin-bottom: 13px;
+    }
+
+    .technologies {
+        gap: 5px;
+        margin-bottom: 15px;
+    }
+
+    .tech {
+        padding: 4px 7px;
+        font-size: 9px;
+    }
+
+    .actions {
+        gap: 7px;
+    }
+
+    .btn {
+        min-height: 38px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .status {
+        top: 9px;
+        left: 9px;
+        padding: 4px 7px;
+        font-size: 9px;
+    }
+
+    .hero {
+        padding: 22px 0 8px;
+    }
+
+    .details-preview {
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .details-preview img {
+        max-height: 260px;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        width: calc(100% - 20px);
+    }
+
+    .project-content {
+        padding: 14px;
+    }
+
+    .project-title {
+        font-size: 15px;
+    }
+
+    .project-description {
+        font-size: 11.5px;
+        line-height: 1.5;
+    }
+
+    .actions {
+        flex-direction: row;
+    }
+
+    .btn {
+        width: auto;
+        min-height: 36px;
+    }
+}
+
+
+/* =========================================================
+   RAHUL GAikwad — ATTRACTIVE PROJECT HEADER
+========================================================= */
+
+.name-header {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 20px 28px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background:
+        radial-gradient(circle at 50% 0%, rgba(91,140,255,.18), transparent 48%),
+        linear-gradient(180deg, #0b1220 0%, #070b12 100%);
+}
+
+.name-header-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.name-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 11px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(91,140,255,.28);
+    border-radius: 999px;
+    background: rgba(91,140,255,.08);
+    color: #9db9ff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    animation: badgeFloat 3s ease-in-out infinite;
+}
+
+.name-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5b8cff;
+    box-shadow: 0 0 12px rgba(91,140,255,.9);
+    animation: dotPulse 1.8s ease-in-out infinite;
+}
+
+.my-name {
+    margin: 0;
+    font-size: clamp(30px, 4.5vw, 52px);
+    line-height: 1;
+    letter-spacing: -2.5px;
+    font-weight: 800;
+    color: #f5f7fb;
+    animation: nameReveal .8s ease both;
+}
+
+.my-name span {
+    color: #ffffff;
+}
+
+.my-name strong {
+    font-weight: 800;
+    background: linear-gradient(90deg, #5b8cff, #9a7cff, #5b8cff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientMove 4s linear infinite;
+}
+
+.name-subtitle {
+    margin: 11px 0 0;
+    color: #8997ab;
+    font-size: 12px;
+    letter-spacing: .8px;
+    animation: nameReveal .8s .15s ease both;
+}
+
+.name-glow {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    filter: blur(65px);
+    opacity: .14;
+    pointer-events: none;
+}
+
+.glow-one {
+    top: -150px;
+    left: 18%;
+    background: #5b8cff;
+    animation: glowMoveOne 7s ease-in-out infinite alternate;
+}
+
+.glow-two {
+    top: -130px;
+    right: 15%;
+    background: #9a7cff;
+    animation: glowMoveTwo 8s ease-in-out infinite alternate;
+}
+
+/* =========================================================
+   PROFESSIONAL COLORFUL BACK BUTTON
+========================================================= */
+
+.back-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 30px auto;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 12px 18px;
+    min-height: 44px;
+
+    border: 1px solid rgba(91,140,255,.45);
+    border-radius: 11px;
+
+    background: linear-gradient(135deg, #2563eb 0%, #ffffff 50%, #dc2626 100%);
+
+    color: #0b1220;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .1px;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.22),
+        0 0 18px rgba(91,140,255,.08);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        box-shadow .2s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    background: linear-gradient(135deg, #1d4ed8 0%, #ffffff 50%, #b91c1c 100%);
+    border-color: rgba(255,255,255,.9);
+    color: #0b1220;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.28),
+        0 0 22px rgba(91,140,255,.18);
+}
+
+.back-btn:active {
+    transform: translateX(-2px) scale(.98);
+}
+
+@media (max-width: 720px) {
+    .back-btn {
+        margin-left: auto;
+        padding: 11px 16px;
+        min-height: 42px;
+        font-size: 12px;
+    }
+}
+
+@keyframes nameReveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes dotPulse {
+    0%, 100% { transform: scale(1); opacity: .8; }
+    50% { transform: scale(1.35); opacity: 1; }
+}
+
+@keyframes glowMoveOne {
+    from { transform: translate(-30px, 0); }
+    to { transform: translate(80px, 20px); }
+}
+
+@keyframes glowMoveTwo {
+    from { transform: translate(30px, 10px); }
+    to { transform: translate(-80px, 25px); }
+}
+
+@media (max-width: 720px) {
+    .name-header {
+        padding: 28px 14px 22px;
+    }
+
+    .my-name {
+        font-size: 30px;
+        letter-spacing: -1.2px;
+    }
+
+    .name-subtitle {
+        font-size: 10px;
+        letter-spacing: .5px;
+    }
+
+    .back-btn {
+        margin-bottom: 22px;
+        padding: 9px 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .my-name {
+        font-size: 27px;
+    }
+
+    .name-badge {
+        font-size: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .name-header *,
+    .name-header::before,
+    .name-header::after {
+        animation: none !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ATTRACTIVE NAME HEADER -->
+<header class="name-header">
+    <div class="name-glow glow-one"></div>
+    <div class="name-glow glow-two"></div>
+    <div class="name-header-inner">
+        <h1 class="my-name">
+            <span>Rahul</span> <strong>Gaikwad</strong>
+        </h1>
+        <p class="name-subtitle">Projects • Applications • Development</p>
+    </div>
+</header>
+
+
+
+<!-- =========================================================
+     HOMEPAGE
+========================================================= -->
+
+<main
+    class="library-page"
+    id="libraryPage"
+>
+
+
+<!-- PROJECT SECTION -->
+
+    <section id="projects">
+
+        <div class="container">
+<!-- PROJECT GRID -->
+
+            <div
+                class="project-grid"
+                id="projectGrid"
+            ></div>
+
+
+
+            <!-- EMPTY -->
+
+            <div
+                class="empty"
+                id="emptyState"
+            >
+
+                <h3>
+                    No projects found
+                </h3>
+
+                <p>
+                    Try another search or technology.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     DETAILS PAGE
+========================================================= -->
+
+<section
+    class="details-page"
+    id="detailsPage"
+>
+
+    <div class="container">
+
+
+        <button
+            class="back-btn"
+            onclick="showLibrary()"
+        >
+            Back to Projects
+        </button>
+
+
+        <div id="detailsContent"></div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <span>
+            © 2026 Rahul Gaikwad • Project Library
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   PROJECT DATABASE
+
+   ADD ALL YOUR PROJECTS HERE.
+
+   ONLY THIS SECTION NEEDS TO BE UPDATED
+   WHEN YOU ADD A NEW PROJECT.
+========================================================= */
+
+const projects = [
+
+    {
+
+        id: "online-polling",
+
+        name: "Online Polling System",
+
+        description:
+            "A web-based polling application for creating polls, collecting votes and viewing results.",
+
+        longDescription:
+            "A complete polling platform designed to simplify the process of creating, managing and participating in online polls. The application provides a structured interface for users to create polls, vote on available options and review results.",
+
+        image:
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Node.js",
+            "MongoDB"
+        ],
+
+        features: [
+            "User authentication",
+            "Create and manage polls",
+            "Online voting system",
+            "Results dashboard",
+            "Responsive interface"
+        ],
+
+        developmentTime:
+            "2 Months",
+
+        status:
+            "Completed",
+
+        github:
+            "https://github.com/",
+
+        live:
+            "https://example.com/"
+
+    },
+
+
+    {
+
+        id: "hospital-management",
+
+        name: "Hospital Management System",
+
+        description:
+            "A centralized application for managing patients, doctors, appointments and hospital records.",
+
+        longDescription:
+            "A management platform designed to organize common hospital workflows in one centralized system. The application focuses on structured data management, appointment handling and improving access to important information.",
+
+        image:
+            "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Bootstrap",
+            "PHP",
+            "MySQL"
+        ],
+
+        features: [
+            "Patient management",
+            "Doctor management",
+            "Appointment scheduling",
+            "Medical record management",
+            "Administrative dashboard"
+        ],
+
+        developmentTime:
+            "6 Weeks",
+
+        status:
+            "Completed",
+
+        github:
+            "https://github.com/",
+
+        live:
+            "https://example.com/"
+
+    },
+
+
+    {
+
+        id: "developer-portfolio",
+
+        name: "Developer Portfolio",
+
+        description:
+            "A responsive developer portfolio designed to present projects, technical skills and professional information.",
+
+        longDescription:
+            "A modern responsive portfolio website focused on presenting development work in a clean and structured interface. The website is optimized for desktop and mobile devices.",
+
+        image:
+            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=85",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Bootstrap",
+            "Netlify"
+        ],
+
+        features: [
+            "Responsive design",
+            "Project showcase",
+            "Interactive navigation",
+            "Mobile-friendly layout",
+            "Netlify deployment"
+        ],
+
+        developmentTime:
+            "2 Weeks",
+
+        status:
+            "Completed",
+
+        github:
+            "https://github.com/",
+
+        live:
+            "https://example.com/"
+
+    },
+
+
+    {
+
+        id: "task-management",
+
+        name: "Task Management Application",
+
+        description:
+            "A productivity application for creating, organizing and tracking personal tasks.",
+
+        longDescription:
+            "A task management application focused on organizing daily work through a simple and efficient interface. Users can create tasks, categorize them and track progress from a centralized dashboard.",
+
+        image:
+            "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1400&q=85",
+
+        technologies: [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB"
+        ],
+
+        features: [
+            "Create and edit tasks",
+            "Task categories",
+            "Progress tracking",
+            "REST API integration",
+            "Responsive dashboard"
+        ],
+
+        developmentTime:
+            "5 Weeks",
+
+        status:
+            "Completed",
+
+        github:
+            "https://github.com/",
+
+        live:
+            "https://example.com/"
+
+    },
+
+
+    {
+
+        id: "ecommerce-platform",
+
+        name: "E-Commerce Platform",
+
+        description:
+            "A modern shopping platform with product browsing, cart management and checkout functionality.",
+
+        longDescription:
+            "A full-stack e-commerce platform developed around a modern shopping experience. The project demonstrates product management, shopping cart workflows and a responsive user interface.",
+
+        image:
+            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85",
+
+        technologies: [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB"
+        ],
+
+        features: [
+            "Product browsing",
+            "Product search",
+            "Shopping cart",
+            "User authentication",
+            "Order management"
+        ],
+
+        developmentTime:
+            "2 Months",
+
+        status:
+            "In Development",
+
+        github:
+            "https://github.com/",
+
+        live:
+            "https://example.com/"
+
+    },
+
+
+    {
+
+        id: "weather-dashboard",
+
+        name: "Weather Dashboard",
+
+        description:
+            "A responsive weather application displaying real-time weather information through an external API.",
+
+        longDescription:
+            "A lightweight weather dashboard that consumes an external weather API to present current conditions and useful weather information in a clean interface.",
+
+        image:
+            "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1400&q=85",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "REST API"
+        ],
+
+        features: [
+            "City search",
+            "Real-time weather data",
+            "API integration",
+            "Responsive interface",
+            "Dynamic weather information"
+        ],
+
+        developmentTime:
+            "2 Weeks",
+
+        status:
+            "Completed",
+
+        github:
+            "https://github.com/",
+
+        live:
+            "https://example.com/"
+
+    }
+
+];
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+
+
+
+
+/* =========================================================
+   RENDER PROJECTS
+========================================================= */
+
+function renderProjects() {
+
+    const grid =
+        document.getElementById("projectGrid");
+
+    const empty =
+        document.getElementById("emptyState");
+
+    const filtered = projects;
+
+
+    grid.innerHTML = "";
+
+
+    filtered.forEach(project => {
+
+
+        const card =
+            document.createElement("article");
+
+
+        card.className =
+            "project-card";
+
+
+        card.innerHTML = `
+
+            <div class="project-image">
+
+                <img
+                    src="${project.image}"
+                    alt="${project.name} preview"
+                    loading="lazy"
+                    onclick="openDetails('${project.id}')"
+                    style="cursor:pointer;"
+                >
+
+                <span class="status">
+                    ${project.status}
+                </span>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <h3
+                    class="project-title"
+                    onclick="openDetails('${project.id}')"
+                    style="cursor:pointer;"
+                >
+                    ${project.name}
+                </h3>
+
+
+                <p class="project-description">
+                    ${project.description}
+                </p>
+
+
+                <div class="technologies">
+
+                    ${project.technologies
+                        .slice(0,5)
+                        .map(
+                            tech =>
+                                `
+                                <span class="tech">
+                                    ${tech}
+                                </span>
+                                `
+                        )
+                        .join("")
+                    }
+
+                </div>
+
+
+                <div class="actions">
+
+
+                    <a
+                        href="${project.live}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn primary"
+                    >
+                        Visit Project ↗
+                    </a>
+
+
+                    <button
+                        class="btn secondary"
+                        onclick="openDetails('${project.id}')"
+                    >
+                        Details ↗
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        grid.appendChild(card);
+
+    });
+
+
+    document.getElementById("projectCount")
+        .textContent =
+            `${filtered.length} ${
+                filtered.length === 1
+                    ? "project"
+                    : "projects"
+            }`;
+
+
+    if(filtered.length === 0) {
+
+        empty.classList.add("show");
+
+    } else {
+
+        empty.classList.remove("show");
+
+    }
+
+}
+
+
+/* =========================================================
+   OPEN DETAILS
+========================================================= */
+
+function openDetails(id) {
+
+    const project =
+        projects.find(
+            project =>
+                project.id === id
+        );
+
+
+    if(!project) return;
+
+
+    document
+        .getElementById("libraryPage")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("detailsPage")
+        .classList.add("active");
+
+    document.body.classList.add("details-open");
+
+
+    const content =
+        document.getElementById("detailsContent");
+
+
+    content.innerHTML = `
+
+        <div class="details-header">
+
+            <div class="details-label">
+                Project Details
+            </div>
+
+
+            <h1 class="details-title">
+                ${project.name}
+            </h1>
+
+
+            <p class="details-description">
+                ${project.description}
+            </p>
+
+        </div>
+
+
+        <div class="details-preview">
+
+            <img
+                src="${project.image}"
+                alt="${project.name} preview"
+            >
+
+        </div>
+
+
+        <div class="details-layout">
+
+
+            <div class="details-main">
+
+
+                <h2>
+                    Description
+                </h2>
+
+
+                <p>
+                    ${project.longDescription}
+                </p>
+
+
+                <h2>
+                    Main Features
+                </h2>
+
+
+                <ul class="features">
+
+                    ${project.features
+                        .map(
+                            feature =>
+                                `
+                                <li>
+
+                                    <span class="check">
+                                        ✓
+                                    </span>
+
+                                    <span>
+                                        ${feature}
+                                    </span>
+
+                                </li>
+                                `
+                        )
+                        .join("")
+                    }
+
+                </ul>
+
+
+            </div>
+
+
+            <aside class="details-sidebar">
+
+
+                <div class="sidebar-box">
+
+                    <h2>
+                        Project Information
+                    </h2>
+
+
+                    <div class="info">
+
+                        <span class="info-label">
+                            Development
+                        </span>
+
+                        <span class="info-value">
+                            ${project.developmentTime}
+                        </span>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="info-label">
+                            Status
+                        </span>
+
+                        <span class="info-value status-completed">
+                            ${project.status}
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sidebar-box">
+
+                    <h2>
+                        Technologies
+                    </h2>
+
+
+                    <div class="detail-techs">
+
+                        ${project.technologies
+                            .map(
+                                tech =>
+                                    `
+                                    <span class="tech">
+                                        ${tech}
+                                    </span>
+                                    `
+                            )
+                            .join("")
+                        }
+
+                    </div>
+
+
+                    <div class="detail-actions">
+
+
+                        <a
+                            href="${project.live}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn primary"
+                        >
+                            Live Project ↗
+                        </a>
+
+
+                        <a
+                            href="${project.github}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn secondary"
+                        >
+                            GitHub ↗
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+
+        </div>
+
+    `;
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================================
+   BACK TO PROJECT LIBRARY
+========================================================= */
+
+function showLibrary() {
+
+    document
+        .getElementById("detailsPage")
+        .classList.remove("active");
+
+
+    document
+        .getElementById("libraryPage")
+        .classList.remove("hidden");
+
+    document.body.classList.remove("details-open");
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+renderProjects();
+
+</script>
+
+</body>
+</html>
