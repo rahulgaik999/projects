@@ -1046,35 +1046,89 @@ footer {
 }
 
 /* =========================================================
-   PROFESSIONAL BACK BUTTON
+   PROFESSIONAL COLORFUL BACK BUTTON
 ========================================================= */
 
 .back-btn {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 10px;
     margin-bottom: 30px;
-    padding: 10px 15px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: rgba(13,19,28,.85);
-    color: #c5cfdd;
-    font-size: 12px;
-    font-weight: 700;
-    box-shadow: 0 8px 24px rgba(0,0,0,.16);
-    transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+    padding: 12px 18px;
+    min-height: 44px;
+
+    border: 1px solid rgba(91,140,255,.45);
+    border-radius: 11px;
+
+    background:
+        linear-gradient(135deg, rgba(91,140,255,.18), rgba(154,124,255,.12)),
+        var(--surface);
+
+    color: #dce6ff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .1px;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.22),
+        0 0 18px rgba(91,140,255,.08);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        box-shadow .2s ease;
+}
+
+.back-btn::before {
+    content: "‹";
+    display: inline-grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+
+    background: linear-gradient(135deg, #5b8cff, #9a7cff);
+    color: #fff;
+    font-size: 21px;
+    line-height: 1;
+    font-weight: 400;
+
+    box-shadow: 0 4px 12px rgba(91,140,255,.3);
 }
 
 .back-btn:hover {
-    transform: translateX(-4px);
-    background: var(--surface-2);
-    border-color: rgba(91,140,255,.5);
+    transform: translateX(-5px);
+    background:
+        linear-gradient(135deg, rgba(91,140,255,.27), rgba(154,124,255,.19)),
+        var(--surface-2);
+    border-color: rgba(125,158,255,.8);
     color: #fff;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.28),
+        0 0 22px rgba(91,140,255,.18);
 }
 
 .back-btn:active {
     transform: translateX(-2px) scale(.98);
+}
+
+@media (max-width: 720px) {
+    .back-btn {
+        padding: 11px 16px;
+        min-height: 42px;
+        font-size: 12px;
+        gap: 9px;
+    }
+
+    .back-btn::before {
+        width: 22px;
+        height: 22px;
+        font-size: 19px;
+    }
 }
 
 @keyframes nameReveal {
