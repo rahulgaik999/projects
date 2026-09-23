@@ -3,9 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="Rahul Gaikwad - Project Portfolio">
 
     <title>My Portfolio | Rahul Gaikwad</title>
@@ -16,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-
 <style>
 
 /* =========================================================
@@ -24,7 +21,8 @@
 ========================================================= */
 
 :root {
-    --bg: #070b12;
+    --bg: #070912;
+
     --surface: #0d131c;
     --surface-2: #151d29;
 
@@ -33,10 +31,11 @@
 
     --border: #253044;
 
-    --accent: #6d7cff;
-    --accent-hover: #8794ff;
-
-    --purple: #a66cff;
+    /* PURPLE / VIOLET UI COLORS */
+    --violet: #8b5cf6;
+    --purple: #a855f7;
+    --violet-light: #c084fc;
+    --violet-soft: #b794f4;
 
     --success: #4ade80;
 
@@ -63,16 +62,16 @@ body {
 
     background:
         radial-gradient(
-            circle at 50% -15%,
-            rgba(109, 124, 255, 0.16),
-            transparent 32%
+            circle at 50% -10%,
+            rgba(139, 92, 246, 0.18),
+            transparent 34%
         ),
         radial-gradient(
-            circle at 100% 30%,
-            rgba(166, 108, 255, 0.08),
-            transparent 25%
+            circle at 100% 40%,
+            rgba(168, 85, 247, 0.10),
+            transparent 28%
         ),
-        #070b12;
+        #070912;
 
     color: var(--text);
 
@@ -151,12 +150,12 @@ img {
     background:
         linear-gradient(
             135deg,
-            rgba(13, 20, 42, .98),
-            rgba(39, 20, 62, .98)
+            rgba(20, 13, 45, .98),
+            rgba(44, 17, 66, .98)
         );
 
     border-bottom:
-        1px solid rgba(166, 108, 255, .28);
+        1px solid rgba(168, 85, 247, .30);
 
     backdrop-filter: blur(22px);
 
@@ -181,15 +180,15 @@ img {
         linear-gradient(
             90deg,
             transparent,
-            #6d7cff,
-            #a66cff,
-            #c07cff,
-            #a66cff,
-            #6d7cff,
+            #7c3aed,
+            #a855f7,
+            #c084fc,
+            #a855f7,
+            #7c3aed,
             transparent
         );
 
-    opacity: .9;
+    opacity: .95;
 }
 
 .navbar-inner {
@@ -206,7 +205,7 @@ img {
 
 
 /* =========================================================
-   PORTFOLIO BRAND
+   BRAND
 ========================================================= */
 
 .navbar-brand {
@@ -224,10 +223,10 @@ img {
 }
 
 .navbar-brand:hover {
-    color: #bcaeff;
+    color: #c084fc;
 
     text-shadow:
-        0 0 20px rgba(166, 108, 255, .4);
+        0 0 22px rgba(168, 85, 247, .45);
 }
 
 
@@ -263,7 +262,7 @@ img {
     color: #ffffff;
 
     background:
-        rgba(166, 108, 255, .10);
+        rgba(168, 85, 247, .12);
 
     transform:
         translateY(-2px);
@@ -275,13 +274,13 @@ img {
     background:
         linear-gradient(
             135deg,
-            rgba(109, 124, 255, .24),
-            rgba(166, 108, 255, .22)
+            rgba(124, 58, 237, .28),
+            rgba(168, 85, 247, .24)
         );
 
     box-shadow:
         inset 0 0 20px
-        rgba(166, 108, 255, .05);
+        rgba(168, 85, 247, .06);
 }
 
 .nav-link.active::after {
@@ -302,15 +301,15 @@ img {
 
     border-radius: 50%;
 
-    background: #a66cff;
+    background: #c084fc;
 
     box-shadow:
-        0 0 14px #a66cff;
+        0 0 14px #a855f7;
 }
 
 
 /* =========================================================
-   SEARCH BUTTON
+   NAV SEARCH
 ========================================================= */
 
 .nav-search {
@@ -325,14 +324,15 @@ img {
     margin-left: 5px;
 
     border:
-        1px solid rgba(166, 108, 255, .22);
+        1px solid rgba(168, 85, 247, .28);
 
     border-radius: 11px;
 
     background:
         rgba(255, 255, 255, .055);
 
-    color: #c9c0ff;
+    color:
+        #c084fc;
 
     transition: .25s ease;
 
@@ -345,24 +345,24 @@ img {
     background:
         linear-gradient(
             135deg,
-            rgba(109, 124, 255, .22),
-            rgba(166, 108, 255, .22)
+            rgba(124, 58, 237, .28),
+            rgba(168, 85, 247, .28)
         );
 
     border-color:
-        rgba(166, 108, 255, .6);
+        rgba(192, 132, 252, .65);
 
     transform:
         translateY(-2px);
 
     box-shadow:
-        0 0 24px
-        rgba(166, 108, 255, .22);
+        0 0 25px
+        rgba(168, 85, 247, .25);
 }
 
 
 /* =========================================================
-   GITHUB BUTTON
+   GITHUB
 ========================================================= */
 
 .nav-github {
@@ -378,18 +378,19 @@ img {
         11px 17px;
 
     border:
-        1px solid rgba(166, 108, 255, .24);
+        1px solid rgba(168, 85, 247, .28);
 
     border-radius: 11px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(109, 124, 255, .16),
-            rgba(166, 108, 255, .16)
+            rgba(124, 58, 237, .18),
+            rgba(168, 85, 247, .16)
         );
 
-    color: #e7e4f4;
+    color:
+        #eee7ff;
 
     font-size: 13px;
 
@@ -402,19 +403,19 @@ img {
     background:
         linear-gradient(
             135deg,
-            rgba(109, 124, 255, .30),
-            rgba(166, 108, 255, .28)
+            rgba(124, 58, 237, .34),
+            rgba(168, 85, 247, .32)
         );
 
     border-color:
-        rgba(166, 108, 255, .6);
+        rgba(192, 132, 252, .65);
 
     transform:
         translateY(-2px);
 
     box-shadow:
         0 8px 25px
-        rgba(166, 108, 255, .12);
+        rgba(168, 85, 247, .16);
 }
 
 
@@ -426,7 +427,7 @@ img {
     position: relative;
 
     padding:
-        105px 0 75px;
+        105px 0 80px;
 
     text-align: center;
 
@@ -436,13 +437,13 @@ img {
 .hero-glow {
     position: absolute;
 
-    width: 650px;
+    width: 680px;
 
-    height: 650px;
+    height: 680px;
 
     left: 50%;
 
-    top: -430px;
+    top: -440px;
 
     transform:
         translateX(-50%);
@@ -452,8 +453,8 @@ img {
     background:
         radial-gradient(
             circle,
-            rgba(109, 124, 255, .25),
-            rgba(166, 108, 255, .12),
+            rgba(139, 92, 246, .28),
+            rgba(168, 85, 247, .13),
             transparent 70%
         );
 
@@ -480,24 +481,24 @@ img {
     gap: 8px;
 
     padding:
-        8px 14px;
+        8px 15px;
 
-    margin-bottom: 25px;
+    margin-bottom: 27px;
 
     border:
-        1px solid rgba(166, 108, 255, .28);
+        1px solid rgba(168, 85, 247, .30);
 
     border-radius: 999px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(109, 124, 255, .09),
-            rgba(166, 108, 255, .09)
+            rgba(124, 58, 237, .10),
+            rgba(168, 85, 247, .10)
         );
 
     color:
-        #bdb5ff;
+        #d1b7ff;
 
     font-size: 10px;
 
@@ -509,17 +510,17 @@ img {
 }
 
 .hero-badge-dot {
-    width: 6px;
+    width: 7px;
 
-    height: 6px;
+    height: 7px;
 
     border-radius: 50%;
 
     background:
-        #a66cff;
+        #a855f7;
 
     box-shadow:
-        0 0 13px #a66cff;
+        0 0 14px #a855f7;
 }
 
 .hero h1 {
@@ -541,10 +542,10 @@ img {
     background:
         linear-gradient(
             90deg,
-            #6d7cff,
-            #a66cff,
-            #c07cff,
-            #6d7cff
+            #8b5cf6,
+            #a855f7,
+            #c084fc,
+            #9333ea
         );
 
     background-size:
@@ -576,24 +577,31 @@ img {
     max-width: 680px;
 
     margin:
-        25px auto 0;
+        27px auto 0;
 
     color:
-        #8f9bad;
+        #939daf;
 
     font-size: 15px;
 
     line-height: 1.85;
 }
 
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
 .hero-actions {
     display: flex;
 
+    align-items: center;
+
     justify-content: center;
 
-    gap: 10px;
+    gap: 12px;
 
-    margin-top: 33px;
+    margin-top: 36px;
 }
 
 .hero-btn {
@@ -603,67 +611,80 @@ img {
 
     justify-content: center;
 
-    min-height: 46px;
+    min-height: 54px;
 
     padding:
-        0 19px;
+        0 25px;
 
-    border-radius: 11px;
+    border-radius: 12px;
 
-    font-size: 11px;
+    font-size: 13px;
 
     font-weight: 800;
 
-    transition: .25s;
+    transition:
+        .25s ease;
 }
 
 .hero-btn-primary {
     background:
         linear-gradient(
             135deg,
-            #6d7cff,
-            #a66cff
+            #7c3aed,
+            #a855f7,
+            #c084fc
         );
 
     border:
-        1px solid #7d79ff;
+        1px solid #a855f7;
 
-    color: white;
+    color: #ffffff;
 
     box-shadow:
-        0 12px 32px
-        rgba(109, 124, 255, .22);
+        0 12px 35px
+        rgba(168, 85, 247, .25);
 }
 
 .hero-btn-primary:hover {
     transform:
-        translateY(-3px);
+        translateY(-4px);
 
     box-shadow:
-        0 17px 40px
-        rgba(166, 108, 255, .3);
+        0 18px 45px
+        rgba(168, 85, 247, .38);
 }
 
 .hero-btn-secondary {
-    border:
-        1px solid rgba(166, 108, 255, .18);
-
     background:
-        rgba(255, 255, 255, .04);
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(168, 85, 247, .35);
 
     color:
-        #cbd5e1;
+        #d9caff;
 }
 
 .hero-btn-secondary:hover {
-    border-color:
-        rgba(166, 108, 255, .45);
-
     background:
-        rgba(166, 108, 255, .08);
+        linear-gradient(
+            135deg,
+            rgba(124,58,237,.18),
+            rgba(168,85,247,.16)
+        );
+
+    border-color:
+        rgba(192,132,252,.65);
+
+    color:
+        #ffffff;
 
     transform:
-        translateY(-3px);
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(168,85,247,.15);
 }
 
 
@@ -690,7 +711,7 @@ img {
     margin-bottom: 8px;
 
     color:
-        #9b8cff;
+        #c084fc;
 
     font-size: 10px;
 
@@ -703,18 +724,19 @@ img {
 
 .projects-heading h2 {
     font-size:
-        clamp(29px, 4vw, 42px);
+        clamp(30px, 4vw, 43px);
 
     line-height: 1;
 
-    letter-spacing: -1.8px;
+    letter-spacing:
+        -1.8px;
 }
 
 .projects-heading p {
     margin-top: 10px;
 
     color:
-        #7f8b9d;
+        #858fa2;
 
     font-size: 13px;
 }
@@ -724,19 +746,15 @@ img {
         7px 12px;
 
     border:
-        1px solid rgba(166, 108, 255, .18);
+        1px solid rgba(168,85,247,.25);
 
     border-radius: 999px;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(109, 124, 255, .07),
-            rgba(166, 108, 255, .07)
-        );
+        rgba(168,85,247,.055);
 
     color:
-        #aeb5c5;
+        #b9a9d4;
 
     font-size: 10px;
 
@@ -764,23 +782,23 @@ img {
     margin-bottom: 25px;
 
     border:
-        1px solid rgba(166, 108, 255, .15);
+        1px solid rgba(168,85,247,.18);
 
     border-radius: 15px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(13, 20, 34, .86),
-            rgba(25, 17, 39, .80)
+            rgba(14,15,30,.90),
+            rgba(30,15,42,.86)
         );
 
     backdrop-filter:
         blur(15px);
 
     box-shadow:
-        0 12px 40px
-        rgba(0,0,0,.12);
+        0 15px 45px
+        rgba(0,0,0,.15);
 }
 
 .search-box {
@@ -794,7 +812,7 @@ img {
 .search-box input {
     width: 100%;
 
-    height: 43px;
+    height: 45px;
 
     padding:
         0 15px 0 43px;
@@ -802,31 +820,32 @@ img {
     outline: none;
 
     border:
-        1px solid rgba(166, 108, 255, .12);
+        1px solid rgba(168,85,247,.18);
 
     border-radius: 10px;
 
     background:
         rgba(255,255,255,.035);
 
-    color: white;
+    color:
+        white;
 
-    font-size: 12px;
-
-    transition: .2s;
+    font-size:
+        12px;
 }
 
 .search-box input::placeholder {
-    color: #687588;
+    color:
+        #687588;
 }
 
 .search-box input:focus {
     border-color:
-        rgba(166,108,255,.55);
+        rgba(168,85,247,.65);
 
     box-shadow:
         0 0 0 3px
-        rgba(166,108,255,.08);
+        rgba(168,85,247,.09);
 }
 
 .search-icon {
@@ -840,11 +859,11 @@ img {
         translateY(-50%);
 
     color:
-        #8e7eff;
+        #a855f7;
 }
 
 .filter-select {
-    height: 43px;
+    height: 45px;
 
     padding:
         0 13px;
@@ -852,25 +871,27 @@ img {
     outline: none;
 
     border:
-        1px solid rgba(166, 108, 255, .12);
+        1px solid rgba(168,85,247,.18);
 
     border-radius: 10px;
 
     background:
-        #101323;
+        #10101c;
 
     color:
-        #b8c1ce;
+        #c4bacf;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 }
 
 
 /* =========================================================
    PROJECT CARDS
-   LOCKED / UNCHANGED
+   EXTERIOR LEFT UNCHANGED
 ========================================================= */
 
 .project-grid {
@@ -893,8 +914,7 @@ img {
 
     background: var(--surface);
 
-    box-shadow:
-        0 1px 2px rgba(0,0,0,.03);
+    box-shadow: 0 1px 2px rgba(0,0,0,.03);
 
     transition:
         transform .22s ease,
@@ -925,6 +945,7 @@ img {
 
 .project-image img {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -942,68 +963,90 @@ img {
     position: absolute;
 
     top: 13px;
+
     left: 13px;
 
-    padding: 5px 9px;
+    padding:
+        5px 9px;
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     background:
         rgba(0,0,0,.7);
 
-    color: white;
+    color:
+        white;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
     backdrop-filter:
         blur(8px);
 }
 
 .project-content {
-    padding: 21px;
+    padding:
+        21px;
 }
 
 .project-title {
-    margin-bottom: 7px;
+    margin-bottom:
+        7px;
 
-    font-size: 17px;
+    font-size:
+        17px;
 
-    line-height: 1.3;
+    line-height:
+        1.3;
 
-    letter-spacing: -.4px;
+    letter-spacing:
+        -.4px;
 }
 
 .project-description {
-    min-height: 47px;
+    min-height:
+        47px;
 
-    margin-bottom: 17px;
+    margin-bottom:
+        17px;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 }
 
 .technologies {
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 6px;
+    gap:
+        6px;
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
 }
 
 .tech {
-    padding: 5px 8px;
+    padding:
+        5px 8px;
 
     border:
         1px solid var(--border);
 
-    border-radius: 6px;
+    border-radius:
+        6px;
 
     background:
         var(--surface-2);
@@ -1011,55 +1054,69 @@ img {
     color:
         var(--muted);
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 600;
+    font-weight:
+        600;
 }
 
 .actions {
-    display: flex;
+    display:
+        flex;
 
-    gap: 8px;
+    gap:
+        8px;
 }
 
 .btn {
-    min-height: 40px;
+    min-height:
+        40px;
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 6px;
+    gap:
+        6px;
 
     padding:
         0 13px;
 
-    border-radius: 8px;
+    border-radius:
+        8px;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    transition: .18s;
+    transition:
+        .18s;
 }
 
 .primary {
     flex: 1;
 
     background:
-        var(--accent);
+        var(--violet);
 
     border:
-        1px solid var(--accent);
+        1px solid var(--violet);
 
-    color: white;
+    color:
+        white;
 }
 
 .primary:hover {
     background:
-        var(--accent-hover);
+        #9b6cff;
 }
 
 .secondary {
@@ -1084,41 +1141,50 @@ img {
 ========================================================= */
 
 .empty {
-    display: none;
+    display:
+        none;
 
-    padding: 70px 20px;
+    padding:
+        70px 20px;
 
-    margin-bottom: 70px;
+    margin-bottom:
+        70px;
 
     border:
-        1px dashed rgba(166,108,255,.25);
+        1px dashed rgba(168,85,247,.25);
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
-    text-align: center;
+    text-align:
+        center;
 
     color:
         var(--muted);
 
     background:
-        rgba(166,108,255,.025);
+        rgba(168,85,247,.025);
 }
 
 .empty.show {
-    display: block;
+    display:
+        block;
 }
 
 .empty h3 {
-    margin-bottom: 6px;
+    margin-bottom:
+        6px;
 
     color:
         var(--text);
 
-    font-size: 17px;
+    font-size:
+        18px;
 }
 
 .empty p {
-    font-size: 13px;
+    font-size:
+        13px;
 }
 
 
@@ -1132,40 +1198,47 @@ img {
 }
 
 .about-box {
-    padding: 38px;
+    padding:
+        40px;
 
     border:
-        1px solid rgba(166,108,255,.16);
+        1px solid rgba(168,85,247,.20);
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
     background:
         linear-gradient(
             135deg,
             rgba(18,25,40,.88),
-            rgba(34,20,51,.78)
+            rgba(38,18,52,.80)
         );
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,.2);
+        0 20px 60px
+        rgba(0,0,0,.2);
 }
 
 .about-box h2 {
-    margin-bottom: 10px;
+    margin-bottom:
+        12px;
 
-    font-size: 29px;
+    font-size:
+        30px;
 
     letter-spacing:
         -1px;
 }
 
 .about-box p {
-    max-width: 780px;
+    max-width:
+        780px;
 
     color:
         var(--muted);
 
-    font-size: 13px;
+    font-size:
+        14px;
 
     line-height:
         1.8;
@@ -1177,22 +1250,26 @@ img {
 ========================================================= */
 
 .details-page {
-    display: none;
+    display:
+        none;
 
     padding:
         45px 0 90px;
 }
 
 .details-page.active {
-    display: block;
+    display:
+        block;
 }
 
 .library-page.hidden {
-    display: none;
+    display:
+        none;
 }
 
 .back-btn {
-    display: flex;
+    display:
+        flex;
 
     margin:
         0 0 35px auto;
@@ -1201,56 +1278,69 @@ img {
         11px 17px;
 
     border:
-        1px solid rgba(166,108,255,.35);
+        1px solid rgba(168,85,247,.35);
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
     background:
-        rgba(166,108,255,.08);
+        rgba(168,85,247,.08);
 
     color:
-        #b8c2ff;
+        #d0b9ff;
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    transition: .2s;
+    transition:
+        .2s;
 }
 
 .back-btn:hover {
     background:
-        rgba(166,108,255,.16);
+        rgba(168,85,247,.18);
 
     transform:
         translateX(-4px);
 }
 
 .details-header {
-    max-width: 900px;
+    max-width:
+        900px;
 
-    margin-bottom: 30px;
+    margin-bottom:
+        30px;
 }
 
 .details-label {
-    margin-bottom: 10px;
+    margin-bottom:
+        10px;
 
     color:
-        #9b8cff;
+        #c084fc;
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 }
 
 .details-title {
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 
     font-size:
         clamp(34px,5vw,56px);
@@ -1263,158 +1353,202 @@ img {
 }
 
 .details-description {
-    max-width: 760px;
+    max-width:
+        760px;
 
     color:
         var(--muted);
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    line-height: 1.8;
+    line-height:
+        1.8;
 }
 
 .details-preview {
-    width: 100%;
+    width:
+        100%;
 
-    max-width: 720px;
+    max-width:
+        720px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     margin:
         0 auto 35px;
 
     border:
-        1px solid rgba(166,108,255,.15);
+        1px solid rgba(168,85,247,.16);
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 }
 
 .details-preview img {
-    width: 100%;
+    width:
+        100%;
 
-    max-height: 450px;
+    max-height:
+        450px;
 
-    aspect-ratio: 16 / 8;
+    aspect-ratio:
+        16 / 8;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 }
 
 .details-layout {
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         minmax(0,1.5fr)
         minmax(260px,.7fr);
 
-    gap: 50px;
+    gap:
+        50px;
 }
 
 .details-main h2,
 .details-sidebar h2 {
-    margin-bottom: 13px;
+    margin-bottom:
+        13px;
 
-    font-size: 17px;
+    font-size:
+        17px;
 }
 
 .details-main p {
-    margin-bottom: 32px;
+    margin-bottom:
+        32px;
 
     color:
         var(--muted);
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    line-height: 1.85;
+    line-height:
+        1.85;
 }
 
 .features {
-    list-style: none;
+    list-style:
+        none;
 
-    display: grid;
+    display:
+        grid;
 
-    gap: 11px;
+    gap:
+        11px;
 
-    margin-bottom: 35px;
+    margin-bottom:
+        35px;
 }
 
 .features li {
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 10px;
+    gap:
+        10px;
 
     color:
         var(--muted);
 
-    font-size: 14px;
+    font-size:
+        14px;
 }
 
 .check {
-    width: 20px;
+    width:
+        20px;
 
-    height: 20px;
+    height:
+        20px;
 
-    display: grid;
+    display:
+        grid;
 
-    place-items: center;
+    place-items:
+        center;
 
-    flex-shrink: 0;
+    flex-shrink:
+        0;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
-        rgba(74,222,128,.12);
+        rgba(168,85,247,.13);
 
     color:
-        var(--success);
+        #c084fc;
 }
 
 .sidebar-box {
-    padding: 20px;
+    padding:
+        20px;
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 
     border:
-        1px solid rgba(166,108,255,.14);
+        1px solid rgba(168,85,247,.15);
 
-    border-radius: 14px;
+    border-radius:
+        14px;
 
     background:
         linear-gradient(
             135deg,
             rgba(13,19,28,.95),
-            rgba(27,18,39,.85)
+            rgba(30,16,40,.86)
         );
 }
 
 .info {
-    display: flex;
+    display:
+        flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    gap: 20px;
+    gap:
+        20px;
 
-    padding: 12px 0;
+    padding:
+        12px 0;
 
     border-bottom:
         1px solid var(--border);
 
-    font-size: 13px;
+    font-size:
+        13px;
 }
 
 .info:last-child {
-    border-bottom: 0;
+    border-bottom:
+        0;
 }
 
 .info-label {
-    color: var(--muted);
+    color:
+        var(--muted);
 }
 
 .info-value {
-    text-align: right;
+    text-align:
+        right;
 
-    font-weight: 700;
+    font-weight:
+        700;
 }
 
 .status-completed {
@@ -1423,23 +1557,30 @@ img {
 }
 
 .detail-techs {
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 6px;
+    gap:
+        6px;
 }
 
 .detail-actions {
-    display: flex;
+    display:
+        flex;
 
-    gap: 8px;
+    gap:
+        8px;
 
-    margin-top: 22px;
+    margin-top:
+        22px;
 }
 
 .detail-actions .btn {
-    flex: 1;
+    flex:
+        1;
 }
 
 
@@ -1449,22 +1590,22 @@ img {
 
 footer {
     border-top:
-        1px solid rgba(166,108,255,.15);
+        1px solid rgba(168,85,247,.22);
 
     padding:
-        45px 0;
+        52px 0;
 
     color:
-        #718096;
+        #929aaa;
 
     font-size:
-        11px;
+        14px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(5,8,15,.95),
-            rgba(17,10,27,.95)
+            rgba(5,7,15,.98),
+            rgba(22,9,32,.98)
         );
 }
 
@@ -1472,12 +1613,14 @@ footer {
     max-width:
         var(--max-width);
 
-    margin: auto;
+    margin:
+        auto;
 
     padding:
         0 28px;
 
-    display: flex;
+    display:
+        flex;
 
     justify-content:
         space-between;
@@ -1485,20 +1628,35 @@ footer {
     align-items:
         center;
 
-    gap: 20px;
+    gap:
+        25px;
 }
 
 .footer-brand {
     color:
-        #cbd5e1;
+        #ffffff;
+
+    font-size:
+        17px;
 
     font-weight:
         800;
+
+    letter-spacing:
+        1px;
 }
 
 .footer-brand span {
     color:
-        #a66cff;
+        #c084fc;
+}
+
+.footer-inner > span {
+    font-size:
+        14px;
+
+    color:
+        #9b94a8;
 }
 
 
@@ -1517,11 +1675,13 @@ footer {
         grid-template-columns:
             1fr;
 
-        gap: 25px;
+        gap:
+            25px;
     }
 
     .navbar-inner {
-        gap: 15px;
+        gap:
+            15px;
     }
 
     .nav-link {
@@ -1606,7 +1766,7 @@ footer {
 
     .hero {
         padding:
-            70px 0 55px;
+            70px 0 58px;
     }
 
     .hero h1 {
@@ -1624,22 +1784,31 @@ footer {
 
     .hero-actions {
         flex-direction:
-            column;
+            row;
 
-        max-width:
-            250px;
+        gap:
+            8px;
 
-        margin:
-            28px auto 0;
-    }
-
-    .hero-btn {
         width:
             100%;
     }
 
+    .hero-btn {
+        flex:
+            1;
 
-    /* PROJECT TITLE */
+        min-height:
+            52px;
+
+        padding:
+            0 12px;
+
+        font-size:
+            11px;
+    }
+
+
+    /* PROJECT HEADING */
 
     .projects-heading {
         padding:
@@ -1694,9 +1863,6 @@ footer {
             50px;
     }
 
-
-    /* CARD WIDTH ONLY FOR RESPONSIVENESS */
-
     .project-card {
         width:
             100%;
@@ -1712,12 +1878,12 @@ footer {
 
     .about-box {
         padding:
-            24px;
+            25px;
     }
 
     .about-box h2 {
         font-size:
-            24px;
+            25px;
     }
 
 
@@ -1744,6 +1910,11 @@ footer {
 
     /* FOOTER */
 
+    footer {
+        padding:
+            42px 0;
+    }
+
     .footer-inner {
         padding:
             0 16px;
@@ -1753,6 +1924,19 @@ footer {
 
         align-items:
             flex-start;
+
+        gap:
+            12px;
+    }
+
+    .footer-brand {
+        font-size:
+            17px;
+    }
+
+    .footer-inner > span {
+        font-size:
+            13px;
     }
 }
 
@@ -1797,6 +1981,22 @@ footer {
             37px;
     }
 
+    .hero-actions {
+        gap:
+            6px;
+    }
+
+    .hero-btn {
+        min-height:
+            50px;
+
+        padding:
+            0 8px;
+
+        font-size:
+            10px;
+    }
+
     .project-content {
         padding:
             14px;
@@ -1829,6 +2029,19 @@ footer {
 
         height:
             29px;
+    }
+
+    .hero-actions {
+        gap:
+            5px;
+    }
+
+    .hero-btn {
+        font-size:
+            9px;
+
+        padding:
+            0 5px;
     }
 }
 
@@ -1864,14 +2077,12 @@ footer {
                 Home
             </a>
 
-
             <a
                 href="#projects"
                 class="nav-link"
             >
                 Projects
             </a>
-
 
             <a
                 href="#about"
@@ -1944,7 +2155,6 @@ footer {
 
     <div class="container hero-content">
 
-
         <div class="hero-badge">
 
             <span class="hero-badge-dot"></span>
@@ -1955,10 +2165,8 @@ footer {
 
 
         <h1>
-
             Building Ideas Into
             <span>Real Projects.</span>
-
         </h1>
 
 
@@ -1974,6 +2182,7 @@ footer {
 
         <div class="hero-actions">
 
+            <!-- WORKING BUTTON -->
 
             <a
                 href="#projects"
@@ -1983,13 +2192,14 @@ footer {
             </a>
 
 
+            <!-- WORKING BUTTON -->
+
             <a
                 href="#about"
                 class="hero-btn hero-btn-secondary"
             >
                 About Me
             </a>
-
 
         </div>
 
@@ -2007,7 +2217,6 @@ footer {
     id="libraryPage"
 >
 
-
 <section id="projects">
 
     <div class="container">
@@ -2017,18 +2226,15 @@ footer {
 
             <div class="projects-heading-top">
 
-
                 <div>
 
                     <div class="projects-label">
                         My Work
                     </div>
 
-
                     <h2>
                         Featured Projects
                     </h2>
-
 
                     <p>
                         A collection of projects I've built and developed.
@@ -2049,7 +2255,7 @@ footer {
         </div>
 
 
-        <!-- SEARCH / FILTER -->
+        <!-- SEARCH -->
 
         <div
             class="toolbar"
@@ -2110,7 +2316,7 @@ footer {
         </div>
 
 
-        <!-- PROJECT GRID -->
+        <!-- PROJECTS -->
 
         <div
             class="project-grid"
@@ -2132,7 +2338,6 @@ footer {
             </p>
 
         </div>
-
 
     </div>
 
@@ -2156,11 +2361,9 @@ footer {
                 About Me
             </div>
 
-
             <h2>
                 Building, learning and creating.
             </h2>
-
 
             <p>
                 I am focused on developing practical software
@@ -2175,7 +2378,6 @@ footer {
     </div>
 
 </section>
-
 
 </main>
 
@@ -2198,7 +2400,6 @@ footer {
             ← Back to Projects
         </button>
 
-
         <div id="detailsContent"></div>
 
     </div>
@@ -2217,7 +2418,6 @@ footer {
         <div class="footer-brand">
             MY <span>PORTFOLIO</span>
         </div>
-
 
         <span>
             © 2026 Rahul Gaikwad • Project Library
@@ -2266,17 +2466,13 @@ const projects = [
             "Responsive interface"
         ],
 
-        developmentTime:
-            "2 Months",
+        developmentTime: "2 Months",
 
-        status:
-            "Completed",
+        status: "Completed",
 
-        github:
-            "https://github.com/",
+        github: "https://github.com/",
 
-        live:
-            "https://example.com/"
+        live: "https://example.com/"
     },
 
 
@@ -2311,17 +2507,13 @@ const projects = [
             "Administrative dashboard"
         ],
 
-        developmentTime:
-            "6 Weeks",
+        developmentTime: "6 Weeks",
 
-        status:
-            "Completed",
+        status: "Completed",
 
-        github:
-            "https://github.com/",
+        github: "https://github.com/",
 
-        live:
-            "https://example.com/"
+        live: "https://example.com/"
     },
 
 
@@ -2355,17 +2547,13 @@ const projects = [
             "Netlify deployment"
         ],
 
-        developmentTime:
-            "2 Weeks",
+        developmentTime: "2 Weeks",
 
-        status:
-            "Completed",
+        status: "Completed",
 
-        github:
-            "https://github.com/",
+        github: "https://github.com/",
 
-        live:
-            "https://example.com/"
+        live: "https://example.com/"
     },
 
 
@@ -2398,17 +2586,13 @@ const projects = [
             "Responsive dashboard"
         ],
 
-        developmentTime:
-            "5 Weeks",
+        developmentTime: "5 Weeks",
 
-        status:
-            "Completed",
+        status: "Completed",
 
-        github:
-            "https://github.com/",
+        github: "https://github.com/",
 
-        live:
-            "https://example.com/"
+        live: "https://example.com/"
     },
 
 
@@ -2441,17 +2625,13 @@ const projects = [
             "Order management"
         ],
 
-        developmentTime:
-            "2 Months",
+        developmentTime: "2 Months",
 
-        status:
-            "In Development",
+        status: "In Development",
 
-        github:
-            "https://github.com/",
+        github: "https://github.com/",
 
-        live:
-            "https://example.com/"
+        live: "https://example.com/"
     },
 
 
@@ -2484,17 +2664,13 @@ const projects = [
             "Dynamic weather information"
         ],
 
-        developmentTime:
-            "2 Weeks",
+        developmentTime: "2 Weeks",
 
-        status:
-            "Completed",
+        status: "Completed",
 
-        github:
-            "https://github.com/",
+        github: "https://github.com/",
 
-        live:
-            "https://example.com/"
+        live: "https://example.com/"
     }
 
 ];
@@ -2568,7 +2744,6 @@ function renderProjects() {
             .toLowerCase()
             .trim();
 
-
     const selectedTechnology =
         technologyFilter.value;
 
@@ -2627,7 +2802,6 @@ function renderProjects() {
 
             const card =
                 document.createElement("article");
-
 
             card.className =
                 "project-card";
@@ -2748,7 +2922,6 @@ searchInput.addEventListener(
     renderProjects
 );
 
-
 technologyFilter.addEventListener(
     "change",
     renderProjects
@@ -2804,7 +2977,6 @@ document
                                     "active"
                                 )
                         );
-
 
                     link.classList.add(
                         "active"
@@ -2991,7 +3163,6 @@ function openDetails(id) {
 
                     <div class="detail-actions">
 
-
                         <a
                             href="${project.live}"
                             target="_blank"
@@ -3011,14 +3182,11 @@ function openDetails(id) {
                             GitHub ↗
                         </a>
 
-
                     </div>
 
                 </div>
 
-
             </aside>
-
 
         </div>
 
