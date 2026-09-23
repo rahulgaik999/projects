@@ -39,8 +39,6 @@
 }
 
 
-
-
 /* =========================================================
    RESET
 ========================================================= */
@@ -97,6 +95,93 @@ img {
     );
 
     margin: auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(7, 11, 18, .88);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.navbar-inner {
+    min-height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.navbar-brand {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.navbar-brand span {
+    color: var(--accent);
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar-links a {
+    position: relative;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: color .2s ease;
+}
+
+.navbar-links a:hover {
+    color: var(--text);
+}
+
+.navbar-links a.active {
+    color: var(--text);
+}
+
+.navbar-search {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: var(--surface);
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    transition: .2s ease;
+}
+
+.navbar-search:hover {
+    border-color: var(--accent);
+    color: var(--text);
 }
 
 
@@ -169,14 +254,9 @@ img {
 }
 
 
-
-
-
 /* =========================================================
    SECTION HEADER
 ========================================================= */
-
-
 
 
 /* =========================================================
@@ -437,7 +517,6 @@ img {
     display: none;
 }
 
-/* Hide the name header while viewing project details */
 body.details-open .name-header {
     display: none;
 }
@@ -732,6 +811,29 @@ footer {
             );
     }
 
+    .navbar-inner {
+        min-height: 58px;
+        gap: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 14px;
+    }
+
+    .navbar-links {
+        gap: 14px;
+    }
+
+    .navbar-links a {
+        font-size: 10px;
+    }
+
+    .navbar-search {
+        width: 31px;
+        height: 31px;
+        font-size: 13px;
+    }
+
     .hero {
         padding: 48px 0 28px;
     }
@@ -804,6 +906,10 @@ footer {
 }
 
 
+/* =========================================================
+   ABOUT
+========================================================= */
+
 .about-projects {
     padding: 34px 0 8px;
 }
@@ -829,9 +935,10 @@ footer {
 }
 
 
+/* =========================================================
+   MOBILE PROJECT CARD FIX
+========================================================= */
 
-
-/* MOBILE PROJECT CARD FIX */
 .project-card,
 .project-content,
 .project-title,
@@ -860,6 +967,7 @@ footer {
 }
 
 @media (max-width: 720px) {
+
     .container {
         width: calc(100% - 24px);
         max-width: 100%;
@@ -940,6 +1048,7 @@ footer {
 }
 
 @media (max-width: 420px) {
+
     .container {
         width: calc(100% - 20px);
     }
@@ -969,7 +1078,7 @@ footer {
 
 
 /* =========================================================
-   RAHUL GAikwad — ATTRACTIVE PROJECT HEADER
+   RAHUL GAIKWAD — ATTRACTIVE PROJECT HEADER
 ========================================================= */
 
 .name-header {
@@ -1069,6 +1178,7 @@ footer {
     animation: glowMoveTwo 8s ease-in-out infinite alternate;
 }
 
+
 /* =========================================================
    PROFESSIONAL COLORFUL BACK BUTTON
 ========================================================= */
@@ -1122,6 +1232,7 @@ footer {
 }
 
 @media (max-width: 720px) {
+
     .back-btn {
         margin-left: auto;
         padding: 11px 16px;
@@ -1131,42 +1242,83 @@ footer {
 }
 
 @keyframes nameReveal {
+
     from {
         opacity: 0;
         transform: translateY(14px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 @keyframes gradientMove {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+
 }
 
 @keyframes badgeFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
 }
 
 @keyframes dotPulse {
-    0%, 100% { transform: scale(1); opacity: .8; }
-    50% { transform: scale(1.35); opacity: 1; }
+
+    0%, 100% {
+        transform: scale(1);
+        opacity: .8;
+    }
+
+    50% {
+        transform: scale(1.35);
+        opacity: 1;
+    }
+
 }
 
 @keyframes glowMoveOne {
-    from { transform: translate(-30px, 0); }
-    to { transform: translate(80px, 20px); }
+
+    from {
+        transform: translate(-30px, 0);
+    }
+
+    to {
+        transform: translate(80px, 20px);
+    }
+
 }
 
 @keyframes glowMoveTwo {
-    from { transform: translate(30px, 10px); }
-    to { transform: translate(-80px, 25px); }
+
+    from {
+        transform: translate(30px, 10px);
+    }
+
+    to {
+        transform: translate(-80px, 25px);
+    }
+
 }
 
 @media (max-width: 720px) {
+
     .name-header {
         padding: 28px 14px 22px;
     }
@@ -1185,9 +1337,11 @@ footer {
         margin-bottom: 22px;
         padding: 9px 12px;
     }
+
 }
 
 @media (max-width: 380px) {
+
     .my-name {
         font-size: 27px;
     }
@@ -1195,14 +1349,17 @@ footer {
     .name-badge {
         font-size: 8px;
     }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .name-header *,
     .name-header::before,
     .name-header::after {
         animation: none !important;
     }
+
 }
 
 </style>
@@ -1212,18 +1369,70 @@ footer {
 <body>
 
 
-<!-- ATTRACTIVE NAME HEADER -->
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="container navbar-inner">
+
+        <a href="#projects" class="navbar-brand">
+            Rahul <span>Gaikwad</span>
+        </a>
+
+        <div class="navbar-links">
+
+            <a href="#projects" class="active">
+                Home
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <button
+                class="navbar-search"
+                type="button"
+                aria-label="Search projects"
+            >
+                🔍
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     ATTRACTIVE NAME HEADER
+========================================================= -->
+
 <header class="name-header">
+
     <div class="name-glow glow-one"></div>
     <div class="name-glow glow-two"></div>
-    <div class="name-header-inner">
-        <h1 class="my-name">
-            <span>Rahul</span> <strong>Gaikwad</strong>
-        </h1>
-        <p class="name-subtitle">Projects • Applications • Development</p>
-    </div>
-</header>
 
+    <div class="name-header-inner">
+
+        <h1 class="my-name">
+            <span>Rahul</span>
+            <strong>Gaikwad</strong>
+        </h1>
+
+        <p class="name-subtitle">
+            Projects • Applications • Development
+        </p>
+
+    </div>
+
+</header>
 
 
 <!-- =========================================================
@@ -1238,42 +1447,40 @@ footer {
 
 <!-- PROJECT SECTION -->
 
-    <section id="projects">
+<section id="projects">
 
-        <div class="container">
-<!-- PROJECT GRID -->
+    <div class="container">
 
-            <div
-                class="project-grid"
-                id="projectGrid"
-            ></div>
+        <!-- PROJECT GRID -->
+
+        <div
+            class="project-grid"
+            id="projectGrid"
+        ></div>
 
 
+        <!-- EMPTY -->
 
-            <!-- EMPTY -->
+        <div
+            class="empty"
+            id="emptyState"
+        >
 
-            <div
-                class="empty"
-                id="emptyState"
-            >
+            <h3>
+                No projects found
+            </h3>
 
-                <h3>
-                    No projects found
-                </h3>
-
-                <p>
-                    Try another search or technology.
-                </p>
-
-            </div>
-
+            <p>
+                Try another search or technology.
+            </p>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 </main>
-
 
 
 <!-- =========================================================
@@ -1287,7 +1494,6 @@ footer {
 
     <div class="container">
 
-
         <button
             class="back-btn"
             onclick="showLibrary()"
@@ -1295,14 +1501,11 @@ footer {
             Back to Projects
         </button>
 
-
         <div id="detailsContent"></div>
-
 
     </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -1322,16 +1525,10 @@ footer {
 </footer>
 
 
-
 <script>
 
 /* =========================================================
    PROJECT DATABASE
-
-   ADD ALL YOUR PROJECTS HERE.
-
-   ONLY THIS SECTION NEEDS TO BE UPDATED
-   WHEN YOU ADD A NEW PROJECT.
 ========================================================= */
 
 const projects = [
@@ -1613,14 +1810,6 @@ const projects = [
 
 
 /* =========================================================
-   STATE
-========================================================= */
-
-
-
-
-
-/* =========================================================
    RENDER PROJECTS
 ========================================================= */
 
@@ -1634,20 +1823,15 @@ function renderProjects() {
 
     const filtered = projects;
 
-
     grid.innerHTML = "";
 
-
     filtered.forEach(project => {
-
 
         const card =
             document.createElement("article");
 
-
         card.className =
             "project-card";
-
 
         card.innerHTML = `
 
@@ -1704,7 +1888,6 @@ function renderProjects() {
 
                 <div class="actions">
 
-
                     <a
                         href="${project.live}"
                         target="_blank"
@@ -1722,26 +1905,30 @@ function renderProjects() {
                         Details ↗
                     </button>
 
-
                 </div>
 
             </div>
 
         `;
 
-
         grid.appendChild(card);
 
     });
 
 
-    document.getElementById("projectCount")
-        .textContent =
+    const projectCount =
+        document.getElementById("projectCount");
+
+    if (projectCount) {
+
+        projectCount.textContent =
             `${filtered.length} ${
                 filtered.length === 1
                     ? "project"
                     : "projects"
             }`;
+
+    }
 
 
     if(filtered.length === 0) {
@@ -1769,14 +1956,11 @@ function openDetails(id) {
                 project.id === id
         );
 
-
     if(!project) return;
-
 
     document
         .getElementById("libraryPage")
         .classList.add("hidden");
-
 
     document
         .getElementById("detailsPage")
@@ -1784,10 +1968,8 @@ function openDetails(id) {
 
     document.body.classList.add("details-open");
 
-
     const content =
         document.getElementById("detailsContent");
-
 
     content.innerHTML = `
 
@@ -1797,11 +1979,9 @@ function openDetails(id) {
                 Project Details
             </div>
 
-
             <h1 class="details-title">
                 ${project.name}
             </h1>
-
 
             <p class="details-description">
                 ${project.description}
@@ -1822,14 +2002,11 @@ function openDetails(id) {
 
         <div class="details-layout">
 
-
             <div class="details-main">
-
 
                 <h2>
                     Description
                 </h2>
-
 
                 <p>
                     ${project.longDescription}
@@ -1839,7 +2016,6 @@ function openDetails(id) {
                 <h2>
                     Main Features
                 </h2>
-
 
                 <ul class="features">
 
@@ -1865,12 +2041,10 @@ function openDetails(id) {
 
                 </ul>
 
-
             </div>
 
 
             <aside class="details-sidebar">
-
 
                 <div class="sidebar-box">
 
@@ -1933,7 +2107,6 @@ function openDetails(id) {
 
                     <div class="detail-actions">
 
-
                         <a
                             href="${project.live}"
                             target="_blank"
@@ -1953,14 +2126,11 @@ function openDetails(id) {
                             GitHub ↗
                         </a>
 
-
                     </div>
 
                 </div>
 
-
             </aside>
-
 
         </div>
 
@@ -1985,13 +2155,11 @@ function showLibrary() {
         .getElementById("detailsPage")
         .classList.remove("active");
 
-
     document
         .getElementById("libraryPage")
         .classList.remove("hidden");
 
     document.body.classList.remove("details-open");
-
 
     window.scrollTo({
         top: 0,
@@ -1999,8 +2167,6 @@ function showLibrary() {
     });
 
 }
-
-
 
 
 /* =========================================================
