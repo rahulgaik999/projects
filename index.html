@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Rahul Gaikwad - Project Portfolio">
+    <meta name="description" content="Rahul Gaikwad - Project Portfolio">
 
-    <title>Rahul Gaikwad | Projects</title>
+    <title>My Portfolio | Rahul Gaikwad</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,9 +63,14 @@ body {
 
     background:
         radial-gradient(
-            circle at 50% -10%,
-            rgba(109,124,255,.12),
-            transparent 35%
+            circle at 50% -15%,
+            rgba(109, 124, 255, 0.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 100% 30%,
+            rgba(166, 108, 255, 0.08),
+            transparent 25%
         ),
         #070b12;
 
@@ -89,16 +92,16 @@ body::before {
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,.015) 1px,
+            rgba(255,255,255,.012) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,.015) 1px,
+            rgba(255,255,255,.012) 1px,
             transparent 1px
         );
 
-    background-size: 50px 50px;
+    background-size: 55px 55px;
 
     z-index: -1;
 }
@@ -125,11 +128,10 @@ img {
 ========================================================= */
 
 .container {
-    width:
-        min(
-            calc(100% - 48px),
-            var(--max-width)
-        );
+    width: min(
+        calc(100% - 48px),
+        var(--max-width)
+    );
 
     margin: auto;
 }
@@ -140,7 +142,6 @@ img {
 ========================================================= */
 
 .navbar {
-
     position: sticky;
 
     top: 0;
@@ -150,26 +151,22 @@ img {
     background:
         linear-gradient(
             135deg,
-            rgba(18,25,48,.97),
-            rgba(42,24,67,.97)
+            rgba(13, 20, 42, .98),
+            rgba(39, 20, 62, .98)
         );
 
     border-bottom:
-        1px solid rgba(139,124,255,.25);
+        1px solid rgba(166, 108, 255, .28);
 
-    backdrop-filter:
-        blur(22px);
+    backdrop-filter: blur(22px);
 
-    -webkit-backdrop-filter:
-        blur(22px);
+    -webkit-backdrop-filter: blur(22px);
 
     box-shadow:
-        0 8px 30px rgba(0,0,0,.25);
+        0 10px 35px rgba(0, 0, 0, .30);
 }
 
-
 .navbar::after {
-
     content: "";
 
     position: absolute;
@@ -185,18 +182,18 @@ img {
             90deg,
             transparent,
             #6d7cff,
-            #b06cff,
+            #a66cff,
+            #c07cff,
+            #a66cff,
             #6d7cff,
             transparent
         );
 
-    opacity: .8;
+    opacity: .9;
 }
 
-
 .navbar-inner {
-
-    min-height: 82px;
+    min-height: 84px;
 
     display: flex;
 
@@ -208,62 +205,37 @@ img {
 }
 
 
-/* LOGO */
+/* =========================================================
+   PORTFOLIO BRAND
+========================================================= */
 
 .navbar-brand {
+    color: #ffffff;
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 11px;
-
-    font-size: 19px;
+    font-size: 21px;
 
     font-weight: 800;
 
-    letter-spacing: -.5px;
+    letter-spacing: 1.8px;
 
     white-space: nowrap;
+
+    transition: .25s ease;
+}
+
+.navbar-brand:hover {
+    color: #bcaeff;
+
+    text-shadow:
+        0 0 20px rgba(166, 108, 255, .4);
 }
 
 
-.navbar-brand span {
-    color: #a99aff;
-}
-
-
-.logo-icon {
-
-    width: 40px;
-    height: 40px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #6d7cff,
-            #a05cff
-        );
-
-    color: white;
-
-    font-size: 18px;
-
-    box-shadow:
-        0 0 25px rgba(126,101,255,.35);
-}
-
-
-/* NAV LINKS */
+/* =========================================================
+   NAV LINKS
+========================================================= */
 
 .navbar-links {
-
     display: flex;
 
     align-items: center;
@@ -271,52 +243,48 @@ img {
     gap: 8px;
 }
 
-
 .nav-link {
-
     position: relative;
 
-    padding: 11px 16px;
+    padding: 12px 17px;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     color: #b7bfd1;
 
-    font-size: 14px;
+    font-size: 15px;
 
     font-weight: 700;
 
     transition: .25s ease;
 }
 
-
 .nav-link:hover {
-
-    color: white;
+    color: #ffffff;
 
     background:
-        rgba(255,255,255,.08);
+        rgba(166, 108, 255, .10);
 
     transform:
         translateY(-2px);
 }
 
-
 .nav-link.active {
-
-    color: white;
+    color: #ffffff;
 
     background:
         linear-gradient(
             135deg,
-            rgba(109,124,255,.25),
-            rgba(160,92,255,.20)
+            rgba(109, 124, 255, .24),
+            rgba(166, 108, 255, .22)
         );
+
+    box-shadow:
+        inset 0 0 20px
+        rgba(166, 108, 255, .05);
 }
 
-
 .nav-link.active::after {
-
     content: "";
 
     position: absolute;
@@ -326,6 +294,7 @@ img {
     bottom: 3px;
 
     width: 5px;
+
     height: 5px;
 
     transform:
@@ -333,19 +302,21 @@ img {
 
     border-radius: 50%;
 
-    background: #9d8cff;
+    background: #a66cff;
 
     box-shadow:
-        0 0 12px #9d8cff;
+        0 0 14px #a66cff;
 }
 
 
-/* SEARCH */
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
 
 .nav-search {
+    width: 44px;
 
-    width: 42px;
-    height: 42px;
+    height: 44px;
 
     display: grid;
 
@@ -354,40 +325,47 @@ img {
     margin-left: 5px;
 
     border:
-        1px solid rgba(255,255,255,.12);
+        1px solid rgba(166, 108, 255, .22);
 
     border-radius: 11px;
 
     background:
-        rgba(255,255,255,.06);
+        rgba(255, 255, 255, .055);
 
-    color: #c5cbe0;
+    color: #c9c0ff;
 
-    transition: .25s;
+    transition: .25s ease;
 
     cursor: pointer;
 }
 
-
 .nav-search:hover {
-
-    color: white;
+    color: #ffffff;
 
     background:
-        rgba(109,124,255,.2);
+        linear-gradient(
+            135deg,
+            rgba(109, 124, 255, .22),
+            rgba(166, 108, 255, .22)
+        );
 
     border-color:
-        rgba(140,125,255,.6);
+        rgba(166, 108, 255, .6);
 
     transform:
         translateY(-2px);
+
+    box-shadow:
+        0 0 24px
+        rgba(166, 108, 255, .22);
 }
 
 
-/* GITHUB */
+/* =========================================================
+   GITHUB BUTTON
+========================================================= */
 
 .nav-github {
-
     display: inline-flex;
 
     align-items: center;
@@ -396,44 +374,47 @@ img {
 
     gap: 7px;
 
-    padding: 11px 16px;
+    padding:
+        11px 17px;
 
     border:
-        1px solid rgba(255,255,255,.12);
+        1px solid rgba(166, 108, 255, .24);
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(109,124,255,.16),
-            rgba(160,92,255,.14)
+            rgba(109, 124, 255, .16),
+            rgba(166, 108, 255, .16)
         );
 
-    color: #e3e7f2;
+    color: #e7e4f4;
 
     font-size: 13px;
 
     font-weight: 700;
 
-    transition: .25s;
+    transition: .25s ease;
 }
 
-
 .nav-github:hover {
-
     background:
         linear-gradient(
             135deg,
-            rgba(109,124,255,.3),
-            rgba(160,92,255,.25)
+            rgba(109, 124, 255, .30),
+            rgba(166, 108, 255, .28)
         );
 
     border-color:
-        rgba(140,125,255,.55);
+        rgba(166, 108, 255, .6);
 
     transform:
         translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(166, 108, 255, .12);
 }
 
 
@@ -442,27 +423,26 @@ img {
 ========================================================= */
 
 .hero {
-
     position: relative;
 
     padding:
-        100px 0 78px;
+        105px 0 75px;
 
     text-align: center;
 
     overflow: hidden;
 }
 
-
 .hero-glow {
-
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 650px;
+
+    height: 650px;
 
     left: 50%;
-    top: -300px;
+
+    top: -430px;
 
     transform:
         translateX(-50%);
@@ -472,8 +452,8 @@ img {
     background:
         radial-gradient(
             circle,
-            rgba(109,124,255,.25),
-            rgba(155,108,255,.10),
+            rgba(109, 124, 255, .25),
+            rgba(166, 108, 255, .12),
             transparent 70%
         );
 
@@ -482,21 +462,17 @@ img {
     pointer-events: none;
 }
 
-
 .hero-content {
-
     position: relative;
 
     z-index: 2;
 
-    max-width: 850px;
+    max-width: 900px;
 
     margin: auto;
 }
 
-
 .hero-badge {
-
     display: inline-flex;
 
     align-items: center;
@@ -504,53 +480,55 @@ img {
     gap: 8px;
 
     padding:
-        7px 13px;
+        8px 14px;
 
-    margin-bottom: 24px;
+    margin-bottom: 25px;
 
     border:
-        1px solid rgba(109,124,255,.25);
+        1px solid rgba(166, 108, 255, .28);
 
     border-radius: 999px;
 
     background:
-        rgba(109,124,255,.08);
+        linear-gradient(
+            135deg,
+            rgba(109, 124, 255, .09),
+            rgba(166, 108, 255, .09)
+        );
 
     color:
-        #aeb8ff;
+        #bdb5ff;
 
     font-size: 10px;
 
     font-weight: 800;
 
-    letter-spacing: 1.2px;
+    letter-spacing: 1.3px;
 
     text-transform: uppercase;
 }
 
-
 .hero-badge-dot {
-
     width: 6px;
+
     height: 6px;
 
     border-radius: 50%;
 
-    background: #6d7cff;
+    background:
+        #a66cff;
 
     box-shadow:
-        0 0 12px #6d7cff;
+        0 0 13px #a66cff;
 }
 
-
 .hero h1 {
-
     max-width: 900px;
 
     margin: auto;
 
     font-size:
-        clamp(42px,7vw,78px);
+        clamp(44px, 7vw, 78px);
 
     line-height: .98;
 
@@ -559,67 +537,76 @@ img {
     font-weight: 800;
 }
 
-
 .hero h1 span {
-
     background:
         linear-gradient(
             90deg,
             #6d7cff,
-            #b07cff,
+            #a66cff,
+            #c07cff,
             #6d7cff
         );
 
     background-size:
-        200% auto;
+        250% auto;
 
     -webkit-background-clip: text;
 
     background-clip: text;
 
     color: transparent;
+
+    animation:
+        gradientMove 5s linear infinite;
 }
 
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 250% center;
+    }
+
+}
 
 .hero-description {
-
-    max-width: 650px;
+    max-width: 680px;
 
     margin:
-        24px auto 0;
+        25px auto 0;
 
     color:
         #8f9bad;
 
     font-size: 15px;
 
-    line-height: 1.8;
+    line-height: 1.85;
 }
 
-
 .hero-actions {
-
     display: flex;
 
     justify-content: center;
 
     gap: 10px;
 
-    margin-top: 32px;
+    margin-top: 33px;
 }
 
-
 .hero-btn {
-
     display: inline-flex;
 
     align-items: center;
 
     justify-content: center;
 
-    min-height: 45px;
+    min-height: 46px;
 
-    padding: 0 18px;
+    padding:
+        0 19px;
 
     border-radius: 11px;
 
@@ -630,58 +617,50 @@ img {
     transition: .25s;
 }
 
-
 .hero-btn-primary {
-
     background:
         linear-gradient(
             135deg,
             #6d7cff,
-            #8c67ff
+            #a66cff
         );
 
     border:
-        1px solid #6d7cff;
+        1px solid #7d79ff;
 
     color: white;
 
     box-shadow:
-        0 10px 30px
-        rgba(109,124,255,.2);
+        0 12px 32px
+        rgba(109, 124, 255, .22);
 }
 
-
 .hero-btn-primary:hover {
-
     transform:
         translateY(-3px);
 
     box-shadow:
-        0 15px 35px
-        rgba(109,124,255,.32);
+        0 17px 40px
+        rgba(166, 108, 255, .3);
 }
 
-
 .hero-btn-secondary {
-
     border:
-        1px solid rgba(255,255,255,.1);
+        1px solid rgba(166, 108, 255, .18);
 
     background:
-        rgba(255,255,255,.04);
+        rgba(255, 255, 255, .04);
 
     color:
         #cbd5e1;
 }
 
-
 .hero-btn-secondary:hover {
-
     border-color:
-        rgba(109,124,255,.4);
+        rgba(166, 108, 255, .45);
 
     background:
-        rgba(109,124,255,.08);
+        rgba(166, 108, 255, .08);
 
     transform:
         translateY(-3px);
@@ -693,16 +672,11 @@ img {
 ========================================================= */
 
 .projects-heading {
-
-    /* MOVED DOWN LITTLE */
-
     padding:
         65px 0 25px;
 }
 
-
 .projects-heading-top {
-
     display: flex;
 
     align-items: flex-end;
@@ -712,13 +686,11 @@ img {
     gap: 20px;
 }
 
-
 .projects-label {
-
     margin-bottom: 8px;
 
     color:
-        #7d8cff;
+        #9b8cff;
 
     font-size: 10px;
 
@@ -729,20 +701,16 @@ img {
     text-transform: uppercase;
 }
 
-
 .projects-heading h2 {
-
     font-size:
-        clamp(28px,4vw,40px);
+        clamp(29px, 4vw, 42px);
 
     line-height: 1;
 
     letter-spacing: -1.8px;
 }
 
-
 .projects-heading p {
-
     margin-top: 10px;
 
     color:
@@ -751,22 +719,24 @@ img {
     font-size: 13px;
 }
 
-
 .project-count {
-
     padding:
-        7px 11px;
+        7px 12px;
 
     border:
-        1px solid var(--border);
+        1px solid rgba(166, 108, 255, .18);
 
     border-radius: 999px;
 
     background:
-        rgba(255,255,255,.035);
+        linear-gradient(
+            135deg,
+            rgba(109, 124, 255, .07),
+            rgba(166, 108, 255, .07)
+        );
 
     color:
-        #9aa6b7;
+        #aeb5c5;
 
     font-size: 10px;
 
@@ -781,7 +751,6 @@ img {
 ========================================================= */
 
 .toolbar {
-
     display: flex;
 
     align-items: center;
@@ -795,20 +764,26 @@ img {
     margin-bottom: 25px;
 
     border:
-        1px solid var(--border);
+        1px solid rgba(166, 108, 255, .15);
 
     border-radius: 15px;
 
     background:
-        rgba(11,16,25,.75);
+        linear-gradient(
+            135deg,
+            rgba(13, 20, 34, .86),
+            rgba(25, 17, 39, .80)
+        );
 
     backdrop-filter:
         blur(15px);
+
+    box-shadow:
+        0 12px 40px
+        rgba(0,0,0,.12);
 }
 
-
 .search-box {
-
     position: relative;
 
     flex: 1;
@@ -816,9 +791,7 @@ img {
     max-width: 500px;
 }
 
-
 .search-box input {
-
     width: 100%;
 
     height: 43px;
@@ -829,7 +802,7 @@ img {
     outline: none;
 
     border:
-        1px solid rgba(255,255,255,.09);
+        1px solid rgba(166, 108, 255, .12);
 
     border-radius: 10px;
 
@@ -839,27 +812,24 @@ img {
     color: white;
 
     font-size: 12px;
-}
 
+    transition: .2s;
+}
 
 .search-box input::placeholder {
     color: #687588;
 }
 
-
 .search-box input:focus {
-
     border-color:
-        rgba(109,124,255,.55);
+        rgba(166,108,255,.55);
 
     box-shadow:
         0 0 0 3px
-        rgba(109,124,255,.08);
+        rgba(166,108,255,.08);
 }
 
-
 .search-icon {
-
     position: absolute;
 
     left: 15px;
@@ -870,12 +840,10 @@ img {
         translateY(-50%);
 
     color:
-        #6f7d90;
+        #8e7eff;
 }
 
-
 .filter-select {
-
     height: 43px;
 
     padding:
@@ -884,12 +852,12 @@ img {
     outline: none;
 
     border:
-        1px solid rgba(255,255,255,.09);
+        1px solid rgba(166, 108, 255, .12);
 
     border-radius: 10px;
 
     background:
-        #101724;
+        #101323;
 
     color:
         #b8c1ce;
@@ -902,11 +870,10 @@ img {
 
 /* =========================================================
    PROJECT CARDS
-   DO NOT CHANGE
+   LOCKED / UNCHANGED
 ========================================================= */
 
 .project-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -917,9 +884,7 @@ img {
     padding-bottom: 80px;
 }
 
-
 .project-card {
-
     overflow: hidden;
 
     border: 1px solid var(--border);
@@ -937,9 +902,7 @@ img {
         border-color .22s ease;
 }
 
-
 .project-card:hover {
-
     transform:
         translateY(-5px);
 
@@ -950,9 +913,7 @@ img {
         rgba(109,124,255,.35);
 }
 
-
 .project-image {
-
     position: relative;
 
     aspect-ratio: 16 / 9;
@@ -962,9 +923,7 @@ img {
     background: var(--surface-2);
 }
 
-
 .project-image img {
-
     width: 100%;
     height: 100%;
 
@@ -974,16 +933,12 @@ img {
         transform .35s ease;
 }
 
-
 .project-card:hover .project-image img {
-
     transform:
         scale(1.025);
 }
 
-
 .status {
-
     position: absolute;
 
     top: 13px;
@@ -1006,15 +961,11 @@ img {
         blur(8px);
 }
 
-
 .project-content {
-
     padding: 21px;
 }
 
-
 .project-title {
-
     margin-bottom: 7px;
 
     font-size: 17px;
@@ -1024,9 +975,7 @@ img {
     letter-spacing: -.4px;
 }
 
-
 .project-description {
-
     min-height: 47px;
 
     margin-bottom: 17px;
@@ -1038,9 +987,7 @@ img {
     line-height: 1.7;
 }
 
-
 .technologies {
-
     display: flex;
 
     flex-wrap: wrap;
@@ -1050,9 +997,7 @@ img {
     margin-bottom: 20px;
 }
 
-
 .tech {
-
     padding: 5px 8px;
 
     border:
@@ -1071,17 +1016,13 @@ img {
     font-weight: 600;
 }
 
-
 .actions {
-
     display: flex;
 
     gap: 8px;
 }
 
-
 .btn {
-
     min-height: 40px;
 
     display: inline-flex;
@@ -1104,9 +1045,7 @@ img {
     transition: .18s;
 }
 
-
 .primary {
-
     flex: 1;
 
     background:
@@ -1118,15 +1057,12 @@ img {
     color: white;
 }
 
-
 .primary:hover {
     background:
         var(--accent-hover);
 }
 
-
 .secondary {
-
     border:
         1px solid var(--border);
 
@@ -1136,7 +1072,6 @@ img {
     color:
         var(--text);
 }
-
 
 .secondary:hover {
     background:
@@ -1149,7 +1084,6 @@ img {
 ========================================================= */
 
 .empty {
-
     display: none;
 
     padding: 70px 20px;
@@ -1157,7 +1091,7 @@ img {
     margin-bottom: 70px;
 
     border:
-        1px dashed var(--border);
+        1px dashed rgba(166,108,255,.25);
 
     border-radius: 18px;
 
@@ -1165,16 +1099,16 @@ img {
 
     color:
         var(--muted);
-}
 
+    background:
+        rgba(166,108,255,.025);
+}
 
 .empty.show {
     display: block;
 }
 
-
 .empty h3 {
-
     margin-bottom: 6px;
 
     color:
@@ -1182,7 +1116,6 @@ img {
 
     font-size: 17px;
 }
-
 
 .empty p {
     font-size: 13px;
@@ -1194,46 +1127,39 @@ img {
 ========================================================= */
 
 .about-section {
-
     padding:
         20px 0 90px;
 }
 
-
 .about-box {
-
-    padding: 35px;
+    padding: 38px;
 
     border:
-        1px solid var(--border);
+        1px solid rgba(166,108,255,.16);
 
     border-radius: 18px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(18,25,40,.85),
-            rgba(24,20,43,.75)
+            rgba(18,25,40,.88),
+            rgba(34,20,51,.78)
         );
 
     box-shadow:
         0 20px 60px rgba(0,0,0,.2);
 }
 
-
 .about-box h2 {
-
     margin-bottom: 10px;
 
-    font-size: 28px;
+    font-size: 29px;
 
     letter-spacing:
         -1px;
 }
 
-
 .about-box p {
-
     max-width: 780px;
 
     color:
@@ -1251,26 +1177,21 @@ img {
 ========================================================= */
 
 .details-page {
-
     display: none;
 
     padding:
         45px 0 90px;
 }
 
-
 .details-page.active {
     display: block;
 }
-
 
 .library-page.hidden {
     display: none;
 }
 
-
 .back-btn {
-
     display: flex;
 
     margin:
@@ -1280,12 +1201,12 @@ img {
         11px 17px;
 
     border:
-        1px solid rgba(109,124,255,.35);
+        1px solid rgba(166,108,255,.35);
 
     border-radius: 10px;
 
     background:
-        rgba(109,124,255,.08);
+        rgba(166,108,255,.08);
 
     color:
         #b8c2ff;
@@ -1294,34 +1215,30 @@ img {
 
     font-weight: 800;
 
+    cursor: pointer;
+
     transition: .2s;
 }
 
-
 .back-btn:hover {
-
     background:
-        rgba(109,124,255,.16);
+        rgba(166,108,255,.16);
 
     transform:
         translateX(-4px);
 }
 
-
 .details-header {
-
     max-width: 900px;
 
     margin-bottom: 30px;
 }
 
-
 .details-label {
-
     margin-bottom: 10px;
 
     color:
-        var(--accent);
+        #9b8cff;
 
     font-size: 11px;
 
@@ -1332,9 +1249,7 @@ img {
     text-transform: uppercase;
 }
 
-
 .details-title {
-
     margin-bottom: 15px;
 
     font-size:
@@ -1347,9 +1262,7 @@ img {
         -2.5px;
 }
 
-
 .details-description {
-
     max-width: 760px;
 
     color:
@@ -1360,9 +1273,7 @@ img {
     line-height: 1.8;
 }
 
-
 .details-preview {
-
     width: 100%;
 
     max-width: 720px;
@@ -1373,14 +1284,12 @@ img {
         0 auto 35px;
 
     border:
-        1px solid var(--border);
+        1px solid rgba(166,108,255,.15);
 
     border-radius: 18px;
 }
 
-
 .details-preview img {
-
     width: 100%;
 
     max-height: 450px;
@@ -1390,9 +1299,7 @@ img {
     object-fit: cover;
 }
 
-
 .details-layout {
-
     display: grid;
 
     grid-template-columns:
@@ -1402,18 +1309,14 @@ img {
     gap: 50px;
 }
 
-
 .details-main h2,
 .details-sidebar h2 {
-
     margin-bottom: 13px;
 
     font-size: 17px;
 }
 
-
 .details-main p {
-
     margin-bottom: 32px;
 
     color:
@@ -1424,9 +1327,7 @@ img {
     line-height: 1.85;
 }
 
-
 .features {
-
     list-style: none;
 
     display: grid;
@@ -1436,9 +1337,7 @@ img {
     margin-bottom: 35px;
 }
 
-
 .features li {
-
     display: flex;
 
     align-items: center;
@@ -1451,10 +1350,9 @@ img {
     font-size: 14px;
 }
 
-
 .check {
-
     width: 20px;
+
     height: 20px;
 
     display: grid;
@@ -1472,25 +1370,25 @@ img {
         var(--success);
 }
 
-
 .sidebar-box {
-
     padding: 20px;
 
     margin-bottom: 15px;
 
     border:
-        1px solid var(--border);
+        1px solid rgba(166,108,255,.14);
 
     border-radius: 14px;
 
     background:
-        var(--surface);
+        linear-gradient(
+            135deg,
+            rgba(13,19,28,.95),
+            rgba(27,18,39,.85)
+        );
 }
 
-
 .info {
-
     display: flex;
 
     justify-content: space-between;
@@ -1505,16 +1403,13 @@ img {
     font-size: 13px;
 }
 
-
 .info:last-child {
     border-bottom: 0;
 }
 
-
 .info-label {
     color: var(--muted);
 }
-
 
 .info-value {
     text-align: right;
@@ -1522,15 +1417,12 @@ img {
     font-weight: 700;
 }
 
-
 .status-completed {
     color:
         #22c55e;
 }
 
-
 .detail-techs {
-
     display: flex;
 
     flex-wrap: wrap;
@@ -1538,16 +1430,13 @@ img {
     gap: 6px;
 }
 
-
 .detail-actions {
-
     display: flex;
 
     gap: 8px;
 
     margin-top: 22px;
 }
-
 
 .detail-actions .btn {
     flex: 1;
@@ -1559,9 +1448,8 @@ img {
 ========================================================= */
 
 footer {
-
     border-top:
-        1px solid rgba(255,255,255,.08);
+        1px solid rgba(166,108,255,.15);
 
     padding:
         45px 0;
@@ -1573,12 +1461,14 @@ footer {
         11px;
 
     background:
-        rgba(3,5,10,.55);
+        linear-gradient(
+            135deg,
+            rgba(5,8,15,.95),
+            rgba(17,10,27,.95)
+        );
 }
 
-
 .footer-inner {
-
     max-width:
         var(--max-width);
 
@@ -1598,9 +1488,7 @@ footer {
     gap: 20px;
 }
 
-
 .footer-brand {
-
     color:
         #cbd5e1;
 
@@ -1608,71 +1496,59 @@ footer {
         800;
 }
 
-
 .footer-brand span {
     color:
-        var(--accent);
+        #a66cff;
 }
 
 
 /* =========================================================
-   TABLET RESPONSIVE
+   TABLET
 ========================================================= */
 
 @media (max-width: 1050px) {
 
     .project-grid {
-
         grid-template-columns:
             repeat(2,minmax(0,1fr));
     }
 
-
     .details-layout {
-
         grid-template-columns:
             1fr;
 
         gap: 25px;
     }
 
-
     .navbar-inner {
-
         gap: 15px;
     }
 
-
     .nav-link {
-
         padding:
             10px 12px;
 
         font-size:
-            12px;
+            13px;
     }
 
-
     .nav-github {
-
         padding:
             10px 12px;
 
         font-size:
             11px;
     }
-
 }
 
 
 /* =========================================================
-   MOBILE RESPONSIVE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 720px) {
 
     .container {
-
         width:
             calc(100% - 24px);
     }
@@ -1681,7 +1557,6 @@ footer {
     /* NAVBAR */
 
     .navbar-inner {
-
         min-height:
             70px;
 
@@ -1689,39 +1564,20 @@ footer {
             8px;
     }
 
-
     .navbar-brand {
-
         font-size:
-            15px;
+            14px;
 
-        gap:
-            8px;
+        letter-spacing:
+            1.2px;
     }
-
-
-    .logo-icon {
-
-        width:
-            34px;
-
-        height:
-            34px;
-
-        font-size:
-            15px;
-    }
-
 
     .navbar-links {
-
         gap:
             2px;
     }
 
-
     .nav-link {
-
         padding:
             8px 8px;
 
@@ -1729,22 +1585,18 @@ footer {
             10px;
     }
 
-
     .nav-search {
-
         width:
-            34px;
+            35px;
 
         height:
-            34px;
+            35px;
 
         margin-left:
             2px;
     }
 
-
     .nav-github {
-
         display:
             none;
     }
@@ -1753,14 +1605,11 @@ footer {
     /* HERO */
 
     .hero {
-
         padding:
             70px 0 55px;
     }
 
-
     .hero h1 {
-
         font-size:
             43px;
 
@@ -1768,16 +1617,12 @@ footer {
             -2.5px;
     }
 
-
     .hero-description {
-
         font-size:
             13px;
     }
 
-
     .hero-actions {
-
         flex-direction:
             column;
 
@@ -1788,9 +1633,7 @@ footer {
             28px auto 0;
     }
 
-
     .hero-btn {
-
         width:
             100%;
     }
@@ -1799,14 +1642,11 @@ footer {
     /* PROJECT TITLE */
 
     .projects-heading {
-
         padding:
             50px 0 20px;
     }
 
-
     .projects-heading-top {
-
         align-items:
             flex-start;
 
@@ -1814,9 +1654,7 @@ footer {
             column;
     }
 
-
     .project-count {
-
         align-self:
             flex-start;
     }
@@ -1825,7 +1663,6 @@ footer {
     /* TOOLBAR */
 
     .toolbar {
-
         flex-direction:
             column;
 
@@ -1833,16 +1670,12 @@ footer {
             stretch;
     }
 
-
     .search-box {
-
         max-width:
             none;
     }
 
-
     .filter-select {
-
         width:
             100%;
     }
@@ -1851,7 +1684,6 @@ footer {
     /* PROJECT GRID */
 
     .project-grid {
-
         grid-template-columns:
             1fr;
 
@@ -1863,31 +1695,27 @@ footer {
     }
 
 
-    /* CARD SIZE/DESIGN UNCHANGED */
+    /* CARD WIDTH ONLY FOR RESPONSIVENESS */
 
     .project-card {
-        width: 100%;
+        width:
+            100%;
     }
 
 
     /* ABOUT */
 
     .about-section {
-
         padding:
             15px 0 60px;
     }
 
-
     .about-box {
-
         padding:
             24px;
     }
 
-
     .about-box h2 {
-
         font-size:
             24px;
     }
@@ -1896,14 +1724,11 @@ footer {
     /* DETAILS */
 
     .details-title {
-
         letter-spacing:
             -1.5px;
     }
 
-
     .details-preview img {
-
         aspect-ratio:
             16 / 9;
 
@@ -1911,9 +1736,7 @@ footer {
             260px;
     }
 
-
     .detail-actions {
-
         flex-direction:
             column;
     }
@@ -1922,7 +1745,6 @@ footer {
     /* FOOTER */
 
     .footer-inner {
-
         padding:
             0 16px;
 
@@ -1932,7 +1754,6 @@ footer {
         align-items:
             flex-start;
     }
-
 }
 
 
@@ -1943,34 +1764,19 @@ footer {
 @media (max-width: 420px) {
 
     .navbar-inner {
-
         min-height:
             64px;
     }
 
-
     .navbar-brand {
-
         font-size:
-            13px;
+            12px;
+
+        letter-spacing:
+            1px;
     }
-
-
-    .logo-icon {
-
-        width:
-            31px;
-
-        height:
-            31px;
-
-        font-size:
-            13px;
-    }
-
 
     .nav-link {
-
         padding:
             7px 5px;
 
@@ -1978,9 +1784,7 @@ footer {
             8px;
     }
 
-
     .nav-search {
-
         width:
             31px;
 
@@ -1988,45 +1792,30 @@ footer {
             31px;
     }
 
-
     .hero h1 {
-
         font-size:
             37px;
     }
 
-
     .project-content {
-
         padding:
             14px;
     }
-
 }
 
 
 /* =========================================================
-   VERY SMALL DEVICES
+   VERY SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 350px) {
 
     .navbar-brand {
-
         font-size:
-            11px;
+            10px;
     }
-
-
-    .navbar-links {
-
-        gap:
-            0;
-    }
-
 
     .nav-link {
-
         padding:
             6px 4px;
 
@@ -2034,20 +1823,16 @@ footer {
             7px;
     }
 
-
     .nav-search {
-
         width:
             29px;
 
         height:
             29px;
     }
-
 }
 
 </style>
-
 </head>
 
 
@@ -2062,23 +1847,15 @@ footer {
 
     <div class="container navbar-inner">
 
-
         <a
             href="#home"
             class="navbar-brand"
         >
-
-            <div class="logo-icon">
-                ✦
-            </div>
-
-            Rahul <span>Gaikwad</span>
-
+            MY PORTFOLIO
         </a>
 
 
         <div class="navbar-links">
-
 
             <a
                 href="#home"
@@ -2110,7 +1887,30 @@ footer {
                 type="button"
                 aria-label="Search projects"
             >
-                🔍
+
+                <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+
+                    <circle
+                        cx="11"
+                        cy="11"
+                        r="7"
+                    ></circle>
+
+                    <path
+                        d="m20 20-4-4"
+                    ></path>
+
+                </svg>
+
             </button>
 
 
@@ -2122,7 +1922,6 @@ footer {
             >
                 GitHub ↗
             </a>
-
 
         </div>
 
@@ -2209,15 +2008,12 @@ footer {
 >
 
 
-<section
-    id="projects"
->
+<section id="projects">
 
     <div class="container">
 
 
         <div class="projects-heading">
-
 
             <div class="projects-heading-top">
 
@@ -2248,24 +2044,45 @@ footer {
                     0 projects
                 </div>
 
-
             </div>
 
         </div>
 
 
-        <!-- SEARCH -->
+        <!-- SEARCH / FILTER -->
 
         <div
             class="toolbar"
             id="projectToolbar"
         >
 
-
             <div class="search-box">
 
                 <span class="search-icon">
-                    🔍
+
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <circle
+                            cx="11"
+                            cy="11"
+                            r="7"
+                        ></circle>
+
+                        <path
+                            d="m20 20-4-4"
+                        ></path>
+
+                    </svg>
+
                 </span>
 
 
@@ -2290,11 +2107,10 @@ footer {
 
             </select>
 
-
         </div>
 
 
-        <!-- PROJECTS -->
+        <!-- PROJECT GRID -->
 
         <div
             class="project-grid"
@@ -2334,9 +2150,7 @@ footer {
 
     <div class="container">
 
-
         <div class="about-box">
-
 
             <div class="projects-label">
                 About Me
@@ -2356,9 +2170,7 @@ footer {
                 along with their technologies and features.
             </p>
 
-
         </div>
-
 
     </div>
 
@@ -2379,7 +2191,6 @@ footer {
 
     <div class="container">
 
-
         <button
             class="back-btn"
             onclick="showLibrary()"
@@ -2389,7 +2200,6 @@ footer {
 
 
         <div id="detailsContent"></div>
-
 
     </div>
 
@@ -2404,18 +2214,14 @@ footer {
 
     <div class="footer-inner">
 
-
         <div class="footer-brand">
-
-            Rahul <span>Gaikwad</span>
-
+            MY <span>PORTFOLIO</span>
         </div>
 
 
         <span>
             © 2026 Rahul Gaikwad • Project Library
         </span>
-
 
     </div>
 
@@ -2720,35 +2526,34 @@ const projectCount =
 
 function createTechnologyFilter() {
 
-    const technologies =
-        [
-            ...new Set(
-                projects.flatMap(
-                    project =>
-                        project.technologies
-                )
+    const technologies = [
+        ...new Set(
+            projects.flatMap(
+                project =>
+                    project.technologies
             )
-        ].sort();
+        )
+    ].sort();
 
 
-    technologies.forEach(technology => {
+    technologies.forEach(
+        technology => {
 
-        const option =
-            document.createElement("option");
+            const option =
+                document.createElement("option");
 
+            option.value =
+                technology;
 
-        option.value =
-            technology;
+            option.textContent =
+                technology;
 
+            technologyFilter.appendChild(
+                option
+            );
 
-        option.textContent =
-            technology;
-
-
-        technologyFilter.appendChild(option);
-
-    });
-
+        }
+    );
 }
 
 
@@ -2769,146 +2574,148 @@ function renderProjects() {
 
 
     const filtered =
-        projects.filter(project => {
+        projects.filter(
+            project => {
+
+                const matchesSearch =
+
+                    project.name
+                        .toLowerCase()
+                        .includes(search)
+
+                    ||
+
+                    project.description
+                        .toLowerCase()
+                        .includes(search)
+
+                    ||
+
+                    project.technologies.some(
+                        tech =>
+                            tech
+                                .toLowerCase()
+                                .includes(search)
+                    );
 
 
-            const matchesSearch =
+                const matchesTechnology =
 
-                project.name
-                    .toLowerCase()
-                    .includes(search)
+                    selectedTechnology === "all"
 
-                ||
+                    ||
 
-                project.description
-                    .toLowerCase()
-                    .includes(search)
+                    project.technologies.includes(
+                        selectedTechnology
+                    );
 
-                ||
 
-                project.technologies.some(
-                    tech =>
-                        tech
-                            .toLowerCase()
-                            .includes(search)
+                return (
+                    matchesSearch &&
+                    matchesTechnology
                 );
 
-
-            const matchesTechnology =
-
-                selectedTechnology === "all"
-
-                ||
-
-                project.technologies.includes(
-                    selectedTechnology
-                );
-
-
-            return (
-                matchesSearch &&
-                matchesTechnology
-            );
-
-        });
+            }
+        );
 
 
     grid.innerHTML = "";
 
 
-    filtered.forEach(project => {
+    filtered.forEach(
+        project => {
+
+            const card =
+                document.createElement("article");
 
 
-        const card =
-            document.createElement("article");
+            card.className =
+                "project-card";
 
 
-        card.className =
-            "project-card";
+            card.innerHTML = `
 
+                <div class="project-image">
 
-        card.innerHTML = `
-
-            <div class="project-image">
-
-                <img
-                    src="${project.image}"
-                    alt="${project.name} preview"
-                    loading="lazy"
-                    onclick="openDetails('${project.id}')"
-                    style="cursor:pointer;"
-                >
-
-                <span class="status">
-                    ${project.status}
-                </span>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3
-                    class="project-title"
-                    onclick="openDetails('${project.id}')"
-                    style="cursor:pointer;"
-                >
-                    ${project.name}
-                </h3>
-
-
-                <p class="project-description">
-                    ${project.description}
-                </p>
-
-
-                <div class="technologies">
-
-                    ${project.technologies
-                        .slice(0,5)
-                        .map(
-                            tech =>
-                                `
-                                <span class="tech">
-                                    ${tech}
-                                </span>
-                                `
-                        )
-                        .join("")
-                    }
-
-                </div>
-
-
-                <div class="actions">
-
-                    <a
-                        href="${project.live}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn primary"
-                    >
-                        Visit Project ↗
-                    </a>
-
-
-                    <button
-                        class="btn secondary"
+                    <img
+                        src="${project.image}"
+                        alt="${project.name} preview"
+                        loading="lazy"
                         onclick="openDetails('${project.id}')"
+                        style="cursor:pointer;"
                     >
-                        Details ↗
-                    </button>
+
+                    <span class="status">
+                        ${project.status}
+                    </span>
 
                 </div>
 
-            </div>
 
-        `;
+                <div class="project-content">
+
+                    <h3
+                        class="project-title"
+                        onclick="openDetails('${project.id}')"
+                        style="cursor:pointer;"
+                    >
+                        ${project.name}
+                    </h3>
 
 
-        grid.appendChild(card);
+                    <p class="project-description">
+                        ${project.description}
+                    </p>
 
-    });
+
+                    <div class="technologies">
+
+                        ${project.technologies
+                            .slice(0,5)
+                            .map(
+                                tech =>
+                                    `
+                                    <span class="tech">
+                                        ${tech}
+                                    </span>
+                                    `
+                            )
+                            .join("")
+                        }
+
+                    </div>
+
+
+                    <div class="actions">
+
+                        <a
+                            href="${project.live}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn primary"
+                        >
+                            Visit Project ↗
+                        </a>
+
+
+                        <button
+                            class="btn secondary"
+                            onclick="openDetails('${project.id}')"
+                        >
+                            Details ↗
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(card);
+
+        }
+    );
 
 
     projectCount.textContent =
@@ -2966,7 +2773,9 @@ document
 
 
             setTimeout(
-                () => searchInput.focus(),
+                () => {
+                    searchInput.focus();
+                },
                 500
             );
 
@@ -2980,31 +2789,32 @@ document
 
 document
     .querySelectorAll(".nav-link")
-    .forEach(link => {
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .querySelectorAll(".nav-link")
+                        .forEach(
+                            item =>
+                                item.classList.remove(
+                                    "active"
+                                )
+                        );
 
 
-        link.addEventListener(
-            "click",
-            () => {
-
-
-                document
-                    .querySelectorAll(".nav-link")
-                    .forEach(item =>
-                        item.classList.remove(
-                            "active"
-                        )
+                    link.classList.add(
+                        "active"
                     );
 
+                }
+            );
 
-                link.classList.add(
-                    "active"
-                );
-
-            }
-        );
-
-    });
+        }
+    );
 
 
 /* =========================================================
@@ -3012,7 +2822,6 @@ document
 ========================================================= */
 
 function openDetails(id) {
-
 
     const project =
         projects.find(
@@ -3076,7 +2885,6 @@ function openDetails(id) {
 
             <div class="details-main">
 
-
                 <h2>
                     Description
                 </h2>
@@ -3115,7 +2923,6 @@ function openDetails(id) {
                     }
 
                 </ul>
-
 
             </div>
 
@@ -3231,7 +3038,6 @@ function openDetails(id) {
 ========================================================= */
 
 function showLibrary() {
-
 
     document
         .getElementById("detailsPage")
