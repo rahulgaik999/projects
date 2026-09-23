@@ -31,11 +31,10 @@
 
     --border: #253044;
 
-    /* PURPLE / VIOLET UI COLORS */
+    /* SOFT PURPLE / VIOLET */
     --violet: #8b5cf6;
     --purple: #a855f7;
     --violet-light: #c084fc;
-    --violet-soft: #b794f4;
 
     --success: #4ade80;
 
@@ -63,12 +62,12 @@ body {
     background:
         radial-gradient(
             circle at 50% -10%,
-            rgba(139, 92, 246, 0.18),
+            rgba(139, 92, 246, 0.12),
             transparent 34%
         ),
         radial-gradient(
             circle at 100% 40%,
-            rgba(168, 85, 247, 0.10),
+            rgba(168, 85, 247, 0.06),
             transparent 28%
         ),
         #070912;
@@ -91,12 +90,12 @@ body::before {
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,.012) 1px,
+            rgba(255,255,255,.01) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,.012) 1px,
+            rgba(255,255,255,.01) 1px,
             transparent 1px
         );
 
@@ -150,20 +149,25 @@ img {
     background:
         linear-gradient(
             135deg,
-            rgba(20, 13, 45, .98),
-            rgba(44, 17, 66, .98)
+            rgba(18, 14, 36, .96),
+            rgba(31, 16, 43, .96)
         );
 
     border-bottom:
-        1px solid rgba(168, 85, 247, .30);
+        1px solid rgba(168, 85, 247, .10);
 
-    backdrop-filter: blur(22px);
+    backdrop-filter:
+        blur(22px);
 
-    -webkit-backdrop-filter: blur(22px);
+    -webkit-backdrop-filter:
+        blur(22px);
 
     box-shadow:
-        0 10px 35px rgba(0, 0, 0, .30);
+        0 8px 30px rgba(0, 0, 0, .20);
 }
+
+
+/* VERY FADE HORIZONTAL LINE */
 
 .navbar::after {
     content: "";
@@ -174,25 +178,23 @@ img {
     right: 0;
     bottom: 0;
 
-    height: 2px;
+    height: 1px;
 
     background:
         linear-gradient(
             90deg,
-            transparent,
-            #7c3aed,
-            #a855f7,
-            #c084fc,
-            #a855f7,
-            #7c3aed,
-            transparent
+            transparent 5%,
+            rgba(139, 92, 246, .18),
+            rgba(168, 85, 247, .22),
+            rgba(192, 132, 252, .18),
+            transparent 95%
         );
 
-    opacity: .95;
+    opacity: .45;
 }
 
 .navbar-inner {
-    min-height: 84px;
+    min-height: 82px;
 
     display: flex;
 
@@ -211,11 +213,11 @@ img {
 .navbar-brand {
     color: #ffffff;
 
-    font-size: 21px;
+    font-size: 20px;
 
     font-weight: 800;
 
-    letter-spacing: 1.8px;
+    letter-spacing: 1.5px;
 
     white-space: nowrap;
 
@@ -223,10 +225,10 @@ img {
 }
 
 .navbar-brand:hover {
-    color: #c084fc;
+    color: #ffffff;
 
     text-shadow:
-        0 0 22px rgba(168, 85, 247, .45);
+        0 0 18px rgba(255,255,255,.12);
 }
 
 
@@ -239,19 +241,19 @@ img {
 
     align-items: center;
 
-    gap: 8px;
+    gap: 7px;
 }
 
 .nav-link {
     position: relative;
 
-    padding: 12px 17px;
+    padding: 11px 16px;
 
-    border-radius: 11px;
+    border-radius: 10px;
 
-    color: #b7bfd1;
+    color: #aeb3c0;
 
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 700;
 
@@ -262,10 +264,10 @@ img {
     color: #ffffff;
 
     background:
-        rgba(168, 85, 247, .12);
+        rgba(168, 85, 247, .07);
 
     transform:
-        translateY(-2px);
+        translateY(-1px);
 }
 
 .nav-link.active {
@@ -274,13 +276,9 @@ img {
     background:
         linear-gradient(
             135deg,
-            rgba(124, 58, 237, .28),
-            rgba(168, 85, 247, .24)
+            rgba(124, 58, 237, .13),
+            rgba(168, 85, 247, .10)
         );
-
-    box-shadow:
-        inset 0 0 20px
-        rgba(168, 85, 247, .06);
 }
 
 .nav-link.active::after {
@@ -292,47 +290,49 @@ img {
 
     bottom: 3px;
 
-    width: 5px;
+    width: 4px;
 
-    height: 5px;
+    height: 4px;
 
     transform:
         translateX(-50%);
 
     border-radius: 50%;
 
-    background: #c084fc;
+    background:
+        rgba(192,132,252,.65);
 
     box-shadow:
-        0 0 14px #a855f7;
+        0 0 8px
+        rgba(168,85,247,.35);
 }
 
 
 /* =========================================================
-   NAV SEARCH
+   SEARCH ICON
 ========================================================= */
 
 .nav-search {
-    width: 44px;
+    width: 42px;
 
-    height: 44px;
+    height: 42px;
 
     display: grid;
 
     place-items: center;
 
-    margin-left: 5px;
+    margin-left: 4px;
 
     border:
-        1px solid rgba(168, 85, 247, .28);
+        1px solid rgba(168,85,247,.14);
 
-    border-radius: 11px;
+    border-radius: 10px;
 
     background:
-        rgba(255, 255, 255, .055);
+        rgba(255,255,255,.035);
 
     color:
-        #c084fc;
+        #b8a5ca;
 
     transition: .25s ease;
 
@@ -340,24 +340,17 @@ img {
 }
 
 .nav-search:hover {
-    color: #ffffff;
+    color:
+        #ffffff;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(124, 58, 237, .28),
-            rgba(168, 85, 247, .28)
-        );
+        rgba(168,85,247,.10);
 
     border-color:
-        rgba(192, 132, 252, .65);
+        rgba(192,132,252,.30);
 
     transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 0 25px
-        rgba(168, 85, 247, .25);
+        translateY(-1px);
 }
 
 
@@ -375,47 +368,41 @@ img {
     gap: 7px;
 
     padding:
-        11px 17px;
+        10px 15px;
 
     border:
-        1px solid rgba(168, 85, 247, .28);
+        1px solid rgba(168,85,247,.14);
 
-    border-radius: 11px;
+    border-radius: 10px;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(124, 58, 237, .18),
-            rgba(168, 85, 247, .16)
-        );
+        rgba(168,85,247,.07);
 
     color:
-        #eee7ff;
+        #d1cad9;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    transition: .25s ease;
+    transition:
+        .25s ease;
 }
 
 .nav-github:hover {
     background:
-        linear-gradient(
-            135deg,
-            rgba(124, 58, 237, .34),
-            rgba(168, 85, 247, .32)
-        );
+        rgba(168,85,247,.13);
 
     border-color:
-        rgba(192, 132, 252, .65);
+        rgba(192,132,252,.30);
+
+    color:
+        #ffffff;
 
     transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 25px
-        rgba(168, 85, 247, .16);
+        translateY(-1px);
 }
 
 
@@ -429,21 +416,23 @@ img {
     padding:
         105px 0 80px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 }
 
 .hero-glow {
     position: absolute;
 
-    width: 680px;
+    width: 650px;
 
-    height: 680px;
+    height: 650px;
 
     left: 50%;
 
-    top: -440px;
+    top: -430px;
 
     transform:
         translateX(-50%);
@@ -453,89 +442,109 @@ img {
     background:
         radial-gradient(
             circle,
-            rgba(139, 92, 246, .28),
-            rgba(168, 85, 247, .13),
+            rgba(139,92,246,.18),
+            rgba(168,85,247,.07),
             transparent 70%
         );
 
-    filter: blur(20px);
+    filter:
+        blur(20px);
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 .hero-content {
-    position: relative;
+    position:
+        relative;
 
-    z-index: 2;
+    z-index:
+        2;
 
-    max-width: 900px;
+    max-width:
+        900px;
 
-    margin: auto;
+    margin:
+        auto;
 }
 
 .hero-badge {
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 8px;
+    gap:
+        8px;
 
     padding:
         8px 15px;
 
-    margin-bottom: 27px;
+    margin-bottom:
+        27px;
 
     border:
-        1px solid rgba(168, 85, 247, .30);
+        1px solid rgba(168,85,247,.18);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(124, 58, 237, .10),
-            rgba(168, 85, 247, .10)
-        );
+        rgba(168,85,247,.045);
 
     color:
-        #d1b7ff;
+        #bca9d1;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    letter-spacing: 1.3px;
+    letter-spacing:
+        1.3px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 }
 
 .hero-badge-dot {
-    width: 7px;
+    width:
+        6px;
 
-    height: 7px;
+    height:
+        6px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
         #a855f7;
 
     box-shadow:
-        0 0 14px #a855f7;
+        0 0 9px
+        rgba(168,85,247,.55);
 }
 
 .hero h1 {
-    max-width: 900px;
+    max-width:
+        900px;
 
-    margin: auto;
+    margin:
+        auto;
 
     font-size:
-        clamp(44px, 7vw, 78px);
+        clamp(44px,7vw,78px);
 
-    line-height: .98;
+    line-height:
+        .98;
 
-    letter-spacing: -4px;
+    letter-spacing:
+        -4px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 }
 
 .hero h1 span {
@@ -544,47 +553,37 @@ img {
             90deg,
             #8b5cf6,
             #a855f7,
-            #c084fc,
-            #9333ea
+            #c084fc
         );
 
     background-size:
-        250% auto;
+        200% auto;
 
-    -webkit-background-clip: text;
+    -webkit-background-clip:
+        text;
 
-    background-clip: text;
+    background-clip:
+        text;
 
-    color: transparent;
-
-    animation:
-        gradientMove 5s linear infinite;
-}
-
-@keyframes gradientMove {
-
-    0% {
-        background-position: 0% center;
-    }
-
-    100% {
-        background-position: 250% center;
-    }
-
+    color:
+        transparent;
 }
 
 .hero-description {
-    max-width: 680px;
+    max-width:
+        680px;
 
     margin:
         27px auto 0;
 
     color:
-        #939daf;
+        #8e97a7;
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    line-height: 1.85;
+    line-height:
+        1.85;
 }
 
 
@@ -593,34 +592,46 @@ img {
 ========================================================= */
 
 .hero-actions {
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 12px;
+    gap:
+        10px;
 
-    margin-top: 36px;
+    margin-top:
+        36px;
 }
 
 .hero-btn {
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    min-height: 54px;
+    min-height:
+        54px;
 
     padding:
         0 25px;
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
     transition:
         .25s ease;
@@ -631,60 +642,54 @@ img {
         linear-gradient(
             135deg,
             #7c3aed,
-            #a855f7,
-            #c084fc
+            #a855f7
         );
 
     border:
-        1px solid #a855f7;
+        1px solid
+        rgba(192,132,252,.45);
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     box-shadow:
-        0 12px 35px
-        rgba(168, 85, 247, .25);
+        0 10px 28px
+        rgba(168,85,247,.18);
 }
 
 .hero-btn-primary:hover {
     transform:
-        translateY(-4px);
+        translateY(-3px);
 
     box-shadow:
-        0 18px 45px
-        rgba(168, 85, 247, .38);
+        0 15px 35px
+        rgba(168,85,247,.28);
 }
 
 .hero-btn-secondary {
     background:
-        rgba(255,255,255,.045);
+        rgba(255,255,255,.035);
 
     border:
-        1px solid rgba(168, 85, 247, .35);
+        1px solid
+        rgba(168,85,247,.20);
 
     color:
-        #d9caff;
+        #c9bfd4;
 }
 
 .hero-btn-secondary:hover {
     background:
-        linear-gradient(
-            135deg,
-            rgba(124,58,237,.18),
-            rgba(168,85,247,.16)
-        );
+        rgba(168,85,247,.09);
 
     border-color:
-        rgba(192,132,252,.65);
+        rgba(192,132,252,.35);
 
     color:
         #ffffff;
 
     transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 12px 30px
-        rgba(168,85,247,.15);
+        translateY(-3px);
 }
 
 
@@ -698,47 +703,59 @@ img {
 }
 
 .projects-heading-top {
-    display: flex;
+    display:
+        flex;
 
-    align-items: flex-end;
+    align-items:
+        flex-end;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    gap: 20px;
+    gap:
+        20px;
 }
 
 .projects-label {
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
 
     color:
-        #c084fc;
+        #b889e8;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 800;
+    font-weight:
+        800;
 
-    letter-spacing: 1.5px;
+    letter-spacing:
+        1.5px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 }
 
 .projects-heading h2 {
     font-size:
-        clamp(30px, 4vw, 43px);
+        clamp(30px,4vw,43px);
 
-    line-height: 1;
+    line-height:
+        1;
 
     letter-spacing:
         -1.8px;
 }
 
 .projects-heading p {
-    margin-top: 10px;
+    margin-top:
+        10px;
 
     color:
-        #858fa2;
+        #7f899a;
 
-    font-size: 13px;
+    font-size:
+        13px;
 }
 
 .project-count {
@@ -746,21 +763,26 @@ img {
         7px 12px;
 
     border:
-        1px solid rgba(168,85,247,.25);
+        1px solid
+        rgba(168,85,247,.14);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     background:
-        rgba(168,85,247,.055);
+        rgba(168,85,247,.035);
 
     color:
-        #b9a9d4;
+        #aaa0b7;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    white-space: nowrap;
+    white-space:
+        nowrap;
 }
 
 
@@ -769,63 +791,75 @@ img {
 ========================================================= */
 
 .toolbar {
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
-    gap: 12px;
+    gap:
+        12px;
 
-    padding: 14px;
+    padding:
+        14px;
 
-    margin-bottom: 25px;
+    margin-bottom:
+        25px;
 
     border:
-        1px solid rgba(168,85,247,.18);
+        1px solid
+        rgba(168,85,247,.13);
 
-    border-radius: 15px;
+    border-radius:
+        15px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(14,15,30,.90),
-            rgba(30,15,42,.86)
+            rgba(12,14,24,.88),
+            rgba(25,14,34,.82)
         );
 
     backdrop-filter:
         blur(15px);
-
-    box-shadow:
-        0 15px 45px
-        rgba(0,0,0,.15);
 }
 
 .search-box {
-    position: relative;
+    position:
+        relative;
 
-    flex: 1;
+    flex:
+        1;
 
-    max-width: 500px;
+    max-width:
+        500px;
 }
 
 .search-box input {
-    width: 100%;
+    width:
+        100%;
 
-    height: 45px;
+    height:
+        45px;
 
     padding:
         0 15px 0 43px;
 
-    outline: none;
+    outline:
+        none;
 
     border:
-        1px solid rgba(168,85,247,.18);
+        1px solid
+        rgba(168,85,247,.12);
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
     background:
-        rgba(255,255,255,.035);
+        rgba(255,255,255,.025);
 
     color:
         white;
@@ -841,45 +875,52 @@ img {
 
 .search-box input:focus {
     border-color:
-        rgba(168,85,247,.65);
+        rgba(168,85,247,.40);
 
     box-shadow:
         0 0 0 3px
-        rgba(168,85,247,.09);
+        rgba(168,85,247,.055);
 }
 
 .search-icon {
-    position: absolute;
+    position:
+        absolute;
 
-    left: 15px;
+    left:
+        15px;
 
-    top: 50%;
+    top:
+        50%;
 
     transform:
         translateY(-50%);
 
     color:
-        #a855f7;
+        #a77bc9;
 }
 
 .filter-select {
-    height: 45px;
+    height:
+        45px;
 
     padding:
         0 13px;
 
-    outline: none;
+    outline:
+        none;
 
     border:
-        1px solid rgba(168,85,247,.18);
+        1px solid
+        rgba(168,85,247,.12);
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
     background:
-        #10101c;
+        #10121c;
 
     color:
-        #c4bacf;
+        #b8b0bf;
 
     font-size:
         11px;
@@ -891,30 +932,38 @@ img {
 
 /* =========================================================
    PROJECT CARDS
-   EXTERIOR LEFT UNCHANGED
+   DO NOT CHANGE EXTERIOR
 ========================================================= */
 
 .project-grid {
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3,minmax(0,1fr));
 
-    gap: 22px;
+    gap:
+        22px;
 
-    padding-bottom: 80px;
+    padding-bottom:
+        80px;
 }
 
 .project-card {
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
-    background: var(--surface);
+    background:
+        var(--surface);
 
-    box-shadow: 0 1px 2px rgba(0,0,0,.03);
+    box-shadow:
+        0 1px 2px rgba(0,0,0,.03);
 
     transition:
         transform .22s ease,
@@ -934,37 +983,48 @@ img {
 }
 
 .project-image {
-    position: relative;
+    position:
+        relative;
 
-    aspect-ratio: 16 / 9;
+    aspect-ratio:
+        16 / 9;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    background: var(--surface-2);
+    background:
+        var(--surface-2);
 }
 
 .project-image img {
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 
     transition:
         transform .35s ease;
 }
 
-.project-card:hover .project-image img {
+.project-card:hover
+.project-image img {
     transform:
         scale(1.025);
 }
 
 .status {
-    position: absolute;
+    position:
+        absolute;
 
-    top: 13px;
+    top:
+        13px;
 
-    left: 13px;
+    left:
+        13px;
 
     padding:
         5px 9px;
@@ -1102,13 +1162,15 @@ img {
 }
 
 .primary {
-    flex: 1;
+    flex:
+        1;
 
     background:
         var(--violet);
 
     border:
-        1px solid var(--violet);
+        1px solid
+        var(--violet);
 
     color:
         white;
@@ -1137,7 +1199,7 @@ img {
 
 
 /* =========================================================
-   EMPTY
+   EMPTY SEARCH
 ========================================================= */
 
 .empty {
@@ -1151,7 +1213,8 @@ img {
         70px;
 
     border:
-        1px dashed rgba(168,85,247,.25);
+        1px dashed
+        rgba(168,85,247,.18);
 
     border-radius:
         18px;
@@ -1189,69 +1252,15 @@ img {
 
 
 /* =========================================================
-   ABOUT
-========================================================= */
-
-.about-section {
-    padding:
-        20px 0 90px;
-}
-
-.about-box {
-    padding:
-        40px;
-
-    border:
-        1px solid rgba(168,85,247,.20);
-
-    border-radius:
-        18px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(18,25,40,.88),
-            rgba(38,18,52,.80)
-        );
-
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.2);
-}
-
-.about-box h2 {
-    margin-bottom:
-        12px;
-
-    font-size:
-        30px;
-
-    letter-spacing:
-        -1px;
-}
-
-.about-box p {
-    max-width:
-        780px;
-
-    color:
-        var(--muted);
-
-    font-size:
-        14px;
-
-    line-height:
-        1.8;
-}
-
-
-/* =========================================================
-   DETAILS
+   DETAILS PAGE
 ========================================================= */
 
 .details-page {
     display:
         none;
+
+    min-height:
+        calc(100vh - 82px);
 
     padding:
         45px 0 90px;
@@ -1278,16 +1287,17 @@ img {
         11px 17px;
 
     border:
-        1px solid rgba(168,85,247,.35);
+        1px solid
+        rgba(168,85,247,.20);
 
     border-radius:
         10px;
 
     background:
-        rgba(168,85,247,.08);
+        rgba(168,85,247,.055);
 
     color:
-        #d0b9ff;
+        #c0abd2;
 
     font-size:
         12px;
@@ -1304,7 +1314,10 @@ img {
 
 .back-btn:hover {
     background:
-        rgba(168,85,247,.18);
+        rgba(168,85,247,.10);
+
+    color:
+        #ffffff;
 
     transform:
         translateX(-4px);
@@ -1323,7 +1336,7 @@ img {
         10px;
 
     color:
-        #c084fc;
+        #b889e8;
 
     font-size:
         11px;
@@ -1380,7 +1393,8 @@ img {
         0 auto 35px;
 
     border:
-        1px solid rgba(168,85,247,.16);
+        1px solid
+        rgba(168,85,247,.10);
 
     border-radius:
         18px;
@@ -1486,10 +1500,10 @@ img {
         50%;
 
     background:
-        rgba(168,85,247,.13);
+        rgba(168,85,247,.10);
 
     color:
-        #c084fc;
+        #b889e8;
 }
 
 .sidebar-box {
@@ -1500,7 +1514,8 @@ img {
         15px;
 
     border:
-        1px solid rgba(168,85,247,.15);
+        1px solid
+        rgba(168,85,247,.10);
 
     border-radius:
         14px;
@@ -1509,7 +1524,7 @@ img {
         linear-gradient(
             135deg,
             rgba(13,19,28,.95),
-            rgba(30,16,40,.86)
+            rgba(27,16,36,.86)
         );
 }
 
@@ -1590,22 +1605,23 @@ img {
 
 footer {
     border-top:
-        1px solid rgba(168,85,247,.22);
+        1px solid
+        rgba(168,85,247,.10);
 
     padding:
-        52px 0;
+        42px 0;
 
     color:
-        #929aaa;
+        #858b99;
 
     font-size:
-        14px;
+        13px;
 
     background:
         linear-gradient(
             135deg,
             rgba(5,7,15,.98),
-            rgba(22,9,32,.98)
+            rgba(20,9,29,.98)
         );
 }
 
@@ -1637,7 +1653,7 @@ footer {
         #ffffff;
 
     font-size:
-        17px;
+        16px;
 
     font-weight:
         800;
@@ -1648,15 +1664,18 @@ footer {
 
 .footer-brand span {
     color:
-        #c084fc;
+        #b889e8;
 }
 
-.footer-inner > span {
-    font-size:
-        14px;
-
+.footer-description {
     color:
-        #9b94a8;
+        #858b99;
+
+    font-size:
+        13px;
+
+    text-align:
+        right;
 }
 
 
@@ -1689,7 +1708,7 @@ footer {
             10px 12px;
 
         font-size:
-            13px;
+            12px;
     }
 
     .nav-github {
@@ -1729,7 +1748,7 @@ footer {
             14px;
 
         letter-spacing:
-            1.2px;
+            1px;
     }
 
     .navbar-links {
@@ -1747,13 +1766,10 @@ footer {
 
     .nav-search {
         width:
-            35px;
+            34px;
 
         height:
-            35px;
-
-        margin-left:
-            2px;
+            34px;
     }
 
     .nav-github {
@@ -1787,10 +1803,7 @@ footer {
             row;
 
         gap:
-            8px;
-
-        width:
-            100%;
+            7px;
     }
 
     .hero-btn {
@@ -1798,13 +1811,13 @@ footer {
             1;
 
         min-height:
-            52px;
+            51px;
 
         padding:
-            0 12px;
+            0 10px;
 
         font-size:
-            11px;
+            10px;
     }
 
 
@@ -1863,31 +1876,16 @@ footer {
             50px;
     }
 
-    .project-card {
-        width:
-            100%;
-    }
-
-
-    /* ABOUT */
-
-    .about-section {
-        padding:
-            15px 0 60px;
-    }
-
-    .about-box {
-        padding:
-            25px;
-    }
-
-    .about-box h2 {
-        font-size:
-            25px;
-    }
-
 
     /* DETAILS */
+
+    .details-page {
+        padding:
+            30px 0 70px;
+
+        min-height:
+            calc(100vh - 70px);
+    }
 
     .details-title {
         letter-spacing:
@@ -1912,7 +1910,7 @@ footer {
 
     footer {
         padding:
-            42px 0;
+            38px 0;
     }
 
     .footer-inner {
@@ -1926,17 +1924,15 @@ footer {
             flex-start;
 
         gap:
+            10px;
+    }
+
+    .footer-description {
+        text-align:
+            left;
+
+        font-size:
             12px;
-    }
-
-    .footer-brand {
-        font-size:
-            17px;
-    }
-
-    .footer-inner > span {
-        font-size:
-            13px;
     }
 }
 
@@ -1955,9 +1951,6 @@ footer {
     .navbar-brand {
         font-size:
             12px;
-
-        letter-spacing:
-            1px;
     }
 
     .nav-link {
@@ -1983,18 +1976,18 @@ footer {
 
     .hero-actions {
         gap:
-            6px;
+            5px;
     }
 
     .hero-btn {
         min-height:
-            50px;
+            49px;
 
         padding:
-            0 8px;
+            0 7px;
 
         font-size:
-            10px;
+            9px;
     }
 
     .project-content {
@@ -2029,19 +2022,6 @@ footer {
 
         height:
             29px;
-    }
-
-    .hero-actions {
-        gap:
-            5px;
-    }
-
-    .hero-btn {
-        font-size:
-            9px;
-
-        padding:
-            0 5px;
     }
 }
 
@@ -2082,13 +2062,6 @@ footer {
                 class="nav-link"
             >
                 Projects
-            </a>
-
-            <a
-                href="#about"
-                class="nav-link"
-            >
-                About
             </a>
 
 
@@ -2142,8 +2115,14 @@ footer {
 
 
 <!-- =========================================================
-     HERO
+     HOME PAGE
 ========================================================= -->
+
+<main
+    class="library-page"
+    id="libraryPage"
+>
+
 
 <header
     class="hero"
@@ -2182,24 +2161,17 @@ footer {
 
         <div class="hero-actions">
 
-            <!-- WORKING BUTTON -->
+            <!-- NO ARROW -->
 
             <a
                 href="#projects"
                 class="hero-btn hero-btn-primary"
             >
-                Explore Projects ↓
+                Explore Projects
             </a>
 
 
-            <!-- WORKING BUTTON -->
-
-            <a
-                href="#about"
-                class="hero-btn hero-btn-secondary"
-            >
-                About Me
-            </a>
+            <!-- ABOUT BUTTON REMOVED -->
 
         </div>
 
@@ -2209,13 +2181,8 @@ footer {
 
 
 <!-- =========================================================
-     PROJECT LIBRARY
+     PROJECTS
 ========================================================= -->
-
-<main
-    class="library-page"
-    id="libraryPage"
->
 
 <section id="projects">
 
@@ -2255,7 +2222,7 @@ footer {
         </div>
 
 
-        <!-- SEARCH -->
+        <!-- SEARCH / FILTER -->
 
         <div
             class="toolbar"
@@ -2316,13 +2283,15 @@ footer {
         </div>
 
 
-        <!-- PROJECTS -->
+        <!-- PROJECT GRID -->
 
         <div
             class="project-grid"
             id="projectGrid"
         ></div>
 
+
+        <!-- SEARCH EMPTY STATE -->
 
         <div
             class="empty"
@@ -2343,47 +2312,11 @@ footer {
 
 </section>
 
-
-<!-- =========================================================
-     ABOUT
-========================================================= -->
-
-<section
-    class="about-section"
-    id="about"
->
-
-    <div class="container">
-
-        <div class="about-box">
-
-            <div class="projects-label">
-                About Me
-            </div>
-
-            <h2>
-                Building, learning and creating.
-            </h2>
-
-            <p>
-                I am focused on developing practical software
-                projects and improving my skills through hands-on
-                development. This portfolio showcases the
-                applications, websites and systems I have worked on,
-                along with their technologies and features.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
 </main>
 
 
 <!-- =========================================================
-     DETAILS PAGE
+     PROJECT DETAILS PAGE
 ========================================================= -->
 
 <section
@@ -2411,7 +2344,7 @@ footer {
      FOOTER
 ========================================================= -->
 
-<footer>
+<footer id="siteFooter">
 
     <div class="footer-inner">
 
@@ -2419,9 +2352,9 @@ footer {
             MY <span>PORTFOLIO</span>
         </div>
 
-        <span>
-            © 2026 Rahul Gaikwad • Project Library
-        </span>
+        <div class="footer-description">
+            A collection of my development projects and work.
+        </div>
 
     </div>
 
@@ -2466,13 +2399,17 @@ const projects = [
             "Responsive interface"
         ],
 
-        developmentTime: "2 Months",
+        developmentTime:
+            "2 Months",
 
-        status: "Completed",
+        status:
+            "Completed",
 
-        github: "https://github.com/",
+        github:
+            "https://github.com/",
 
-        live: "https://example.com/"
+        live:
+            "https://example.com/"
     },
 
 
@@ -2507,13 +2444,17 @@ const projects = [
             "Administrative dashboard"
         ],
 
-        developmentTime: "6 Weeks",
+        developmentTime:
+            "6 Weeks",
 
-        status: "Completed",
+        status:
+            "Completed",
 
-        github: "https://github.com/",
+        github:
+            "https://github.com/",
 
-        live: "https://example.com/"
+        live:
+            "https://example.com/"
     },
 
 
@@ -2547,13 +2488,17 @@ const projects = [
             "Netlify deployment"
         ],
 
-        developmentTime: "2 Weeks",
+        developmentTime:
+            "2 Weeks",
 
-        status: "Completed",
+        status:
+            "Completed",
 
-        github: "https://github.com/",
+        github:
+            "https://github.com/",
 
-        live: "https://example.com/"
+        live:
+            "https://example.com/"
     },
 
 
@@ -2586,13 +2531,17 @@ const projects = [
             "Responsive dashboard"
         ],
 
-        developmentTime: "5 Weeks",
+        developmentTime:
+            "5 Weeks",
 
-        status: "Completed",
+        status:
+            "Completed",
 
-        github: "https://github.com/",
+        github:
+            "https://github.com/",
 
-        live: "https://example.com/"
+        live:
+            "https://example.com/"
     },
 
 
@@ -2625,13 +2574,17 @@ const projects = [
             "Order management"
         ],
 
-        developmentTime: "2 Months",
+        developmentTime:
+            "2 Months",
 
-        status: "In Development",
+        status:
+            "In Development",
 
-        github: "https://github.com/",
+        github:
+            "https://github.com/",
 
-        live: "https://example.com/"
+        live:
+            "https://example.com/"
     },
 
 
@@ -2664,13 +2617,17 @@ const projects = [
             "Dynamic weather information"
         ],
 
-        developmentTime: "2 Weeks",
+        developmentTime:
+            "2 Weeks",
 
-        status: "Completed",
+        status:
+            "Completed",
 
-        github: "https://github.com/",
+        github:
+            "https://github.com/",
 
-        live: "https://example.com/"
+        live:
+            "https://example.com/"
     }
 
 ];
@@ -2694,6 +2651,15 @@ const technologyFilter =
 
 const projectCount =
     document.getElementById("projectCount");
+
+const libraryPage =
+    document.getElementById("libraryPage");
+
+const detailsPage =
+    document.getElementById("detailsPage");
+
+const siteFooter =
+    document.getElementById("siteFooter");
 
 
 /* =========================================================
@@ -2868,7 +2834,7 @@ function renderProjects() {
                             rel="noopener noreferrer"
                             class="btn primary"
                         >
-                            Visit Project ↗
+                            Visit Project
                         </a>
 
 
@@ -2876,7 +2842,7 @@ function renderProjects() {
                             class="btn secondary"
                             onclick="openDetails('${project.id}')"
                         >
-                            Details ↗
+                            Details
                         </button>
 
                     </div>
@@ -2938,12 +2904,13 @@ document
         "click",
         () => {
 
+            showLibrary();
+
             document
                 .getElementById("projects")
                 .scrollIntoView({
                     behavior: "smooth"
                 });
-
 
             setTimeout(
                 () => {
@@ -2957,7 +2924,7 @@ document
 
 
 /* =========================================================
-   NAV ACTIVE
+   NAVIGATION
 ========================================================= */
 
 document
@@ -2968,6 +2935,8 @@ document
             link.addEventListener(
                 "click",
                 () => {
+
+                    showLibrary();
 
                     document
                         .querySelectorAll(".nav-link")
@@ -2990,7 +2959,7 @@ document
 
 
 /* =========================================================
-   OPEN DETAILS
+   OPEN PROJECT DETAILS
 ========================================================= */
 
 function openDetails(id) {
@@ -3005,14 +2974,21 @@ function openDetails(id) {
     if (!project) return;
 
 
-    document
-        .getElementById("libraryPage")
-        .classList.add("hidden");
+    /*
+       IMPORTANT:
+       Completely hide home page AND footer.
+       Only project details remain visible.
+    */
 
+    libraryPage.style.display =
+        "none";
 
-    document
-        .getElementById("detailsPage")
-        .classList.add("active");
+    siteFooter.style.display =
+        "none";
+
+    detailsPage.classList.add(
+        "active"
+    );
 
 
     const content =
@@ -3169,7 +3145,7 @@ function openDetails(id) {
                             rel="noopener noreferrer"
                             class="btn primary"
                         >
-                            Live Project ↗
+                            Live Project
                         </a>
 
 
@@ -3179,7 +3155,7 @@ function openDetails(id) {
                             rel="noopener noreferrer"
                             class="btn secondary"
                         >
-                            GitHub ↗
+                            GitHub
                         </a>
 
                     </div>
@@ -3193,29 +3169,34 @@ function openDetails(id) {
     `;
 
 
+    /*
+       Always start directly at the
+       project details page.
+    */
+
     window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "instant"
     });
 
 }
 
 
 /* =========================================================
-   BACK TO PROJECTS
+   RETURN TO HOME / PROJECTS
 ========================================================= */
 
 function showLibrary() {
 
-    document
-        .getElementById("detailsPage")
-        .classList.remove("active");
+    detailsPage.classList.remove(
+        "active"
+    );
 
+    libraryPage.style.display =
+        "block";
 
-    document
-        .getElementById("libraryPage")
-        .classList.remove("hidden");
-
+    siteFooter.style.display =
+        "block";
 
     window.scrollTo({
         top: 0,
