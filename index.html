@@ -7,7 +7,7 @@
 <title>Rahul Gaikwad | Project Portfolio</title>
 
 <meta name="description"
-      content="Professional software project showcase and project library">
+      content="Rahul Gaikwad project portfolio and software project showcase">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,20 +22,27 @@
 ========================================================= */
 
 :root {
-    --bg: #070b12;
-    --surface: #0d131c;
-    --surface-2: #151d29;
-    --text: #f5f7fb;
-    --muted: #9aa7b8;
-    --border: #253044;
-    --accent: #5b8cff;
-    --accent-hover: #79a2ff;
-    --accent-soft: rgba(91,140,255,.14);
+    --bg: #05070d;
+    --surface: #0b1019;
+    --surface-2: #111927;
+    --surface-3: #172235;
+
+    --text: #f8fafc;
+    --muted: #94a3b8;
+
+    --border: rgba(148,163,184,.15);
+
+    --accent: #6d7cff;
+    --accent-2: #9b6cff;
+    --accent-hover: #8794ff;
+
     --success: #4ade80;
-    --success-soft: rgba(74,222,128,.12);
-    --shadow: 0 18px 45px rgba(0,0,0,.35);
-    --radius: 16px;
+
+    --shadow:
+        0 25px 70px rgba(0,0,0,.45);
+
     --max-width: 1280px;
+    --radius: 18px;
 }
 
 
@@ -55,17 +62,57 @@ html {
 
 body {
     font-family: "Inter", sans-serif;
-    background: var(--bg);
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(109,124,255,.13),
+            transparent 35%
+        ),
+        #05070d;
+
     color: var(--text);
+
     line-height: 1.6;
 
-    transition:
-        background .2s ease,
-        color .2s ease;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 75%
+        );
+
+    z-index: -1;
 }
 
 button,
-input {
+input,
+select {
     font: inherit;
 }
 
@@ -74,8 +121,8 @@ button {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 img {
@@ -89,99 +136,276 @@ img {
 ========================================================= */
 
 .container {
-    width: min(
-        calc(100% - 48px),
-        var(--max-width)
-    );
+    width:
+        min(
+            calc(100% - 48px),
+            var(--max-width)
+        );
 
     margin: auto;
 }
 
 
 /* =========================================================
-   NAVBAR
+   PREMIUM NAVBAR
 ========================================================= */
 
 .navbar {
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
 
-    background: rgba(7, 11, 18, .88);
+    background:
+        rgba(5,7,13,.72);
 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+}
+
+.navbar::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    bottom: -1px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(109,124,255,.7),
+            rgba(155,108,255,.7),
+            transparent
+        );
+
+    opacity: .7;
 }
 
 .navbar-inner {
-    min-height: 64px;
+    min-height: 72px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 30px;
 }
 
+
+/* LOGO */
+
 .navbar-brand {
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: -.5px;
-}
-
-.navbar-brand span {
-    color: var(--accent);
-}
-
-.navbar-links {
     display: flex;
+
     align-items: center;
-    gap: 28px;
-}
 
-.navbar-links a {
-    position: relative;
-
-    color: var(--muted);
-
-    font-size: 12px;
-    font-weight: 700;
-
-    transition: color .2s ease;
-}
-
-.navbar-links a:hover {
-    color: var(--text);
-}
-
-.navbar-links a.active {
-    color: var(--text);
-}
-
-.navbar-search {
-    width: 34px;
-    height: 34px;
-
-    display: grid;
-    place-items: center;
-
-    border: 1px solid var(--border);
-    border-radius: 9px;
-
-    background: var(--surface);
-
-    color: var(--muted);
+    gap: 10px;
 
     font-size: 15px;
 
-    transition: .2s ease;
+    font-weight: 800;
+
+    letter-spacing: -.5px;
 }
 
-.navbar-search:hover {
-    border-color: var(--accent);
-    color: var(--text);
+.logo-icon {
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid rgba(255,255,255,.16);
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d7cff,
+            #9b6cff
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 0 25px rgba(109,124,255,.28);
+}
+
+.navbar-brand span {
+    color: #a7b3ff;
+}
+
+
+/* NAV LINKS */
+
+.navbar-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.nav-link {
+    position: relative;
+
+    padding: 9px 13px;
+
+    border-radius: 9px;
+
+    color: #8f9bad;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+.nav-link:hover {
+    color: white;
+
+    background:
+        rgba(255,255,255,.055);
+
+    transform:
+        translateY(-1px);
+}
+
+.nav-link.active {
+    color: white;
+
+    background:
+        rgba(109,124,255,.12);
+}
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 3px;
+
+    width: 4px;
+    height: 4px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 10px var(--accent);
+}
+
+
+/* NAV SEARCH */
+
+.nav-search {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-left: 7px;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color: #aab4c4;
+
+    transition: .25s;
+}
+
+.nav-search:hover {
+    color: white;
+
+    border-color:
+        rgba(109,124,255,.55);
+
+    background:
+        rgba(109,124,255,.12);
+
+    box-shadow:
+        0 0 20px rgba(109,124,255,.15);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* GITHUB */
+
+.nav-github {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-left: 5px;
+
+    padding: 9px 13px;
+
+    border:
+        1px solid rgba(255,255,255,.11);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    color: #dce2ec;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.nav-github:hover {
+    border-color:
+        rgba(109,124,255,.5);
+
+    background:
+        rgba(109,124,255,.1);
+
+    transform:
+        translateY(-2px);
 }
 
 
@@ -190,73 +414,531 @@ img {
 ========================================================= */
 
 .hero {
-    padding: 28px 0 10px;
+    position: relative;
+
+    padding:
+        100px 0
+        78px;
+
+    text-align: center;
+
+    overflow: hidden;
 }
 
-.hero-content {
-    max-width: 850px;
-}
+.hero-glow {
+    position: absolute;
 
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    width: 500px;
+    height: 500px;
 
-    padding: 6px 10px;
+    left: 50%;
+    top: -300px;
 
-    margin-bottom: 18px;
-
-    border: 1px solid var(--border);
-    border-radius: 999px;
-
-    background: var(--surface);
-
-    color: var(--muted);
-
-    font-size: 11px;
-    font-weight: 700;
-
-    text-transform: uppercase;
-    letter-spacing: .6px;
-}
-
-.eyebrow-dot {
-    width: 7px;
-    height: 7px;
+    transform:
+        translateX(-50%);
 
     border-radius: 50%;
 
-    background: var(--accent);
+    background:
+        radial-gradient(
+            circle,
+            rgba(109,124,255,.25),
+            rgba(155,108,255,.1),
+            transparent 70%
+        );
+
+    filter:
+        blur(20px);
+
+    pointer-events: none;
+
+    animation:
+        heroGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+
+    from {
+        transform:
+            translateX(-50%)
+            scale(.9);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            scale(1.15);
+    }
+
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.hero-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        7px 13px;
+
+    margin-bottom: 24px;
+
+    border:
+        1px solid rgba(109,124,255,.25);
+
+    border-radius: 999px;
+
+    background:
+        rgba(109,124,255,.08);
+
+    color:
+        #aeb8ff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    animation:
+        heroReveal .7s ease both;
+}
+
+.hero-badge-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #6d7cff;
+
+    box-shadow:
+        0 0 12px #6d7cff;
 }
 
 .hero h1 {
-    font-size: clamp(38px,5vw,64px);
+    max-width: 900px;
 
-    line-height: 1.04;
+    margin: auto;
 
-    letter-spacing: -3px;
+    font-size:
+        clamp(42px, 7vw, 78px);
 
-    margin-bottom: 18px;
+    line-height: .98;
+
+    letter-spacing: -4px;
+
+    font-weight: 800;
+
+    animation:
+        heroReveal .8s .05s ease both;
 }
 
 .hero h1 span {
-    color: var(--accent);
+    background:
+        linear-gradient(
+            90deg,
+            #6d7cff,
+            #b07cff,
+            #6d7cff
+        );
+
+    background-size:
+        200% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+    animation:
+        textGradient 5s linear infinite;
+}
+
+@keyframes textGradient {
+
+    to {
+        background-position:
+            200% center;
+    }
+
 }
 
 .hero-description {
-    max-width: 700px;
+    max-width: 650px;
 
-    color: var(--muted);
+    margin:
+        24px auto 0;
 
-    font-size: 16px;
+    color:
+        #8f9bad;
 
-    line-height: 1.75;
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+
+    animation:
+        heroReveal .8s .12s ease both;
+}
+
+.hero-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 32px;
+
+    animation:
+        heroReveal .8s .2s ease both;
+}
+
+.hero-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 45px;
+
+    padding:
+        0 18px;
+
+    border-radius:
+        11px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    transition:
+        .25s;
+}
+
+.hero-btn-primary {
+    border:
+        1px solid #6d7cff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d7cff,
+            #8c67ff
+        );
+
+    color:
+        white;
+
+    box-shadow:
+        0 10px 30px
+        rgba(109,124,255,.2);
+}
+
+.hero-btn-primary:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(109,124,255,.32);
+}
+
+.hero-btn-secondary {
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:
+        #cbd5e1;
+}
+
+.hero-btn-secondary:hover {
+    border-color:
+        rgba(109,124,255,.4);
+
+    background:
+        rgba(109,124,255,.08);
+
+    transform:
+        translateY(-3px);
+}
+
+@keyframes heroReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
 }
 
 
 /* =========================================================
-   SECTION HEADER
+   NAME HEADER
 ========================================================= */
+
+.name-header {
+    display: none;
+}
+
+
+/* =========================================================
+   PROJECT SECTION HEADER
+========================================================= */
+
+.projects-heading {
+    padding:
+        20px 0
+        25px;
+}
+
+.projects-heading-top {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.projects-label {
+    margin-bottom: 8px;
+
+    color:
+        #7d8cff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.projects-heading h2 {
+    font-size:
+        clamp(28px,4vw,40px);
+
+    line-height: 1;
+
+    letter-spacing: -1.8px;
+}
+
+.projects-heading p {
+    margin-top: 10px;
+
+    color:
+        #7f8b9d;
+
+    font-size: 13px;
+}
+
+
+/* PROJECT COUNT */
+
+.project-count {
+    padding:
+        7px 11px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        #9aa6b7;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    white-space:
+        nowrap;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding:
+        14px;
+
+    margin-bottom:
+        25px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(11,16,25,.75);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.18);
+}
+
+.search-box {
+    position: relative;
+
+    flex: 1;
+
+    max-width: 500px;
+}
+
+.search-box input {
+    width: 100%;
+
+    height: 43px;
+
+    padding:
+        0 15px 0 43px;
+
+    outline: none;
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        white;
+
+    font-size:
+        12px;
+
+    transition:
+        .25s;
+}
+
+.search-box input::placeholder {
+    color:
+        #687588;
+}
+
+.search-box input:focus {
+    border-color:
+        rgba(109,124,255,.55);
+
+    background:
+        rgba(109,124,255,.045);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(109,124,255,.08);
+}
+
+.search-icon {
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        #6f7d90;
+
+    font-size:
+        14px;
+}
+
+
+/* FILTER */
+
+.filter-select {
+    height: 43px;
+
+    padding:
+        0 13px;
+
+    outline: none;
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius:
+        10px;
+
+    background:
+        #101724;
+
+    color:
+        #b8c1ce;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+}
 
 
 /* =========================================================
@@ -277,6 +959,7 @@ img {
 
 /* =========================================================
    PROJECT CARD
+   🔒 ORIGINAL CARD DESIGN
 ========================================================= */
 
 .project-card {
@@ -308,9 +991,6 @@ img {
             var(--border)
         );
 }
-
-
-/* PROJECT IMAGE */
 
 .project-image {
     position: relative;
@@ -355,9 +1035,6 @@ img {
     backdrop-filter: blur(8px);
 }
 
-
-/* PROJECT CONTENT */
-
 .project-content {
     padding: 21px;
 }
@@ -384,9 +1061,6 @@ img {
     line-height: 1.7;
 }
 
-
-/* TECHNOLOGY BADGES */
-
 .technologies {
     display: flex;
     flex-wrap: wrap;
@@ -409,11 +1083,6 @@ img {
     font-size: 10px;
     font-weight: 600;
 }
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
 
 .actions {
     display: flex;
@@ -464,7 +1133,7 @@ img {
 
 
 /* =========================================================
-   EMPTY STATE
+   EMPTY
 ========================================================= */
 
 .empty {
@@ -475,6 +1144,7 @@ img {
     margin-bottom: 70px;
 
     border: 1px dashed var(--border);
+
     border-radius: var(--radius);
 
     text-align: center;
@@ -506,7 +1176,8 @@ img {
 .details-page {
     display: none;
 
-    padding: 20px 0 90px;
+    padding:
+        40px 0 90px;
 }
 
 .details-page.active {
@@ -517,29 +1188,57 @@ img {
     display: none;
 }
 
-body.details-open .name-header {
-    display: none;
-}
-
 .back-btn {
-    border: 0;
+    position: relative;
 
-    background: transparent;
+    display: inline-flex;
 
-    color: var(--muted);
+    align-items: center;
 
-    font-size: 13px;
-    font-weight: 700;
+    justify-content: center;
 
-    margin: 0 0 32px auto;
+    margin:
+        0 0 35px auto;
 
-    padding: 5px 0;
+    margin-left: auto;
 
-    cursor: pointer;
+    padding:
+        11px 17px;
+
+    min-height:
+        42px;
+
+    border:
+        1px solid rgba(109,124,255,.35);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(109,124,255,.08);
+
+    color:
+        #b8c2ff;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    transition:
+        .2s;
 }
 
 .back-btn:hover {
-    color: var(--text);
+    background:
+        rgba(109,124,255,.16);
+
+    border-color:
+        rgba(109,124,255,.65);
+
+    transform:
+        translateX(-4px);
 }
 
 .details-header {
@@ -554,6 +1253,7 @@ body.details-open .name-header {
     color: var(--accent);
 
     font-size: 11px;
+
     font-weight: 800;
 
     letter-spacing: 1px;
@@ -564,11 +1264,14 @@ body.details-open .name-header {
 .details-title {
     margin-bottom: 15px;
 
-    font-size: clamp(34px,5vw,56px);
+    font-size:
+        clamp(34px,5vw,56px);
 
-    line-height: 1.05;
+    line-height:
+        1.05;
 
-    letter-spacing: -2.5px;
+    letter-spacing:
+        -2.5px;
 }
 
 .details-description {
@@ -581,35 +1284,41 @@ body.details-open .name-header {
     line-height: 1.8;
 }
 
-
-/* DETAILS IMAGE */
-
 .details-preview {
     width: 100%;
+
     max-width: 720px;
+
     overflow: hidden;
 
-    margin: 0 auto 35px;
+    margin:
+        0 auto 35px;
 
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border:
+        1px solid var(--border);
 
-    background: var(--surface);
+    border-radius:
+        var(--radius);
+
+    background:
+        var(--surface);
 }
 
 .details-preview img {
     display: block;
+
     width: 100%;
+
     height: auto;
+
     max-height: 450px;
 
-    aspect-ratio: 16 / 8;
+    aspect-ratio:
+        16 / 8;
 
-    object-fit: cover;
+    object-fit:
+        cover;
 }
-
-
-/* DETAILS LAYOUT */
 
 .details-layout {
     display: grid;
@@ -638,9 +1347,6 @@ body.details-open .name-header {
     line-height: 1.85;
 }
 
-
-/* FEATURES */
-
 .features {
     list-style: none;
 
@@ -653,6 +1359,7 @@ body.details-open .name-header {
 
 .features li {
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -669,30 +1376,33 @@ body.details-open .name-header {
     flex-shrink: 0;
 
     display: grid;
+
     place-items: center;
 
     border-radius: 50%;
 
-    background: var(--success-soft);
+    background: rgba(74,222,128,.12);
 
     color: var(--success);
 
     font-size: 11px;
+
     font-weight: 800;
 }
-
-
-/* SIDEBAR */
 
 .sidebar-box {
     padding: 20px;
 
     margin-bottom: 15px;
 
-    border: 1px solid var(--border);
-    border-radius: 14px;
+    border:
+        1px solid var(--border);
 
-    background: var(--surface);
+    border-radius:
+        14px;
+
+    background:
+        var(--surface);
 }
 
 .info {
@@ -704,7 +1414,8 @@ body.details-open .name-header {
 
     padding: 12px 0;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
 
     font-size: 13px;
 }
@@ -729,6 +1440,7 @@ body.details-open .name-header {
 
 .detail-techs {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 6px;
@@ -754,32 +1466,60 @@ body.details-open .name-header {
 ========================================================= */
 
 footer {
-    border-top: 1px solid var(--border);
+    position: relative;
 
-    padding: 26px 0;
+    border-top:
+        1px solid rgba(255,255,255,.08);
 
-    color: var(--muted);
+    padding:
+        45px 0;
 
-    font-size: 11px;
+    color:
+        #718096;
+
+    font-size:
+        11px;
+
+    background:
+        rgba(3,5,10,.55);
 }
 
 .footer-inner {
-    max-width: var(--max-width);
+    max-width:
+        var(--max-width);
 
     margin: auto;
 
-    padding: 0 28px;
+    padding:
+        0 28px;
 
     display: flex;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
 
     gap: 20px;
 }
 
+.footer-brand {
+    color:
+        #cbd5e1;
+
+    font-weight:
+        800;
+}
+
+.footer-brand span {
+    color:
+        var(--accent);
+}
+
 
 /* =========================================================
-   TABLET
+   RESPONSIVE
 ========================================================= */
 
 @media(max-width:1050px) {
@@ -790,574 +1530,305 @@ footer {
     }
 
     .details-layout {
-        grid-template-columns: 1fr;
-        gap: 25px;
+        grid-template-columns:
+            1fr;
+
+        gap:
+            25px;
     }
 
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media(max-width:720px) {
 
     .container {
         width:
-            min(
-                calc(100% - 32px),
-                var(--max-width)
-            );
+            calc(100% - 24px);
+
+        max-width:
+            100%;
     }
 
     .navbar-inner {
-        min-height: 58px;
-        gap: 15px;
+        min-height:
+            60px;
+
+        gap:
+            10px;
     }
 
     .navbar-brand {
-        font-size: 14px;
+        font-size:
+            13px;
+    }
+
+    .logo-icon {
+        width:
+            31px;
+
+        height:
+            31px;
+
+        font-size:
+            13px;
     }
 
     .navbar-links {
-        gap: 14px;
+        gap:
+            3px;
     }
 
-    .navbar-links a {
-        font-size: 10px;
+    .nav-link {
+        padding:
+            8px 7px;
+
+        font-size:
+            9px;
     }
 
-    .navbar-search {
-        width: 31px;
-        height: 31px;
-        font-size: 13px;
+    .nav-github {
+        display:
+            none;
     }
+
+    .nav-search {
+        width:
+            32px;
+
+        height:
+            32px;
+
+        margin-left:
+            2px;
+    }
+
+
+    /* HERO */
 
     .hero {
-        padding: 48px 0 28px;
+        padding:
+            70px 0
+            55px;
     }
 
     .hero h1 {
-        letter-spacing: -2px;
+        font-size:
+            43px;
+
+        letter-spacing:
+            -2.5px;
     }
 
     .hero-description {
-        font-size: 14px;
+        font-size:
+            13px;
     }
 
+    .hero-actions {
+        flex-direction:
+            column;
+
+        max-width:
+            250px;
+
+        margin:
+            28px auto 0;
+    }
+
+    .hero-btn {
+        width:
+            100%;
+    }
+
+
+    /* PROJECT HEADER */
+
+    .projects-heading-top {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+    .project-count {
+        align-self:
+            flex-start;
+    }
+
+
+    /* TOOLBAR */
+
     .toolbar {
-        align-items: stretch;
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
     }
 
     .search-box {
-        max-width: none;
+        max-width:
+            none;
     }
+
+    .filter-select {
+        width:
+            100%;
+    }
+
+
+    /* GRID */
 
     .project-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 16px;
-    }
+        gap:
+            14px;
 
-    .details-title {
-        letter-spacing: -1.5px;
-    }
-
-    .details-preview img {
-        aspect-ratio: 16 / 9;
-    }
-
-    .footer-inner {
-        padding: 0 16px;
-
-        flex-direction: column;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media(max-width:420px) {
-
-    .brand span {
-        font-size: 14px;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    .actions {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .detail-actions {
-        flex-direction: column;
-    }
-
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-projects {
-    padding: 34px 0 8px;
-}
-
-.about-box {
-    padding: 24px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-}
-
-.about-box h2 {
-    margin: 5px 0 8px;
-    font-size: 22px;
-    letter-spacing: -.6px;
-}
-
-.about-box p {
-    max-width: 760px;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.75;
-}
-
-
-/* =========================================================
-   MOBILE PROJECT CARD FIX
-========================================================= */
-
-.project-card,
-.project-content,
-.project-title,
-.project-description,
-.technologies,
-.actions {
-    min-width: 0;
-}
-
-.project-title,
-.project-description,
-.details-title,
-.details-description,
-.details-main p,
-.info-value {
-    overflow-wrap: anywhere;
-    word-break: normal;
-}
-
-.project-title {
-    font-size: 17px;
-}
-
-.project-description {
-    min-height: 0;
-}
-
-@media (max-width: 720px) {
-
-    .container {
-        width: calc(100% - 24px);
-        max-width: 100%;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        padding-bottom: 45px;
+        padding-bottom:
+            45px;
     }
 
     .project-card {
-        width: 100%;
-        border-radius: 12px;
+        width:
+            100%;
+
+        border-radius:
+            12px;
     }
 
     .project-image {
-        aspect-ratio: 16 / 9;
+        aspect-ratio:
+            16 / 9;
     }
 
     .project-content {
-        padding: 16px;
+        padding:
+            16px;
     }
 
     .project-title {
-        font-size: 15px;
-        line-height: 1.3;
-        letter-spacing: -.25px;
-        margin-bottom: 6px;
+        font-size:
+            15px;
     }
 
     .project-description {
-        font-size: 12px;
-        line-height: 1.55;
-        margin-bottom: 13px;
-    }
+        font-size:
+            12px;
 
-    .technologies {
-        gap: 5px;
-        margin-bottom: 15px;
+        line-height:
+            1.55;
     }
 
     .tech {
-        padding: 4px 7px;
-        font-size: 9px;
-    }
-
-    .actions {
-        gap: 7px;
+        font-size:
+            9px;
     }
 
     .btn {
-        min-height: 38px;
-        padding: 0 10px;
-        font-size: 10px;
+        min-height:
+            38px;
+
+        font-size:
+            10px;
     }
 
-    .status {
-        top: 9px;
-        left: 9px;
-        padding: 4px 7px;
-        font-size: 9px;
-    }
 
-    .hero {
-        padding: 22px 0 8px;
-    }
+    /* DETAILS */
 
-    .details-preview {
-        max-width: 100%;
-        margin-bottom: 25px;
+    .details-title {
+        letter-spacing:
+            -1.5px;
     }
 
     .details-preview img {
-        max-height: 260px;
-        aspect-ratio: 16 / 9;
+        aspect-ratio:
+            16 / 9;
+
+        max-height:
+            260px;
     }
+
+    .detail-actions {
+        flex-direction:
+            column;
+    }
+
+
+    /* FOOTER */
+
+    .footer-inner {
+        padding:
+            0 16px;
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
 }
 
-@media (max-width: 420px) {
 
-    .container {
-        width: calc(100% - 20px);
+@media(max-width:420px) {
+
+    .navbar-brand {
+        font-size:
+            12px;
+    }
+
+    .nav-link {
+        font-size:
+            8px;
+
+        padding:
+            8px 5px;
+    }
+
+    .hero h1 {
+        font-size:
+            37px;
     }
 
     .project-content {
-        padding: 14px;
-    }
-
-    .project-title {
-        font-size: 15px;
-    }
-
-    .project-description {
-        font-size: 11.5px;
-        line-height: 1.5;
+        padding:
+            14px;
     }
 
     .actions {
-        flex-direction: row;
+        flex-direction:
+            row;
     }
 
     .btn {
-        width: auto;
-        min-height: 36px;
+        width:
+            auto;
     }
+
 }
 
 
 /* =========================================================
-   RAHUL GAIKWAD — ATTRACTIVE PROJECT HEADER
+   REDUCED MOTION
 ========================================================= */
 
-.name-header {
-    position: relative;
-    overflow: hidden;
-    padding: 38px 20px 28px;
-    text-align: center;
-    border-bottom: 1px solid var(--border);
-    background:
-        radial-gradient(circle at 50% 0%, rgba(91,140,255,.18), transparent 48%),
-        linear-gradient(180deg, #0b1220 0%, #070b12 100%);
-}
+@media(prefers-reduced-motion: reduce) {
 
-.name-header-inner {
-    position: relative;
-    z-index: 2;
-}
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            .01ms !important;
 
-.name-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 11px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(91,140,255,.28);
-    border-radius: 999px;
-    background: rgba(91,140,255,.08);
-    color: #9db9ff;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1.4px;
-    animation: badgeFloat 3s ease-in-out infinite;
-}
+        animation-iteration-count:
+            1 !important;
 
-.name-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #5b8cff;
-    box-shadow: 0 0 12px rgba(91,140,255,.9);
-    animation: dotPulse 1.8s ease-in-out infinite;
-}
-
-.my-name {
-    margin: 0;
-    font-size: clamp(30px, 4.5vw, 52px);
-    line-height: 1;
-    letter-spacing: -2.5px;
-    font-weight: 800;
-    color: #f5f7fb;
-    animation: nameReveal .8s ease both;
-}
-
-.my-name span {
-    color: #ffffff;
-}
-
-.my-name strong {
-    font-weight: 800;
-    background: linear-gradient(90deg, #5b8cff, #9a7cff, #5b8cff);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: gradientMove 4s linear infinite;
-}
-
-.name-subtitle {
-    margin: 11px 0 0;
-    color: #8997ab;
-    font-size: 12px;
-    letter-spacing: .8px;
-    animation: nameReveal .8s .15s ease both;
-}
-
-.name-glow {
-    position: absolute;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    filter: blur(65px);
-    opacity: .14;
-    pointer-events: none;
-}
-
-.glow-one {
-    top: -150px;
-    left: 18%;
-    background: #5b8cff;
-    animation: glowMoveOne 7s ease-in-out infinite alternate;
-}
-
-.glow-two {
-    top: -130px;
-    right: 15%;
-    background: #9a7cff;
-    animation: glowMoveTwo 8s ease-in-out infinite alternate;
-}
-
-
-/* =========================================================
-   PROFESSIONAL COLORFUL BACK BUTTON
-========================================================= */
-
-.back-btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 30px auto;
-    margin-left: auto;
-    margin-right: 0;
-    padding: 12px 18px;
-    min-height: 44px;
-
-    border: 1px solid rgba(91,140,255,.45);
-    border-radius: 11px;
-
-    background: linear-gradient(135deg, #2563eb 0%, #ffffff 50%, #dc2626 100%);
-
-    color: #0b1220;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: .1px;
-
-    box-shadow:
-        0 8px 24px rgba(0,0,0,.22),
-        0 0 18px rgba(91,140,255,.08);
-
-    transition:
-        transform .2s ease,
-        background .2s ease,
-        border-color .2s ease,
-        color .2s ease,
-        box-shadow .2s ease;
-}
-
-.back-btn:hover {
-    transform: translateX(-5px);
-    background: linear-gradient(135deg, #1d4ed8 0%, #ffffff 50%, #b91c1c 100%);
-    border-color: rgba(255,255,255,.9);
-    color: #0b1220;
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,.28),
-        0 0 22px rgba(91,140,255,.18);
-}
-
-.back-btn:active {
-    transform: translateX(-2px) scale(.98);
-}
-
-@media (max-width: 720px) {
-
-    .back-btn {
-        margin-left: auto;
-        padding: 11px 16px;
-        min-height: 42px;
-        font-size: 12px;
-    }
-}
-
-@keyframes nameReveal {
-
-    from {
-        opacity: 0;
-        transform: translateY(14px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-@keyframes gradientMove {
-
-    0% {
-        background-position: 0% center;
-    }
-
-    100% {
-        background-position: 200% center;
-    }
-
-}
-
-@keyframes badgeFloat {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-3px);
-    }
-
-}
-
-@keyframes dotPulse {
-
-    0%, 100% {
-        transform: scale(1);
-        opacity: .8;
-    }
-
-    50% {
-        transform: scale(1.35);
-        opacity: 1;
-    }
-
-}
-
-@keyframes glowMoveOne {
-
-    from {
-        transform: translate(-30px, 0);
-    }
-
-    to {
-        transform: translate(80px, 20px);
-    }
-
-}
-
-@keyframes glowMoveTwo {
-
-    from {
-        transform: translate(30px, 10px);
-    }
-
-    to {
-        transform: translate(-80px, 25px);
-    }
-
-}
-
-@media (max-width: 720px) {
-
-    .name-header {
-        padding: 28px 14px 22px;
-    }
-
-    .my-name {
-        font-size: 30px;
-        letter-spacing: -1.2px;
-    }
-
-    .name-subtitle {
-        font-size: 10px;
-        letter-spacing: .5px;
-    }
-
-    .back-btn {
-        margin-bottom: 22px;
-        padding: 9px 12px;
-    }
-
-}
-
-@media (max-width: 380px) {
-
-    .my-name {
-        font-size: 27px;
-    }
-
-    .name-badge {
-        font-size: 8px;
-    }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    .name-header *,
-    .name-header::before,
-    .name-header::after {
-        animation: none !important;
+        scroll-behavior:
+            auto !important;
     }
 
 }
@@ -1370,38 +1841,69 @@ footer {
 
 
 <!-- =========================================================
-     NAVBAR
+     PREMIUM NAVBAR
 ========================================================= -->
 
 <nav class="navbar">
 
     <div class="container navbar-inner">
 
-        <a href="#projects" class="navbar-brand">
+        <a
+            href="#home"
+            class="navbar-brand"
+        >
+
+            <div class="logo-icon">
+                ✦
+            </div>
+
             Rahul <span>Gaikwad</span>
+
         </a>
+
 
         <div class="navbar-links">
 
-            <a href="#projects" class="active">
+            <a
+                href="#home"
+                class="nav-link active"
+            >
                 Home
             </a>
 
-            <a href="#projects">
+            <a
+                href="#projects"
+                class="nav-link"
+            >
                 Projects
             </a>
 
-            <a href="#about">
+            <a
+                href="#about"
+                class="nav-link"
+            >
                 About
             </a>
 
+
             <button
-                class="navbar-search"
+                class="nav-search"
+                id="navSearch"
                 type="button"
                 aria-label="Search projects"
             >
                 🔍
             </button>
+
+
+            <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-github"
+            >
+                GitHub ↗
+            </a>
 
         </div>
 
@@ -1411,24 +1913,64 @@ footer {
 
 
 <!-- =========================================================
-     ATTRACTIVE NAME HEADER
+     HERO
 ========================================================= -->
 
-<header class="name-header">
+<header
+    class="hero"
+    id="home"
+>
 
-    <div class="name-glow glow-one"></div>
-    <div class="name-glow glow-two"></div>
+    <div class="hero-glow"></div>
 
-    <div class="name-header-inner">
 
-        <h1 class="my-name">
-            <span>Rahul</span>
-            <strong>Gaikwad</strong>
+    <div class="container hero-content">
+
+        <div class="hero-badge">
+
+            <span class="hero-badge-dot"></span>
+
+            Personal Project Showcase
+
+        </div>
+
+
+        <h1>
+
+            Building Ideas Into
+            <span>Real Projects.</span>
+
         </h1>
 
-        <p class="name-subtitle">
-            Projects • Applications • Development
+
+        <p class="hero-description">
+
+            Explore my collection of applications,
+            websites and development projects —
+            including the technologies, features and
+            live experiences behind each one.
+
         </p>
+
+
+        <div class="hero-actions">
+
+            <a
+                href="#projects"
+                class="hero-btn hero-btn-primary"
+            >
+                Explore Projects ↓
+            </a>
+
+
+            <a
+                href="#about"
+                class="hero-btn hero-btn-secondary"
+            >
+                About Me
+            </a>
+
+        </div>
 
     </div>
 
@@ -1436,7 +1978,7 @@ footer {
 
 
 <!-- =========================================================
-     HOMEPAGE
+     PROJECT LIBRARY
 ========================================================= -->
 
 <main
@@ -1445,11 +1987,84 @@ footer {
 >
 
 
-<!-- PROJECT SECTION -->
-
-<section id="projects">
+<section
+    id="projects"
+>
 
     <div class="container">
+
+
+        <!-- PROJECT HEADING -->
+
+        <div class="projects-heading">
+
+            <div class="projects-heading-top">
+
+                <div>
+
+                    <div class="projects-label">
+                        My Work
+                    </div>
+
+                    <h2>
+                        Featured Projects
+                    </h2>
+
+                    <p>
+                        A collection of projects I've built and developed.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="project-count"
+                    id="projectCount"
+                >
+                    0 projects
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH / FILTER -->
+
+        <div
+            class="toolbar"
+            id="projectToolbar"
+        >
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search projects, technologies..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <select
+                class="filter-select"
+                id="technologyFilter"
+            >
+
+                <option value="all">
+                    All Technologies
+                </option>
+
+            </select>
+
+        </div>
+
 
         <!-- PROJECT GRID -->
 
@@ -1471,7 +2086,57 @@ footer {
             </h3>
 
             <p>
-                Try another search or technology.
+                Try another project name or technology.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    id="about"
+    style="padding:20px 0 80px;"
+>
+
+    <div class="container">
+
+        <div class="sidebar-box">
+
+            <div class="projects-label">
+                About
+            </div>
+
+            <h2
+                style="
+                    font-size:28px;
+                    margin-bottom:10px;
+                    letter-spacing:-1px;
+                "
+            >
+                A little about this portfolio.
+            </h2>
+
+            <p
+                style="
+                    max-width:760px;
+                    color:var(--muted);
+                    font-size:13px;
+                    line-height:1.8;
+                "
+            >
+                This project library is a collection of my
+                software applications, websites and development
+                work. Each project includes its technologies,
+                features, development information and links
+                to explore the project further.
             </p>
 
         </div>
@@ -1479,6 +2144,7 @@ footer {
     </div>
 
 </section>
+
 
 </main>
 
@@ -1494,14 +2160,17 @@ footer {
 
     <div class="container">
 
+
         <button
             class="back-btn"
             onclick="showLibrary()"
         >
-            Back to Projects
+            ← Back to Projects
         </button>
 
+
         <div id="detailsContent"></div>
+
 
     </div>
 
@@ -1515,6 +2184,10 @@ footer {
 <footer>
 
     <div class="footer-inner">
+
+        <div class="footer-brand">
+            Rahul <span>Gaikwad</span>
+        </div>
 
         <span>
             © 2026 Rahul Gaikwad • Project Library
@@ -1534,7 +2207,6 @@ footer {
 const projects = [
 
     {
-
         id: "online-polling",
 
         name: "Online Polling System",
@@ -1575,12 +2247,10 @@ const projects = [
 
         live:
             "https://example.com/"
-
     },
 
 
     {
-
         id: "hospital-management",
 
         name: "Hospital Management System",
@@ -1622,12 +2292,10 @@ const projects = [
 
         live:
             "https://example.com/"
-
     },
 
 
     {
-
         id: "developer-portfolio",
 
         name: "Developer Portfolio",
@@ -1668,12 +2336,10 @@ const projects = [
 
         live:
             "https://example.com/"
-
     },
 
 
     {
-
         id: "task-management",
 
         name: "Task Management Application",
@@ -1713,12 +2379,10 @@ const projects = [
 
         live:
             "https://example.com/"
-
     },
 
 
     {
-
         id: "ecommerce-platform",
 
         name: "E-Commerce Platform",
@@ -1758,12 +2422,10 @@ const projects = [
 
         live:
             "https://example.com/"
-
     },
 
 
     {
-
         id: "weather-dashboard",
 
         name: "Weather Dashboard",
@@ -1803,10 +2465,60 @@ const projects = [
 
         live:
             "https://example.com/"
-
     }
 
 ];
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const grid =
+    document.getElementById("projectGrid");
+
+const empty =
+    document.getElementById("emptyState");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const technologyFilter =
+    document.getElementById("technologyFilter");
+
+const projectCount =
+    document.getElementById("projectCount");
+
+
+/* =========================================================
+   TECHNOLOGY FILTER
+========================================================= */
+
+function createTechnologyFilter() {
+
+    const technologies =
+        [...new Set(
+            projects.flatMap(
+                project => project.technologies
+            )
+        )].sort();
+
+    technologies.forEach(technology => {
+
+        const option =
+            document.createElement("option");
+
+        option.value =
+            technology;
+
+        option.textContent =
+            technology;
+
+        technologyFilter.appendChild(option);
+
+    });
+
+}
 
 
 /* =========================================================
@@ -1815,23 +2527,69 @@ const projects = [
 
 function renderProjects() {
 
-    const grid =
-        document.getElementById("projectGrid");
+    const search =
+        searchInput.value
+            .toLowerCase()
+            .trim();
 
-    const empty =
-        document.getElementById("emptyState");
+    const selectedTechnology =
+        technologyFilter.value;
 
-    const filtered = projects;
+
+    const filtered =
+        projects.filter(project => {
+
+            const matchesSearch =
+                project.name
+                    .toLowerCase()
+                    .includes(search)
+
+                ||
+
+                project.description
+                    .toLowerCase()
+                    .includes(search)
+
+                ||
+
+                project.technologies.some(
+                    tech =>
+                        tech
+                            .toLowerCase()
+                            .includes(search)
+                );
+
+
+            const matchesTechnology =
+                selectedTechnology === "all"
+
+                ||
+
+                project.technologies.includes(
+                    selectedTechnology
+                );
+
+
+            return (
+                matchesSearch &&
+                matchesTechnology
+            );
+
+        });
+
 
     grid.innerHTML = "";
+
 
     filtered.forEach(project => {
 
         const card =
             document.createElement("article");
 
+
         card.className =
             "project-card";
+
 
         card.innerHTML = `
 
@@ -1911,24 +2669,18 @@ function renderProjects() {
 
         `;
 
+
         grid.appendChild(card);
 
     });
 
 
-    const projectCount =
-        document.getElementById("projectCount");
-
-    if (projectCount) {
-
-        projectCount.textContent =
-            `${filtered.length} ${
-                filtered.length === 1
-                    ? "project"
-                    : "projects"
-            }`;
-
-    }
+    projectCount.textContent =
+        `${filtered.length} ${
+            filtered.length === 1
+                ? "project"
+                : "projects"
+        }`;
 
 
     if(filtered.length === 0) {
@@ -1945,6 +2697,73 @@ function renderProjects() {
 
 
 /* =========================================================
+   SEARCH
+========================================================= */
+
+searchInput.addEventListener(
+    "input",
+    renderProjects
+);
+
+
+technologyFilter.addEventListener(
+    "change",
+    renderProjects
+);
+
+
+/* =========================================================
+   NAV SEARCH BUTTON
+========================================================= */
+
+document
+    .getElementById("navSearch")
+    .addEventListener(
+        "click",
+        () => {
+
+            document
+                .getElementById("projects")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            setTimeout(
+                () => searchInput.focus(),
+                500
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   NAV ACTIVE STATE
+========================================================= */
+
+document
+    .querySelectorAll(".nav-link")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                document
+                    .querySelectorAll(".nav-link")
+                    .forEach(item =>
+                        item.classList.remove("active")
+                    );
+
+                link.classList.add("active");
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
    OPEN DETAILS
 ========================================================= */
 
@@ -1956,20 +2775,23 @@ function openDetails(id) {
                 project.id === id
         );
 
+
     if(!project) return;
+
 
     document
         .getElementById("libraryPage")
         .classList.add("hidden");
 
+
     document
         .getElementById("detailsPage")
         .classList.add("active");
 
-    document.body.classList.add("details-open");
 
     const content =
         document.getElementById("detailsContent");
+
 
     content.innerHTML = `
 
@@ -1979,9 +2801,11 @@ function openDetails(id) {
                 Project Details
             </div>
 
+
             <h1 class="details-title">
                 ${project.name}
             </h1>
+
 
             <p class="details-description">
                 ${project.description}
@@ -2002,11 +2826,14 @@ function openDetails(id) {
 
         <div class="details-layout">
 
+
             <div class="details-main">
+
 
                 <h2>
                     Description
                 </h2>
+
 
                 <p>
                     ${project.longDescription}
@@ -2016,6 +2843,7 @@ function openDetails(id) {
                 <h2>
                     Main Features
                 </h2>
+
 
                 <ul class="features">
 
@@ -2041,10 +2869,12 @@ function openDetails(id) {
 
                 </ul>
 
+
             </div>
 
 
             <aside class="details-sidebar">
+
 
                 <div class="sidebar-box">
 
@@ -2107,6 +2937,7 @@ function openDetails(id) {
 
                     <div class="detail-actions">
 
+
                         <a
                             href="${project.live}"
                             target="_blank"
@@ -2126,11 +2957,14 @@ function openDetails(id) {
                             GitHub ↗
                         </a>
 
+
                     </div>
 
                 </div>
 
+
             </aside>
+
 
         </div>
 
@@ -2146,7 +2980,7 @@ function openDetails(id) {
 
 
 /* =========================================================
-   BACK TO PROJECT LIBRARY
+   BACK TO PROJECTS
 ========================================================= */
 
 function showLibrary() {
@@ -2155,11 +2989,11 @@ function showLibrary() {
         .getElementById("detailsPage")
         .classList.remove("active");
 
+
     document
         .getElementById("libraryPage")
         .classList.remove("hidden");
 
-    document.body.classList.remove("details-open");
 
     window.scrollTo({
         top: 0,
@@ -2172,6 +3006,8 @@ function showLibrary() {
 /* =========================================================
    INITIALIZE
 ========================================================= */
+
+createTechnologyFilter();
 
 renderProjects();
 
