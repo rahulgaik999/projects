@@ -50,7 +50,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 body {
@@ -74,6 +74,9 @@ body {
     line-height: 1.6;
 
     overflow-x: hidden;
+
+    /* Prevents accidental horizontal movement */
+    width: 100%;
 }
 
 a {
@@ -104,7 +107,7 @@ img {
             var(--max-width)
         );
 
-    margin: auto;
+    margin: 0 auto;
 }
 
 
@@ -194,6 +197,8 @@ img {
 
     transition:
         .2s ease;
+
+    flex-shrink: 0;
 }
 
 .navbar-brand:hover {
@@ -213,8 +218,14 @@ img {
     align-items:
         center;
 
+    justify-content:
+        flex-end;
+
     gap:
         8px;
+
+    min-width:
+        0;
 }
 
 .nav-link {
@@ -239,6 +250,9 @@ img {
     transition:
         color .2s ease,
         background .2s ease;
+
+    white-space:
+        nowrap;
 }
 
 .nav-link:hover {
@@ -324,6 +338,9 @@ img {
 
     transition:
         .2s ease;
+
+    white-space:
+        nowrap;
 }
 
 .nav-github:hover {
@@ -834,7 +851,6 @@ img {
 
 /* =========================================================
    PROJECT CARDS
-   UNCHANGED
 ========================================================= */
 
 .project-grid {
@@ -1173,6 +1189,11 @@ img {
         none;
 }
 
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
 .back-btn {
     display:
         flex;
@@ -1181,19 +1202,19 @@ img {
         0 0 35px auto;
 
     padding:
-        11px 17px;
+        12px 19px;
 
     border:
-        1px solid rgba(168,85,247,.20);
+        1px solid rgba(168,85,247,.40);
 
     border-radius:
         10px;
 
     background:
-        rgba(168,85,247,.055);
+        rgba(139,92,246,.16);
 
     color:
-        #c0abd2;
+        #ffffff;
 
     font-size:
         12px;
@@ -1205,18 +1226,23 @@ img {
         pointer;
 
     transition:
-        .2s;
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
 }
 
 .back-btn:hover {
     background:
-        rgba(168,85,247,.10);
+        rgba(139,92,246,.28);
+
+    border-color:
+        rgba(192,132,252,.65);
 
     color:
         #ffffff;
 
     transform:
-        translateX(-4px);
+        translateX(-3px);
 }
 
 .details-header {
@@ -1514,17 +1540,20 @@ footer {
 
     color:
         #858b99;
+
+    width:
+        100%;
 }
 
 .footer-inner {
     max-width:
         var(--max-width);
 
+    width:
+        calc(100% - 48px);
+
     margin:
         auto;
-
-    padding:
-        0 28px;
 
     display:
         grid;
@@ -1542,6 +1571,9 @@ footer {
 .footer-main {
     max-width:
         780px;
+
+    min-width:
+        0;
 }
 
 .footer-brand {
@@ -1640,6 +1672,9 @@ footer {
 
     background:
         rgba(168,85,247,.018);
+
+    min-width:
+        0;
 }
 
 .footer-small-title {
@@ -1714,6 +1749,58 @@ footer {
 
 
 /* =========================================================
+   TABLET / SMALL LAPTOP NAVBAR
+========================================================= */
+
+@media (max-width: 850px) and (min-width: 721px) {
+
+    .navbar-inner {
+        min-height:
+            76px;
+
+        gap:
+            15px;
+    }
+
+    .navbar-brand {
+        font-size:
+            17px;
+    }
+
+    .navbar-links {
+        gap:
+            5px;
+    }
+
+    .nav-link {
+        padding:
+            10px 11px;
+
+        font-size:
+            12px;
+    }
+
+    .nav-github {
+        padding:
+            9px 11px;
+
+        font-size:
+            10px;
+    }
+
+    .container {
+        width:
+            calc(100% - 36px);
+    }
+
+    .hero {
+        padding:
+            85px 0 70px;
+    }
+}
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
@@ -1721,27 +1808,35 @@ footer {
 
     .container {
         width:
-            calc(100% - 24px);
+            calc(100% - 28px);
+
+        max-width:
+            none;
     }
 
 
-    /* NAVBAR */
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
 
     .navbar {
         background:
             linear-gradient(
                 180deg,
-                rgba(11,9,22,.94),
-                rgba(9,9,18,.90)
+                rgba(11,9,22,.96),
+                rgba(9,9,18,.94)
             );
     }
 
     .navbar-inner {
         min-height:
-            68px;
+            70px;
+
+        width:
+            calc(100% - 22px);
 
         gap:
-            7px;
+            8px;
     }
 
     .navbar-brand {
@@ -1753,16 +1848,22 @@ footer {
     }
 
     .navbar-links {
+        flex:
+            1;
+
+        justify-content:
+            flex-end;
+
         gap:
-            3px;
+            4px;
     }
 
     .nav-link {
         padding:
-            9px 9px;
+            10px 10px;
 
         font-size:
-            11px;
+            12px;
 
         border-radius:
             8px;
@@ -1774,11 +1875,30 @@ footer {
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO - FULL FIRST SCREEN
+    ===================================================== */
 
     .hero {
+        min-height:
+            calc(100svh - 70px);
+
         padding:
-            68px 0 58px;
+            55px 0 55px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+    }
+
+    .hero-content {
+        width:
+            100%;
     }
 
     .hero::before {
@@ -1792,9 +1912,20 @@ footer {
             -90px;
     }
 
+    .hero-badge {
+        margin-bottom:
+            23px;
+
+        padding:
+            8px 13px;
+
+        font-size:
+            9px;
+    }
+
     .hero h1 {
         font-size:
-            44px;
+            clamp(40px, 11vw, 52px);
 
         line-height:
             1;
@@ -1804,6 +1935,9 @@ footer {
     }
 
     .hero-description {
+        max-width:
+            620px;
+
         margin-top:
             22px;
 
@@ -1837,7 +1971,9 @@ footer {
     }
 
 
-    /* PROJECT HEADING */
+    /* =====================================================
+       PROJECT HEADING
+    ===================================================== */
 
     .projects-heading {
         padding:
@@ -1850,6 +1986,22 @@ footer {
 
         flex-direction:
             column;
+
+        width:
+            100%;
+    }
+
+    .projects-heading h2 {
+        font-size:
+            34px;
+
+        max-width:
+            100%;
+    }
+
+    .projects-heading p {
+        max-width:
+            100%;
     }
 
     .project-count {
@@ -1858,7 +2010,9 @@ footer {
     }
 
 
-    /* TOOLBAR */
+    /* =====================================================
+       TOOLBAR
+    ===================================================== */
 
     .toolbar {
         flex-direction:
@@ -1866,9 +2020,21 @@ footer {
 
         align-items:
             stretch;
+
+        width:
+            100%;
+
+        padding:
+            12px;
+
+        margin-bottom:
+            22px;
     }
 
     .search-box {
+        width:
+            100%;
+
         max-width:
             none;
     }
@@ -1879,33 +2045,73 @@ footer {
     }
 
 
-    /* PROJECT GRID */
+    /* =====================================================
+       PROJECT GRID
+    ===================================================== */
 
     .project-grid {
         grid-template-columns:
-            1fr;
+            minmax(0, 1fr);
+
+        width:
+            100%;
 
         gap:
-            14px;
+            16px;
 
         padding-bottom:
             50px;
     }
 
+    .project-card {
+        width:
+            100%;
 
-    /* DETAILS */
+        min-width:
+            0;
+    }
+
+
+    /* =====================================================
+       DETAILS
+    ===================================================== */
 
     .details-page {
         padding:
-            30px 0 70px;
+            25px 0 70px;
 
         min-height:
-            calc(100vh - 68px);
+            calc(100vh - 70px);
+    }
+
+    .back-btn {
+        margin:
+            0 0 28px auto;
+
+        padding:
+            12px 18px;
+
+        font-size:
+            12px;
+
+        background:
+            rgba(139,92,246,.20);
+
+        border-color:
+            rgba(168,85,247,.45);
+
+        color:
+            #ffffff;
     }
 
     .details-title {
         letter-spacing:
             -1.5px;
+    }
+
+    .details-description {
+        font-size:
+            14px;
     }
 
     .details-preview img {
@@ -1922,16 +2128,24 @@ footer {
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
         padding:
             50px 0;
+
+        width:
+            100%;
     }
 
     .footer-inner {
+        width:
+            calc(100% - 28px);
+
         padding:
-            0 16px;
+            0;
 
         grid-template-columns:
             1fr;
@@ -1954,6 +2168,9 @@ footer {
 
         text-align:
             left;
+
+        max-width:
+            100%;
     }
 
     .footer-side {
@@ -1975,30 +2192,76 @@ footer {
 
 @media (max-width: 420px) {
 
+    .container {
+        width:
+            calc(100% - 24px);
+    }
+
     .navbar-inner {
+        width:
+            calc(100% - 16px);
+
         min-height:
-            64px;
+            66px;
+
+        gap:
+            5px;
     }
 
     .navbar-brand {
         font-size:
             12px;
+
+        letter-spacing:
+            .8px;
+    }
+
+    .navbar-links {
+        gap:
+            2px;
     }
 
     .nav-link {
         padding:
-            8px 6px;
+            9px 7px;
 
         font-size:
-            10px;
+            11px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height:
+            calc(100svh - 66px);
+
+        padding:
+            45px 0;
+    }
+
+    .hero-badge {
+        font-size:
+            8px;
+
+        letter-spacing:
+            1px;
     }
 
     .hero h1 {
         font-size:
-            38px;
+            39px;
 
         letter-spacing:
             -2px;
+    }
+
+    .hero-description {
+        font-size:
+            12px;
+
+        line-height:
+            1.7;
     }
 
     .hero-btn {
@@ -2009,9 +2272,30 @@ footer {
             12px;
     }
 
+
+    /* PROJECTS */
+
+    .projects-heading {
+        padding-top:
+            45px;
+    }
+
+    .projects-heading h2 {
+        font-size:
+            30px;
+    }
+
     .project-content {
         padding:
-            14px;
+            16px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-inner {
+        width:
+            calc(100% - 24px);
     }
 }
 
@@ -2022,17 +2306,42 @@ footer {
 
 @media (max-width: 350px) {
 
+    .navbar-inner {
+        min-height:
+            64px;
+
+        width:
+            calc(100% - 12px);
+    }
+
     .navbar-brand {
         font-size:
             10px;
+
+        letter-spacing:
+            .5px;
+    }
+
+    .navbar-links {
+        gap:
+            1px;
     }
 
     .nav-link {
         padding:
-            7px 5px;
+            8px 5px;
 
         font-size:
             9px;
+    }
+
+
+    .hero {
+        min-height:
+            calc(100svh - 64px);
+
+        padding:
+            40px 0;
     }
 
     .hero h1 {
@@ -2040,9 +2349,50 @@ footer {
             35px;
     }
 
+    .hero-description {
+        font-size:
+            11px;
+    }
+
     .hero-btn {
         font-size:
             11px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   Prevents hover transforms from feeling jumpy on phones
+========================================================= */
+
+@media (hover: none) {
+
+    .project-card:hover {
+        transform:
+            none;
+
+        box-shadow:
+            0 1px 2px rgba(0,0,0,.03);
+
+        border-color:
+            var(--border);
+    }
+
+    .project-card:hover
+    .project-image img {
+        transform:
+            none;
+    }
+
+    .hero-btn-primary:hover {
+        transform:
+            none;
+    }
+
+    .back-btn:hover {
+        transform:
+            none;
     }
 }
 
@@ -2309,7 +2659,7 @@ footer {
             class="back-btn"
             onclick="showLibrary()"
         >
-            ← Back to Projects
+            Back to Projects
         </button>
 
         <div id="detailsContent"></div>
@@ -3140,7 +3490,7 @@ function openDetails(id) {
 
     window.scrollTo({
         top: 0,
-        behavior: "instant"
+        behavior: "auto"
     });
 
 }
@@ -3164,7 +3514,7 @@ function showLibrary() {
 
     window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "auto"
     });
 
 }
