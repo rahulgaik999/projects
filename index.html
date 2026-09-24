@@ -16,31 +16,18 @@
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root {
     --bg: #080912;
     --surface: #0d131c;
     --surface-2: #151d29;
-
     --text: #f5f7fb;
     --muted: #9aa7b8;
-
     --border: #253044;
-
     --violet: #8b5cf6;
     --purple: #a855f7;
     --violet-light: #c084fc;
-
     --max-width: 1280px;
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
     margin: 0;
@@ -54,7 +41,6 @@ html {
 
 body {
     font-family: "Inter", sans-serif;
-
     background:
         radial-gradient(
             circle at 50% -15%,
@@ -67,13 +53,9 @@ body {
             transparent 25%
         ),
         #080912;
-
     color: var(--text);
-
     line-height: 1.6;
-
     overflow-x: hidden;
-
     scroll-behavior: auto;
 }
 
@@ -93,319 +75,75 @@ img {
     width: 100%;
 }
 
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
 .container {
-    width:
-        min(
-            calc(100% - 48px),
-            var(--max-width)
-        );
-
+    width: min(calc(100% - 40px), var(--max-width));
     margin: auto;
 }
 
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
 .navbar {
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(12, 10, 24, .94),
-            rgba(13, 10, 25, .88)
-        );
-
-    border-bottom:
-        1px solid rgba(168, 85, 247, .035);
-
-    box-shadow:
-        0 6px 22px rgba(0, 0, 0, .14);
+    display: none;
 }
 
 
-.navbar::after {
-    content: "";
-
-    position: absolute;
-
-    left: 8%;
-    right: 8%;
-
-    bottom: 0;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(168, 85, 247, .08),
-            transparent
-        );
-
-    opacity: .45;
-}
-
-.navbar-inner {
-    min-height: 82px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 25px;
-}
-
-
-/* =========================================================
-   BRAND
-========================================================= */
-
-.navbar-brand {
-    color: #ffffff;
-
-    font-size: 20px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-
-    white-space: nowrap;
-
-    transition: .2s ease;
-}
-
-.navbar-brand:hover {
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   NAV LINKS
-========================================================= */
-
-.navbar-links {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-}
-
-.nav-link {
-    position: relative;
-
-    padding: 11px 17px;
-
-    border-radius: 10px;
-
-    color: #aaa6b5;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition:
-        color .2s ease,
-        background .2s ease;
-}
-
-.nav-link:hover {
-    color: #ffffff;
-
-    background:
-        rgba(168,85,247,.055);
-}
-
-.nav-link.active {
-    color: #ffffff;
-
-    background:
-        rgba(168,85,247,.075);
-}
-
-.nav-link.active::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-
-    bottom: 3px;
-
-    width: 4px;
-
-    height: 4px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background: rgba(192,132,252,.55);
-}
-
-
-/* =========================================================
-   GITHUB
-========================================================= */
-
-.nav-github {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 10px 15px;
-
-    border:
-        1px solid rgba(168,85,247,.12);
-
-    border-radius: 10px;
-
-    background:
-        rgba(168,85,247,.055);
-
-    color: #d0c9d8;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    transition: .2s ease;
-}
-
-.nav-github:hover {
-    background:
-        rgba(168,85,247,.10);
-
-    color: #ffffff;
-
-    border-color:
-        rgba(192,132,252,.20);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero {
     position: relative;
-
-    /* PC / LAPTOP - TOP SPACE REDUCED ONLY */
-    padding: 75px 0 80px;
-
+    padding: 30px 0 20px;
     text-align: center;
-
     overflow: hidden;
 }
 
 .hero::before {
     content: "";
-
     position: absolute;
-
     width: 520px;
-
     height: 260px;
-
     left: 50%;
-
     top: -120px;
-
     transform: translateX(-50%);
-
     border-radius: 50%;
-
-    background:
-        rgba(139,92,246,.08);
-
+    background: rgba(139,92,246,.08);
     pointer-events: none;
 }
 
 .hero-content {
     position: relative;
-
     z-index: 2;
-
     max-width: 900px;
-
     margin: auto;
 }
 
 .hero-badge {
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
-
     padding: 8px 15px;
-
     margin-bottom: 27px;
-
-    border:
-        1px solid rgba(168,85,247,.15);
-
+    border: 1px solid rgba(168,85,247,.15);
     border-radius: 999px;
-
-    background:
-        rgba(168,85,247,.035);
-
+    background: rgba(168,85,247,.035);
     color: #bca9d1;
-
     font-size: 10px;
-
     font-weight: 800;
-
     letter-spacing: 1.3px;
-
     text-transform: uppercase;
 }
 
 .hero-badge-dot {
     width: 6px;
-
     height: 6px;
-
     border-radius: 50%;
-
     background: #a855f7;
 }
 
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
 .hero h1 {
     max-width: 900px;
-
     margin: auto;
-
     font-size: clamp(44px, 7vw, 78px);
-
     line-height: .98;
-
     letter-spacing: -4px;
-
     font-weight: 800;
-
     color: #ffffff;
 }
 
@@ -417,213 +155,101 @@ img {
             #c084fc,
             #d8b4fe
         );
-
     -webkit-background-clip: text;
-
     background-clip: text;
-
     color: transparent;
 }
 
 .hero-description {
     max-width: 680px;
-
     margin: 27px auto 0;
-
     color: #969eae;
-
     font-size: 15px;
-
     line-height: 1.85;
 }
 
 
-/* =========================================================
-   HERO BUTTON
-========================================================= */
-
-.hero-actions {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    margin-top: 36px;
-}
-
-.hero-btn {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: 54px;
-
-    padding: 0 25px;
-
-    border-radius: 12px;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
-}
-
-.hero-btn-primary {
-    background:
-        linear-gradient(
-            135deg,
-            #7c3aed,
-            #a855f7
-        );
-
-    border:
-        1px solid rgba(192,132,252,.35);
-
-    color: #ffffff;
-
-    box-shadow:
-        0 8px 24px rgba(139,92,246,.14);
-}
-
-.hero-btn-primary:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 12px 28px rgba(139,92,246,.20);
-}
-
-
-/* =========================================================
-   PROJECT HEADING
-========================================================= */
+/* PROJECT HEADING */
 
 .projects-heading {
-    padding: 65px 0 25px;
+    padding: 20px 0 18px;
 }
 
 .projects-heading-top {
     display: flex;
-
-    align-items: flex-end;
-
+    align-items: center;
     justify-content: space-between;
+    gap: 25px;
+}
 
-    gap: 20px;
+.projects-heading-content {
+    flex-shrink: 0;
 }
 
 .projects-label {
     margin-bottom: 8px;
-
     color: #b889e8;
-
     font-size: 10px;
-
     font-weight: 800;
-
     letter-spacing: 1.5px;
-
     text-transform: uppercase;
 }
 
 .projects-heading h2 {
     font-size: clamp(30px,4vw,43px);
-
     line-height: 1;
-
     letter-spacing: -1.8px;
 }
 
 .projects-heading p {
     margin-top: 10px;
-
     color: #7f899a;
-
     font-size: 13px;
 }
 
 .project-count {
     padding: 7px 12px;
-
-    border:
-        1px solid rgba(168,85,247,.12);
-
+    border: 1px solid rgba(168,85,247,.12);
     border-radius: 999px;
-
-    background:
-        rgba(168,85,247,.025);
-
+    background: rgba(168,85,247,.025);
     color: #aaa0b7;
-
     font-size: 10px;
-
     font-weight: 700;
-
     white-space: nowrap;
 }
 
 
-/* =========================================================
-   TOOLBAR
-========================================================= */
+/* TOOLBAR */
 
 .toolbar {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    gap: 12px;
-
-    padding: 14px;
-
-    margin-bottom: 25px;
-
-    border:
-        1px solid rgba(168,85,247,.10);
-
+    gap: 10px;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid rgba(168,85,247,.10);
     border-radius: 15px;
-
-    background:
-        rgba(10,12,21,.72);
+    background: rgba(10,12,21,.72);
+    flex: 1;
+    max-width: 610px;
 }
 
 .search-box {
     position: relative;
-
     flex: 1;
-
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .search-box input {
     width: 100%;
-
     height: 45px;
-
     padding: 0 15px 0 43px;
-
     outline: none;
-
-    border:
-        1px solid rgba(168,85,247,.10);
-
+    border: 1px solid rgba(168,85,247,.10);
     border-radius: 10px;
-
-    background:
-        rgba(255,255,255,.02);
-
+    background: rgba(255,255,255,.02);
     color: white;
-
     font-size: 12px;
 }
 
@@ -632,79 +258,48 @@ img {
 }
 
 .search-box input:focus {
-    border-color:
-        rgba(168,85,247,.30);
-
-    box-shadow:
-        0 0 0 3px rgba(168,85,247,.035);
+    border-color: rgba(168,85,247,.30);
+    box-shadow: 0 0 0 3px rgba(168,85,247,.035);
 }
 
 .search-icon {
     position: absolute;
-
     left: 15px;
-
     top: 50%;
-
     transform: translateY(-50%);
-
     color: #a77bc9;
 }
 
 .filter-select {
     height: 45px;
-
     padding: 0 13px;
-
     outline: none;
-
-    border:
-        1px solid rgba(168,85,247,.10);
-
+    border: 1px solid rgba(168,85,247,.10);
     border-radius: 10px;
-
     background: #10121c;
-
     color: #b8b0bf;
-
     font-size: 11px;
-
     font-weight: 700;
 }
 
 
-/* =========================================================
-   PROJECT CARDS
-========================================================= */
+/* PROJECT CARDS */
 
 .project-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
+    grid-template-columns: repeat(3,minmax(0,1fr));
     gap: 22px;
-
-    padding-bottom: 80px;
-
+    padding-bottom: 55px;
     width: 100%;
 }
 
 .project-card {
     min-width: 0;
-
     overflow: hidden;
-
-    border:
-        1px solid var(--border);
-
+    border: 1px solid var(--border);
     border-radius: 18px;
-
     background: var(--surface);
-
-    box-shadow:
-        0 1px 2px rgba(0,0,0,.03);
-
+    box-shadow: 0 1px 2px rgba(0,0,0,.03);
     transition:
         transform .22s ease,
         box-shadow .22s ease,
@@ -713,57 +308,37 @@ img {
 
 .project-card:hover {
     transform: translateY(-5px);
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.45);
-
-    border-color:
-        rgba(109,124,255,.35);
+    box-shadow: 0 25px 70px rgba(0,0,0,.45);
+    border-color: rgba(109,124,255,.35);
 }
 
 .project-image {
     position: relative;
-
     aspect-ratio: 16 / 9;
-
     overflow: hidden;
-
     background: var(--surface-2);
 }
 
 .project-image img {
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     transition: transform .35s ease;
 }
 
-.project-card:hover
-.project-image img {
+.project-card:hover .project-image img {
     transform: scale(1.025);
 }
 
 .status {
     position: absolute;
-
     top: 13px;
-
     left: 13px;
-
     padding: 5px 9px;
-
     border-radius: 999px;
-
-    background:
-        rgba(0,0,0,.7);
-
+    background: rgba(0,0,0,.7);
     color: white;
-
     font-size: 10px;
-
     font-weight: 700;
 }
 
@@ -773,89 +348,58 @@ img {
 
 .project-title {
     margin-bottom: 7px;
-
     font-size: 17px;
-
     line-height: 1.3;
-
     letter-spacing: -.4px;
 }
 
 .project-description {
     min-height: 47px;
-
     margin-bottom: 17px;
-
     color: var(--muted);
-
     font-size: 13px;
-
     line-height: 1.7;
 }
 
 .technologies {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 6px;
-
     margin-bottom: 20px;
 }
 
 .tech {
     padding: 5px 8px;
-
-    border:
-        1px solid var(--border);
-
+    border: 1px solid var(--border);
     border-radius: 6px;
-
     background: var(--surface-2);
-
     color: var(--muted);
-
     font-size: 10px;
-
     font-weight: 600;
 }
 
 .actions {
     display: flex;
-
     gap: 8px;
 }
 
 .btn {
     min-height: 40px;
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 6px;
-
     padding: 0 13px;
-
     border-radius: 8px;
-
     font-size: 11px;
-
     font-weight: 700;
-
     transition: .18s;
 }
 
 .primary {
     flex: 1;
-
     background: var(--violet);
-
-    border:
-        1px solid var(--violet);
-
+    border: 1px solid var(--violet);
     color: white;
 }
 
@@ -864,11 +408,8 @@ img {
 }
 
 .secondary {
-    border:
-        1px solid var(--border);
-
+    border: 1px solid var(--border);
     background: var(--surface);
-
     color: var(--text);
 }
 
@@ -877,28 +418,17 @@ img {
 }
 
 
-/* =========================================================
-   EMPTY
-========================================================= */
+/* EMPTY */
 
 .empty {
     display: none;
-
     padding: 70px 20px;
-
     margin-bottom: 70px;
-
-    border:
-        1px dashed rgba(168,85,247,.18);
-
+    border: 1px dashed rgba(168,85,247,.18);
     border-radius: 18px;
-
     text-align: center;
-
     color: var(--muted);
-
-    background:
-        rgba(168,85,247,.025);
+    background: rgba(168,85,247,.025);
 }
 
 .empty.show {
@@ -907,9 +437,7 @@ img {
 
 .empty h3 {
     margin-bottom: 6px;
-
     color: var(--text);
-
     font-size: 18px;
 }
 
@@ -918,17 +446,12 @@ img {
 }
 
 
-/* =========================================================
-   DETAILS
-========================================================= */
+/* DETAILS */
 
 .details-page {
     display: none;
-
-    min-height:
-        calc(100vh - 82px);
-
-    padding: 45px 0 90px;
+    min-height: calc(100vh - 82px);
+    padding: 45px 0 70px;
 }
 
 .details-page.active {
@@ -939,193 +462,121 @@ img {
     display: none;
 }
 
-
-/* BACK BUTTON */
-
 .back-btn {
     display: flex;
-
     margin: 0 0 35px auto;
-
     padding: 11px 17px;
-
-    border:
-        1px solid rgba(192,132,252,.42);
-
+    border: 1px solid rgba(192,132,252,.42);
     border-radius: 10px;
-
-    background:
-        rgba(139,92,246,.12);
-
+    background: rgba(139,92,246,.12);
     color: #d8b4fe;
-
     font-size: 12px;
-
     font-weight: 800;
-
     cursor: pointer;
-
-    transition:
-        .2s;
+    transition: .2s;
 }
 
 .back-btn:hover {
-    background:
-        rgba(139,92,246,.20);
-
-    border-color:
-        rgba(216,180,254,.60);
-
+    background: rgba(139,92,246,.20);
+    border-color: rgba(216,180,254,.60);
     color: #ffffff;
-
-    transform:
-        translateX(-4px);
+    transform: translateX(-4px);
 }
 
 .details-header {
     max-width: 900px;
-
     margin-bottom: 30px;
 }
 
 .details-label {
     margin-bottom: 10px;
-
     color: #b889e8;
-
     font-size: 11px;
-
     font-weight: 800;
-
     letter-spacing: 1px;
-
     text-transform: uppercase;
 }
 
 .details-title {
     margin-bottom: 15px;
-
-    font-size:
-        clamp(34px,5vw,56px);
-
+    font-size: clamp(34px,5vw,56px);
     line-height: 1.05;
-
     letter-spacing: -2.5px;
 }
 
 .details-description {
     max-width: 760px;
-
     color: var(--muted);
-
     font-size: 15px;
-
     line-height: 1.8;
 }
 
 .details-preview {
     width: 100%;
-
     max-width: 720px;
-
     overflow: hidden;
-
     margin: 0 auto 35px;
-
-    border:
-        1px solid rgba(168,85,247,.10);
-
+    border: 1px solid rgba(168,85,247,.10);
     border-radius: 18px;
 }
 
 .details-preview img {
     width: 100%;
-
     max-height: 450px;
-
     aspect-ratio: 16 / 8;
-
     object-fit: cover;
 }
 
 .details-layout {
     display: grid;
-
-    grid-template-columns:
-        minmax(0,1.5fr)
-        minmax(260px,.7fr);
-
+    grid-template-columns: minmax(0,1.5fr) minmax(260px,.7fr);
     gap: 50px;
 }
 
 .details-main h2,
 .details-sidebar h2 {
     margin-bottom: 13px;
-
     font-size: 17px;
 }
 
 .details-main p {
     margin-bottom: 32px;
-
     color: var(--muted);
-
     font-size: 14px;
-
     line-height: 1.85;
 }
 
 .features {
     list-style: none;
-
     display: grid;
-
     gap: 11px;
-
     margin-bottom: 35px;
 }
 
 .features li {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
-
     color: var(--muted);
-
     font-size: 14px;
 }
 
 .check {
     width: 20px;
-
     height: 20px;
-
     display: grid;
-
     place-items: center;
-
     flex-shrink: 0;
-
     border-radius: 50%;
-
-    background:
-        rgba(168,85,247,.10);
-
+    background: rgba(168,85,247,.10);
     color: #b889e8;
 }
 
 .sidebar-box {
     padding: 20px;
-
     margin-bottom: 15px;
-
-    border:
-        1px solid rgba(168,85,247,.10);
-
+    border: 1px solid rgba(168,85,247,.10);
     border-radius: 14px;
-
     background:
         linear-gradient(
             135deg,
@@ -1136,16 +587,10 @@ img {
 
 .info {
     display: flex;
-
     justify-content: space-between;
-
     gap: 20px;
-
     padding: 12px 0;
-
-    border-bottom:
-        1px solid var(--border);
-
+    border-bottom: 1px solid var(--border);
     font-size: 13px;
 }
 
@@ -1159,7 +604,6 @@ img {
 
 .info-value {
     text-align: right;
-
     font-weight: 700;
 }
 
@@ -1169,17 +613,13 @@ img {
 
 .detail-techs {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 6px;
 }
 
 .detail-actions {
     display: flex;
-
     gap: 8px;
-
     margin-top: 22px;
 }
 
@@ -1189,13 +629,22 @@ img {
 
 
 /* =========================================================
-   PC / LAPTOP DETAILS ALIGNMENT ONLY
+   PC / LAPTOP ONLY
+   DETAILS CENTER
 ========================================================= */
 
 @media (min-width: 1051px) {
 
     .details-header {
-        margin-left: 40px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .details-description {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .details-layout {
@@ -1206,16 +655,11 @@ img {
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 footer {
-    border-top:
-        1px solid rgba(168,85,247,.06);
-
-    padding: 70px 0;
-
+    border-top: 1px solid rgba(168,85,247,.06);
+    padding: 45px 0 70px;
     background:
         radial-gradient(
             circle at 20% 100%,
@@ -1223,24 +667,16 @@ footer {
             transparent 35%
         ),
         #080912;
-
     color: #858b99;
 }
 
 .footer-inner {
     max-width: var(--max-width);
-
     margin: auto;
-
     padding: 0 28px;
-
     display: grid;
-
-    grid-template-columns:
-        1.6fr .8fr;
-
+    grid-template-columns: 1.6fr .8fr;
     gap: 80px;
-
     align-items: center;
 }
 
@@ -1250,13 +686,9 @@ footer {
 
 .footer-brand {
     margin-bottom: 18px;
-
     color: #ffffff;
-
     font-size: 18px;
-
     font-weight: 800;
-
     letter-spacing: 1.5px;
 }
 
@@ -1266,26 +698,17 @@ footer {
 
 .footer-title {
     max-width: 700px;
-
     margin: 0 0 20px;
-
     color: #ffffff;
-
-    font-size:
-        clamp(30px,4vw,48px);
-
+    font-size: clamp(30px,4vw,48px);
     line-height: 1.08;
-
     letter-spacing: -1.8px;
-
     font-weight: 800;
 }
 
 .footer-title span {
     display: block;
-
     margin-top: 4px;
-
     background:
         linear-gradient(
             90deg,
@@ -1293,206 +716,91 @@ footer {
             #c084fc,
             #d8b4fe
         );
-
     -webkit-background-clip: text;
-
     background-clip: text;
-
     color: transparent;
 }
 
 .footer-description {
     max-width: 650px;
-
     color: #949aaa;
-
     font-size: 15px;
-
     line-height: 1.8;
-
     text-align: left;
 }
 
 .footer-side {
     padding: 25px;
-
-    border-left:
-        1px solid rgba(168,85,247,.10);
-
-    background:
-        rgba(168,85,247,.018);
+    border-left: 1px solid rgba(168,85,247,.10);
+    background: rgba(168,85,247,.018);
 }
 
 .footer-small-title {
     margin-bottom: 12px;
-
     color: #b889e8;
-
     font-size: 10px;
-
     font-weight: 800;
-
     letter-spacing: 1.5px;
 }
 
 .footer-side p {
     color: #777f90;
-
     font-size: 13px;
-
     line-height: 1.8;
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+/* TABLET */
 
 @media (max-width: 1050px) {
 
     .project-grid {
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-
+        grid-template-columns: repeat(2,minmax(0,1fr));
         width: 100%;
     }
 
     .details-layout {
         grid-template-columns: 1fr;
-
         gap: 25px;
     }
 
-
-    /* NAVBAR - LARGER FONT + MEDIUM SPACING */
-
-    .navbar-inner {
-        gap: 18px;
-    }
-
-    .navbar-links {
-        gap: 8px;
-    }
-
-    .nav-link {
-        padding: 11px 15px;
-
-        font-size: 15px;
-    }
-
-    .nav-github {
-        padding: 11px 14px;
-
-        font-size: 12px;
-    }
-
-
-    /* HOME - TOP + BOTTOM REDUCED */
-
     .hero {
-        padding: 55px 0 45px;
+        padding: 25px 0 20px;
     }
 
     .projects-heading {
-        padding-top: 50px;
+        padding-top: 20px;
+    }
+
+    .projects-heading-top {
+        gap: 15px;
+    }
+
+    .toolbar {
+        max-width: 500px;
     }
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width: 720px) {
 
     .container {
-        width:
-            calc(100% - 28px);
-
+        width: calc(100% - 28px);
         max-width: none;
     }
 
-
-    /* =====================================================
-       NAVBAR MOBILE
-    ===================================================== */
-
-    .navbar {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(11,9,22,.96),
-                rgba(9,9,18,.94)
-            );
-    }
-
-    .navbar-inner {
-        min-height: 70px;
-
-        width:
-            calc(100% - 20px);
-
-        gap: 10px;
-
-        justify-content: space-between;
-    }
-
-    .navbar-brand {
-        font-size: 16px;
-
-        letter-spacing: 1px;
-
-        flex-shrink: 0;
-    }
-
-    .navbar-links {
-        gap: 8px;
-
-        margin-left: auto;
-
-        justify-content: flex-end;
-    }
-
-    .nav-link {
-        padding:
-            10px 12px;
-
-        font-size: 14px;
-
-        font-weight: 800;
-
-        border-radius: 9px;
-
-        white-space: nowrap;
-    }
-
-    .nav-github {
-        display: none;
-    }
-
-
-    /* =====================================================
-       HERO MOBILE
-    ===================================================== */
-
     .hero {
-        min-height:
-            calc(100svh - 70px);
-
+        min-height: auto;
         display: flex;
-
         align-items: center;
-
-        /* TOP + BOTTOM REDUCED */
-        padding:
-            30px 0 34px;
+        padding: 20px 0 18px;
     }
 
     .hero::before {
         width: 400px;
-
         height: 200px;
-
         top: -90px;
     }
 
@@ -1502,150 +810,92 @@ footer {
 
     .hero-badge {
         margin-bottom: 22px;
-
         font-size: 10px;
-
         padding: 8px 13px;
     }
 
     .hero h1 {
-        font-size:
-            clamp(40px, 11vw, 52px);
-
+        font-size: clamp(40px, 11vw, 52px);
         line-height: 1.02;
-
         letter-spacing: -2.8px;
     }
 
     .hero-description {
         max-width: 600px;
-
         margin-top: 20px;
-
         font-size: 14px;
-
         line-height: 1.7;
     }
 
-    .hero-actions {
-        margin-top: 27px;
-    }
-
-    .hero-btn {
-        width: 100%;
-
-        min-height: 53px;
-
-        padding: 0 18px;
-
-        font-size: 13px;
-
-        border-radius: 11px;
-    }
-
-
-    /* =====================================================
-       PROJECT HEADING MOBILE
-    ===================================================== */
-
     .projects-heading {
-        padding:
-            42px 0 20px;
+        padding: 22px 0 18px;
     }
 
     .projects-heading-top {
         width: 100%;
-
-        align-items: flex-start;
-
+        align-items: stretch;
         flex-direction: column;
-
         gap: 14px;
+    }
+
+    .projects-heading-content {
+        width: 100%;
     }
 
     .projects-heading h2 {
         font-size: 34px;
-
         line-height: 1.05;
     }
 
     .projects-heading p {
         max-width: 100%;
-
         font-size: 13px;
-
         line-height: 1.6;
     }
 
     .project-count {
         align-self: flex-start;
-
         font-size: 10px;
     }
 
-
-    /* =====================================================
-       TOOLBAR MOBILE
-    ===================================================== */
-
     .toolbar {
         width: 100%;
-
+        max-width: none;
         flex-direction: column;
-
         align-items: stretch;
-
         padding: 11px;
-
-        margin-bottom: 20px;
-
+        margin: 0;
         gap: 10px;
     }
 
     .search-box {
         width: 100%;
-
         max-width: none;
     }
 
     .search-box input {
         height: 46px;
-
         font-size: 13px;
     }
 
     .filter-select {
         width: 100%;
-
         height: 46px;
-
         font-size: 12px;
     }
 
-
-    /* =====================================================
-       PROJECT GRID MOBILE
-    ===================================================== */
-
     .project-grid {
         width: 100%;
-
         max-width: 100%;
-
         grid-template-columns: 1fr;
-
         gap: 16px;
-
         padding-bottom: 50px;
-
         margin-left: 0;
-
         margin-right: 0;
     }
 
     .project-card {
         width: 100%;
-
         max-width: 100%;
     }
 
@@ -1659,52 +909,30 @@ footer {
 
     .project-description {
         font-size: 13px;
-
         min-height: auto;
     }
 
-
-    /* =====================================================
-       DETAILS MOBILE
-    ===================================================== */
-
     .details-page {
-        padding:
-            26px 0 65px;
-
-        min-height:
-            calc(100svh - 70px);
+        padding: 26px 0 65px;
+        min-height: auto;
     }
 
     .back-btn {
-        margin:
-            0 0 27px auto;
-
-        padding:
-            11px 16px;
-
+        margin: 0 0 27px auto;
+        padding: 11px 16px;
         color: #d8b4fe;
-
-        border-color:
-            rgba(192,132,252,.45);
-
-        background:
-            rgba(139,92,246,.12);
-
+        border-color: rgba(192,132,252,.45);
+        background: rgba(139,92,246,.12);
         font-size: 12px;
     }
 
     .details-title {
-        font-size:
-            clamp(34px, 9vw, 48px);
-
-        letter-spacing:
-            -1.8px;
+        font-size: clamp(34px, 9vw, 48px);
+        letter-spacing: -1.8px;
     }
 
     .details-description {
         font-size: 14px;
-
         line-height: 1.75;
     }
 
@@ -1714,7 +942,6 @@ footer {
 
     .details-preview img {
         aspect-ratio: 16 / 9;
-
         max-height: 260px;
     }
 
@@ -1722,114 +949,60 @@ footer {
         flex-direction: column;
     }
 
-
-    /* =====================================================
-       FOOTER MOBILE
-    ===================================================== */
-
     footer {
-        padding: 50px 0;
+        padding: 40px 0 50px;
     }
 
     .footer-inner {
         width: 100%;
-
         padding: 0 16px;
-
         grid-template-columns: 1fr;
-
         gap: 30px;
     }
 
     .footer-title {
         font-size: 31px;
-
         letter-spacing: -1px;
     }
 
     .footer-description {
         font-size: 13px;
-
         text-align: left;
     }
 
     .footer-side {
         padding: 20px 0;
-
         border-left: 0;
-
-        border-top:
-            1px solid rgba(168,85,247,.08);
+        border-top: 1px solid rgba(168,85,247,.08);
     }
 }
 
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 420px) {
 
     .container {
-        width:
-            calc(100% - 22px);
-    }
-
-    .navbar-inner {
-        min-height: 66px;
-
-        width:
-            calc(100% - 14px);
-
-        gap: 7px;
-    }
-
-    .navbar-brand {
-        font-size: 15px;
-
-        letter-spacing: .8px;
-    }
-
-    .navbar-links {
-        gap: 6px;
-    }
-
-    .nav-link {
-        padding:
-            9px 9px;
-
-        font-size: 13px;
+        width: calc(100% - 22px);
     }
 
     .hero {
-        min-height:
-            calc(100svh - 66px);
-
-        /* TOP + BOTTOM REDUCED */
-        padding:
-            25px 0 28px;
+        min-height: auto;
+        padding: 18px 0 16px;
     }
 
     .hero h1 {
         font-size: 39px;
-
         letter-spacing: -2.1px;
     }
 
     .hero-description {
         font-size: 13px;
-
         line-height: 1.7;
     }
 
-    .hero-btn {
-        min-height: 52px;
-
-        font-size: 12px;
-    }
-
     .projects-heading {
-        padding-top: 38px;
+        padding-top: 20px;
     }
 
     .projects-heading h2 {
@@ -1842,95 +1015,46 @@ footer {
 }
 
 
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
+/* VERY SMALL MOBILE */
 
 @media (max-width: 350px) {
 
-    .navbar-inner {
-        min-height: 62px;
-    }
-
-    .navbar-brand {
-        font-size: 13px;
-    }
-
-    .navbar-links {
-        gap: 5px;
-    }
-
-    .nav-link {
-        padding:
-            8px 7px;
-
-        font-size: 12px;
-    }
-
     .hero {
-        min-height:
-            calc(100svh - 62px);
-
-        /* TOP + BOTTOM REDUCED */
-        padding:
-            -11px 0 14px;
+        min-height: auto;
+        padding: 15px 0 14px;
     }
 
     .hero h1 {
         font-size: 35px;
-
         letter-spacing: -1.8px;
     }
 
     .hero-description {
         font-size: 12px;
     }
-
-    .hero-btn {
-        font-size: 11px;
-    }
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================================================
-     NAVBAR
-========================================================= -->
-
 <nav class="navbar">
-
     <div class="container navbar-inner">
 
-        <a
-            href="#home"
-            class="navbar-brand"
-        >
+        <a href="#home" class="navbar-brand">
             MY PORTFOLIO
         </a>
 
-
         <div class="navbar-links">
 
-            <a
-                href="#home"
-                class="nav-link active"
-            >
+            <a href="#home" class="nav-link active">
                 Home
             </a>
 
-
-            <a
-                href="#projects"
-                class="nav-link"
-            >
+            <a href="#projects" class="nav-link">
                 Projects
             </a>
-
 
             <a
                 href="https://github.com/"
@@ -1944,82 +1068,46 @@ footer {
         </div>
 
     </div>
-
 </nav>
 
 
-<!-- =========================================================
-     HOME PAGE
-========================================================= -->
+<main class="library-page" id="libraryPage">
 
-<main
-    class="library-page"
-    id="libraryPage"
->
-
-
-<header
-    class="hero"
-    id="home"
->
+<header class="hero" id="home">
 
     <div class="container hero-content">
 
         <div class="hero-badge">
-
             <span class="hero-badge-dot"></span>
-
             Personal Project Showcase
-
         </div>
-
 
         <h1>
             Building Ideas Into
             <span>Real Projects.</span>
         </h1>
 
-
         <p class="hero-description">
-
             Explore my collection of applications,
             websites and development projects —
             including the technologies, features and
             experiences behind each project.
-
         </p>
-
-
-        <div class="hero-actions">
-
-            <a
-                href="#projects"
-                class="hero-btn hero-btn-primary"
-            >
-                Explore Projects
-            </a>
-
-        </div>
 
     </div>
 
 </header>
 
 
-<!-- =========================================================
-     PROJECTS
-========================================================= -->
-
 <section id="projects">
 
     <div class="container">
-
 
         <div class="projects-heading">
 
             <div class="projects-heading-top">
 
-                <div>
+                <div class="projects-heading-content">
 
                     <div class="projects-label">
                         My Work
@@ -2036,6 +1124,59 @@ footer {
                 </div>
 
 
+                <div class="toolbar" id="projectToolbar">
+
+                    <div class="search-box">
+
+                        <span class="search-icon">
+
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+
+                                <circle
+                                    cx="11"
+                                    cy="11"
+                                    r="7"
+                                ></circle>
+
+                                <path d="m20 20-4-4"></path>
+
+                            </svg>
+
+                        </span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search projects, technologies..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <select
+                        class="filter-select"
+                        id="technologyFilter"
+                    >
+
+                        <option value="all">
+                            All Technologies
+                        </option>
+
+                    </select>
+
+                </div>
+
+
                 <div
                     class="project-count"
                     id="projectCount"
@@ -2047,69 +1188,6 @@ footer {
 
         </div>
 
-
-        <!-- SEARCH / FILTER -->
-
-        <div
-            class="toolbar"
-            id="projectToolbar"
-        >
-
-            <div class="search-box">
-
-                <span class="search-icon">
-
-                    <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-
-                        <circle
-                            cx="11"
-                            cy="11"
-                            r="7"
-                        ></circle>
-
-                        <path
-                            d="m20 20-4-4"
-                        ></path>
-
-                    </svg>
-
-                </span>
-
-
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search projects, technologies..."
-                    autocomplete="off"
-                >
-
-            </div>
-
-
-            <select
-                class="filter-select"
-                id="technologyFilter"
-            >
-
-                <option value="all">
-                    All Technologies
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <!-- PROJECT GRID -->
 
         <div
             class="project-grid"
@@ -2139,10 +1217,6 @@ footer {
 </main>
 
 
-<!-- =========================================================
-     PROJECT DETAILS PAGE
-========================================================= -->
-
 <section
     class="details-page"
     id="detailsPage"
@@ -2163,10 +1237,6 @@ footer {
 
 </section>
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
 
 <footer id="siteFooter">
 
@@ -2212,26 +1282,17 @@ footer {
 
 <script>
 
-/* =========================================================
-   PROJECT DATA
-========================================================= */
-
 const projects = [
 
     {
         id: "online-polling",
-
         name: "Online Polling System",
-
         description:
             "A web-based polling application for creating polls, collecting votes and viewing results.",
-
         longDescription:
             "A complete polling platform designed to simplify the process of creating, managing and participating in online polls. The application provides a structured interface for users to create polls, vote on available options and review results.",
-
         image:
             "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85",
-
         technologies: [
             "HTML",
             "CSS",
@@ -2239,7 +1300,6 @@ const projects = [
             "Node.js",
             "MongoDB"
         ],
-
         features: [
             "User authentication",
             "Create and manage polls",
@@ -2247,35 +1307,22 @@ const projects = [
             "Results dashboard",
             "Responsive interface"
         ],
-
-        developmentTime:
-            "2 Months",
-
-        status:
-            "Completed",
-
-        github:
-            "https://github.com/",
-
-        live:
-            "https://example.com/"
+        developmentTime: "2 Months",
+        status: "Completed",
+        github: "https://github.com/",
+        live: "https://example.com/"
     },
 
 
     {
         id: "hospital-management",
-
         name: "Hospital Management System",
-
         description:
             "A centralized application for managing patients, doctors, appointments and hospital records.",
-
         longDescription:
             "A management platform designed to organize common hospital workflows in one centralized system. The application focuses on structured data management, appointment handling and improving access to important information.",
-
         image:
             "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
-
         technologies: [
             "HTML",
             "CSS",
@@ -2284,7 +1331,6 @@ const projects = [
             "PHP",
             "MySQL"
         ],
-
         features: [
             "Patient management",
             "Doctor management",
@@ -2292,35 +1338,22 @@ const projects = [
             "Medical record management",
             "Administrative dashboard"
         ],
-
-        developmentTime:
-            "6 Weeks",
-
-        status:
-            "Completed",
-
-        github:
-            "https://github.com/",
-
-        live:
-            "https://example.com/"
+        developmentTime: "6 Weeks",
+        status: "Completed",
+        github: "https://github.com/",
+        live: "https://example.com/"
     },
 
 
     {
         id: "developer-portfolio",
-
         name: "Developer Portfolio",
-
         description:
             "A responsive developer portfolio designed to present projects, technical skills and professional information.",
-
         longDescription:
             "A modern responsive portfolio website focused on presenting development work in a clean and structured interface. The website is optimized for desktop and mobile devices.",
-
         image:
             "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=85",
-
         technologies: [
             "HTML",
             "CSS",
@@ -2328,7 +1361,6 @@ const projects = [
             "Bootstrap",
             "Netlify"
         ],
-
         features: [
             "Responsive design",
             "Project showcase",
@@ -2336,42 +1368,28 @@ const projects = [
             "Mobile-friendly layout",
             "Netlify deployment"
         ],
-
-        developmentTime:
-            "2 Weeks",
-
-        status:
-            "Completed",
-
-        github:
-            "https://github.com/",
-
-        live:
-            "https://example.com/"
+        developmentTime: "2 Weeks",
+        status: "Completed",
+        github: "https://github.com/",
+        live: "https://example.com/"
     },
 
 
     {
         id: "task-management",
-
         name: "Task Management Application",
-
         description:
             "A productivity application for creating, organizing and tracking personal tasks.",
-
         longDescription:
             "A task management application focused on organizing daily work through a simple and efficient interface. Users can create tasks, categorize them and track progress from a centralized dashboard.",
-
         image:
             "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1400&q=85",
-
         technologies: [
             "React",
             "Node.js",
             "Express",
             "MongoDB"
         ],
-
         features: [
             "Create and edit tasks",
             "Task categories",
@@ -2379,42 +1397,28 @@ const projects = [
             "REST API integration",
             "Responsive dashboard"
         ],
-
-        developmentTime:
-            "5 Weeks",
-
-        status:
-            "Completed",
-
-        github:
-            "https://github.com/",
-
-        live:
-            "https://example.com/"
+        developmentTime: "5 Weeks",
+        status: "Completed",
+        github: "https://github.com/",
+        live: "https://example.com/"
     },
 
 
     {
         id: "ecommerce-platform",
-
         name: "E-Commerce Platform",
-
         description:
             "A modern shopping platform with product browsing, cart management and checkout functionality.",
-
         longDescription:
             "A full-stack e-commerce platform developed around a modern shopping experience. The project demonstrates product management, shopping cart workflows and a responsive user interface.",
-
         image:
             "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85",
-
         technologies: [
             "React",
             "Node.js",
             "Express",
             "MongoDB"
         ],
-
         features: [
             "Product browsing",
             "Product search",
@@ -2422,42 +1426,28 @@ const projects = [
             "User authentication",
             "Order management"
         ],
-
-        developmentTime:
-            "2 Months",
-
-        status:
-            "In Development",
-
-        github:
-            "https://github.com/",
-
-        live:
-            "https://example.com/"
+        developmentTime: "2 Months",
+        status: "In Development",
+        github: "https://github.com/",
+        live: "https://example.com/"
     },
 
 
     {
         id: "weather-dashboard",
-
         name: "Weather Dashboard",
-
         description:
             "A responsive weather application displaying real-time weather information through an external API.",
-
         longDescription:
             "A lightweight weather dashboard that consumes an external weather API to present current conditions and useful weather information in a clean interface.",
-
         image:
             "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1400&q=85",
-
         technologies: [
             "HTML",
             "CSS",
             "JavaScript",
             "REST API"
         ],
-
         features: [
             "City search",
             "Real-time weather data",
@@ -2465,26 +1455,14 @@ const projects = [
             "Responsive interface",
             "Dynamic weather information"
         ],
-
-        developmentTime:
-            "2 Weeks",
-
-        status:
-            "Completed",
-
-        github:
-            "https://github.com/",
-
-        live:
-            "https://example.com/"
+        developmentTime: "2 Weeks",
+        status: "Completed",
+        github: "https://github.com/",
+        live: "https://example.com/"
     }
 
 ];
 
-
-/* =========================================================
-   ELEMENTS
-========================================================= */
 
 const grid =
     document.getElementById("projectGrid");
@@ -2511,17 +1489,12 @@ const siteFooter =
     document.getElementById("siteFooter");
 
 
-/* =========================================================
-   TECHNOLOGY FILTER
-========================================================= */
-
 function createTechnologyFilter() {
 
     const technologies = [
         ...new Set(
             projects.flatMap(
-                project =>
-                    project.technologies
+                project => project.technologies
             )
         )
     ].sort();
@@ -2533,24 +1506,15 @@ function createTechnologyFilter() {
             const option =
                 document.createElement("option");
 
-            option.value =
-                technology;
+            option.value = technology;
+            option.textContent = technology;
 
-            option.textContent =
-                technology;
-
-            technologyFilter.appendChild(
-                option
-            );
+            technologyFilter.appendChild(option);
 
         }
     );
 }
 
-
-/* =========================================================
-   RENDER PROJECTS
-========================================================= */
 
 function renderProjects() {
 
@@ -2568,7 +1532,6 @@ function renderProjects() {
             project => {
 
                 const matchesSearch =
-
                     project.name
                         .toLowerCase()
                         .includes(search)
@@ -2590,7 +1553,6 @@ function renderProjects() {
 
 
                 const matchesTechnology =
-
                     selectedTechnology === "all"
 
                     ||
@@ -2716,21 +1678,13 @@ function renderProjects() {
 
 
     if (filtered.length === 0) {
-
         empty.classList.add("show");
-
     } else {
-
         empty.classList.remove("show");
-
     }
 
 }
 
-
-/* =========================================================
-   SEARCH
-========================================================= */
 
 searchInput.addEventListener(
     "input",
@@ -2742,10 +1696,6 @@ technologyFilter.addEventListener(
     renderProjects
 );
 
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
 
 document
     .querySelectorAll(".nav-link")
@@ -2767,9 +1717,7 @@ document
                                 )
                         );
 
-                    link.classList.add(
-                        "active"
-                    );
+                    link.classList.add("active");
 
                 }
             );
@@ -2777,10 +1725,6 @@ document
         }
     );
 
-
-/* =========================================================
-   OPEN PROJECT DETAILS
-========================================================= */
 
 function openDetails(id) {
 
@@ -2794,21 +1738,15 @@ function openDetails(id) {
     if (!project) return;
 
 
-    libraryPage.style.display =
-        "none";
+    libraryPage.style.display = "none";
 
-    siteFooter.style.display =
-        "none";
+    siteFooter.style.display = "none";
 
-    detailsPage.classList.add(
-        "active"
-    );
+    detailsPage.classList.add("active");
 
 
     const content =
-        document.getElementById(
-            "detailsContent"
-        );
+        document.getElementById("detailsContent");
 
 
     content.innerHTML = `
@@ -2992,21 +1930,13 @@ function openDetails(id) {
 }
 
 
-/* =========================================================
-   RETURN TO HOME
-========================================================= */
-
 function showLibrary() {
 
-    detailsPage.classList.remove(
-        "active"
-    );
+    detailsPage.classList.remove("active");
 
-    libraryPage.style.display =
-        "block";
+    libraryPage.style.display = "block";
 
-    siteFooter.style.display =
-        "block";
+    siteFooter.style.display = "block";
 
     window.scrollTo({
         top: 0,
@@ -3016,10 +1946,6 @@ function showLibrary() {
 
 }
 
-
-/* =========================================================
-   INITIALIZE
-========================================================= */
 
 createTechnologyFilter();
 
