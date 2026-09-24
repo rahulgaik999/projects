@@ -1079,7 +1079,7 @@ footer {
     <div class="container hero-content">
 
         <div class="hero-badge">
-            <span class="hero-badge"></span>
+            <!-- <span class="hero-badge"></span> -->
             Personal Project Showcase
         </div>
 
@@ -1314,7 +1314,6 @@ const projects = [
         live: "https://example.com/"
     },
 
-
     {
         id: "hospital-management",
         name: "Hospital Management System",
@@ -1345,7 +1344,6 @@ const projects = [
         live: "https://example.com/"
     },
 
-
     {
         id: "developer-portfolio",
         name: "Developer Portfolio",
@@ -1375,7 +1373,6 @@ const projects = [
         live: "https://example.com/"
     },
 
-
     {
         id: "task-management",
         name: "Task Management Application",
@@ -1404,7 +1401,6 @@ const projects = [
         live: "https://example.com/"
     },
 
-
     {
         id: "ecommerce-platform",
         name: "E-Commerce Platform",
@@ -1432,7 +1428,6 @@ const projects = [
         github: "https://github.com/",
         live: "https://example.com/"
     },
-
 
     {
         id: "weather-dashboard",
@@ -1727,7 +1722,7 @@ document
     );
 
 
-function openDetails(id) {
+function openDetails(id, addHistory = true) {
 
     const project =
         projects.find(
@@ -1737,6 +1732,25 @@ function openDetails(id) {
 
 
     if (!project) return;
+
+
+    /*
+     * Add a browser history entry when opening
+     * project details.
+     *
+     * This makes Chrome Back and mobile Back
+     * return to the project list instead of
+     * exiting the browser.
+     */
+    if (addHistory) {
+
+        history.pushState(
+            { projectId: id },
+            "",
+            "#project-" + id
+        );
+
+    }
 
 
     libraryPage.style.display = "none";
@@ -1931,7 +1945,27 @@ function openDetails(id) {
 }
 
 
-function showLibrary() {
+function showLibrary(updateHistory = true) {
+
+    /*
+     * When the user clicks the website's own
+     * "Back to Projects" button, remove the
+     * project history entry.
+     *
+     * When Chrome/mobile Back triggers this
+     * function, updateHistory is false.
+     */
+    if (updateHistory) {
+
+        history.replaceState(
+            null,
+            "",
+            window.location.pathname +
+            window.location.search
+        );
+
+    }
+
 
     detailsPage.classList.remove("active");
 
@@ -1946,6 +1980,42 @@ function showLibrary() {
     });
 
 }
+
+
+/*
+ * Browser Back button / Mobile Back button
+ */
+window.addEventListener(
+    "popstate",
+    function (event) {
+
+        if (event.state && event.state.projectId) {
+
+            openDetails(
+                event.state.projectId,
+                false
+            );
+
+        } else {
+
+            showLibrary(false);
+
+        }
+
+    }
+);
+
+
+/*
+ * Keep the initial page as the browser's
+ * starting history state.
+ */
+history.replaceState(
+    null,
+    "",
+    window.location.pathname +
+    window.location.search
+);
 
 
 createTechnologyFilter();
