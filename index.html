@@ -307,11 +307,8 @@ img {
 .hero {
     position: relative;
 
-    /*
-       Desktop remains close to your original spacing.
-       Smaller screens are adjusted below.
-    */
-    padding: 105px 0 80px;
+    /* PC / LAPTOP - TOP SPACE REDUCED ONLY */
+    padding: 75px 0 80px;
 
     text-align: center;
 
@@ -690,10 +687,6 @@ img {
 
     padding-bottom: 80px;
 
-    /*
-       Prevent grid/content from creating
-       horizontal overflow on smaller devices.
-    */
     width: 100%;
 }
 
@@ -947,9 +940,7 @@ img {
 }
 
 
-/* BACK BUTTON
-   Arrow removed + brighter color
-========================================================= */
+/* BACK BUTTON */
 
 .back-btn {
     display: flex;
@@ -1198,6 +1189,24 @@ img {
 
 
 /* =========================================================
+   PC / LAPTOP DETAILS ALIGNMENT ONLY
+========================================================= */
+
+@media (min-width: 1051px) {
+
+    .details-header {
+        margin-left: 40px;
+    }
+
+    .details-layout {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+}
+
+
+/* =========================================================
    FOOTER
 ========================================================= */
 
@@ -1354,28 +1363,34 @@ footer {
         gap: 25px;
     }
 
+
+    /* NAVBAR - LARGER FONT + MEDIUM SPACING */
+
     .navbar-inner {
-        gap: 15px;
+        gap: 18px;
+    }
+
+    .navbar-links {
+        gap: 8px;
     }
 
     .nav-link {
-        padding: 10px 13px;
+        padding: 11px 15px;
 
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .nav-github {
-        padding: 10px 12px;
+        padding: 11px 14px;
 
-        font-size: 11px;
+        font-size: 12px;
     }
 
-    /*
-       Tablet hero is slightly tighter so
-       important content appears sooner.
-    */
+
+    /* HOME - TOP + BOTTOM REDUCED */
+
     .hero {
-        padding: 80px 0 65px;
+        padding: 55px 0 45px;
     }
 
     .projects-heading {
@@ -1417,7 +1432,7 @@ footer {
         width:
             calc(100% - 20px);
 
-        gap: 8px;
+        gap: 10px;
 
         justify-content: space-between;
     }
@@ -1431,7 +1446,7 @@ footer {
     }
 
     .navbar-links {
-        gap: 5px;
+        gap: 8px;
 
         margin-left: auto;
 
@@ -1440,9 +1455,9 @@ footer {
 
     .nav-link {
         padding:
-            10px 11px;
+            10px 12px;
 
-        font-size: 13px;
+        font-size: 14px;
 
         font-weight: 800;
 
@@ -1461,10 +1476,6 @@ footer {
     ===================================================== */
 
     .hero {
-        /*
-           Reduced unnecessary top/bottom space.
-           Content remains clearly visible.
-        */
         min-height:
             calc(100svh - 70px);
 
@@ -1472,8 +1483,9 @@ footer {
 
         align-items: center;
 
+        /* TOP + BOTTOM REDUCED */
         padding:
-            48px 0 52px;
+            30px 0 34px;
     }
 
     .hero::before {
@@ -1769,32 +1781,33 @@ footer {
         width:
             calc(100% - 14px);
 
-        gap: 5px;
+        gap: 7px;
     }
 
     .navbar-brand {
-        font-size: 14px;
+        font-size: 15px;
 
         letter-spacing: .8px;
     }
 
     .navbar-links {
-        gap: 3px;
+        gap: 6px;
     }
 
     .nav-link {
         padding:
-            9px 8px;
+            9px 9px;
 
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .hero {
         min-height:
             calc(100svh - 66px);
 
+        /* TOP + BOTTOM REDUCED */
         padding:
-            40px 0 44px;
+            25px 0 28px;
     }
 
     .hero h1 {
@@ -1840,22 +1853,27 @@ footer {
     }
 
     .navbar-brand {
-        font-size: 12px;
+        font-size: 13px;
+    }
+
+    .navbar-links {
+        gap: 5px;
     }
 
     .nav-link {
         padding:
-            8px 6px;
+            8px 7px;
 
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .hero {
         min-height:
             calc(100svh - 62px);
 
+        /* TOP + BOTTOM REDUCED */
         padding:
-            34px 0 38px;
+            22px 0 25px;
     }
 
     .hero h1 {
@@ -2965,10 +2983,6 @@ function openDetails(id) {
     `;
 
 
-    /*
-       Instant movement prevents the browser's
-       smooth-scroll animation from feeling too fast.
-    */
     window.scrollTo({
         top: 0,
         left: 0,
