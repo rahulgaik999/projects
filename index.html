@@ -470,15 +470,15 @@ img {
 
         position: sticky;
 
-        top: 8px;
+        top: 0;
 
-        width: calc(100% - 20px);
+        width: 100%;
 
-        margin-top: 8px;
+        margin: 0;
 
         padding: 9px 11px;
 
-        border-radius: 19px;
+        border-radius: 0;
 
     }
 
@@ -508,13 +508,15 @@ img {
 
         z-index: 2000;
 
-        width: 100%;
+        width: 100vw;
+
+        min-width: 100vw;
 
         height: 100vh;
 
         height: 100dvh;
 
-        padding: max(22px, env(safe-area-inset-top)) 24px max(28px, env(safe-area-inset-bottom));
+        padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
 
         display: flex;
 
@@ -2926,6 +2928,66 @@ footer {
     }
 }
 
+/* CONTACT FORM RESULT POPUP */
+.contact-result-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(3, 5, 14, .82);
+    backdrop-filter: blur(8px);
+}
+.contact-result-overlay.show { display: flex; }
+.contact-result-dialog {
+    width: min(100%, 520px);
+    padding: 38px 30px 32px;
+    border: 1px solid rgba(168, 85, 247, .65);
+    border-radius: 24px;
+    background: #111827;
+    box-shadow: 0 24px 90px rgba(0, 0, 0, .55);
+    text-align: center;
+    color: #fff;
+}
+.contact-result-icon {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, .14);
+    color: #86efac;
+    font-size: 42px;
+    font-weight: 800;
+}
+.contact-result-dialog.error .contact-result-icon {
+    background: rgba(248, 113, 113, .14);
+    color: #fca5a5;
+}
+.contact-result-dialog h3 { margin: 0 0 12px; font-size: clamp(23px, 5vw, 30px); }
+.contact-result-dialog p { margin: 0; color: #cbd5e1; font-size: 16px; line-height: 1.7; overflow-wrap: anywhere; }
+.contact-result-close {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 26px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(100deg, #a855f7, #6b2ca8);
+    color: #fff;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+@media (max-width: 720px) {
+    .contact-result-overlay { padding: 14px; }
+    .contact-result-dialog { padding: 32px 22px 24px; }
+}
+
+
 </style>
 
 </head>
@@ -4963,15 +5025,18 @@ window.addEventListener(
 
         } else {
 
-
-
             showLibrary(false);
 
-
+            // Keep the first browser-back action inside the portfolio on mobile.
+            if (!event.state || !event.state.portfolioHomeSentinel) {
+                history.pushState(
+                    { portfolioHomeSentinel: true },
+                    "",
+                    window.location.pathname + window.location.search
+                );
+            }
 
         }
-
-
 
     }
 
@@ -4993,6 +5058,13 @@ history.replaceState(
 
     window.location.search
 
+);
+
+// Add one in-page history entry so a mobile Back tap returns to the portfolio first.
+history.pushState(
+    { portfolioHomeSentinel: true },
+    "",
+    window.location.pathname + window.location.search
 );
 
 
@@ -5027,6 +5099,7 @@ renderProjects();
 
 
 
+
 /* CONTACT FORM - FormSubmit email delivery */
 
 const portfolioContactForm =
@@ -5035,175 +5108,101 @@ const portfolioContactForm =
 
 
 
-if (portfolioContactForm) {
-
-
-
-    portfolioContactForm.addEventListener("submit", async function (event) {
-
-
-
-        event.preventDefault();
-
-
-
-        const submitButton =
-
-            document.getElementById("contactSubmit");
-
-
-
-        const statusMessage =
-
-            document.getElementById("contactFormStatus");
-
-
-
-        const formData =
-
-            new FormData(portfolioContactForm);
-
-
-
-        const payload =
-
-            Object.fromEntries(formData.entries());
-
-
-
-        payload._subject =
-
-            "Portfolio Contact: " + payload.subject;
-
-
-
-        payload._template = "table";
-
-
-
-        payload._captcha = "false";
-
-
-
-        submitButton.disabled = true;
-
-        submitButton.textContent = "Sending...";
-
-
-
-        statusMessage.classList.remove("error");
-
-        statusMessage.textContent = "Sending your message...";
-
-
-
-        try {
-
-
-
-            const response = await fetch(
-
-                "https://formsubmit.co/ajax/rahulgaik999@gmail.com",
-
-                {
-
-                    method: "POST",
-
-                    headers: {
-
-                        "Content-Type": "application/json",
-
-                        "Accept": "application/json"
-
-                    },
-
-                    body: JSON.stringify(payload)
-
-                }
-
-            );
-
-
-
-            const result = await response.json();
-
-
-
-            const succeeded = result && (
-
-                result.success === true ||
-
-                result.success === "true"
-
-            );
-
-
-
-            if (!response.ok || !succeeded) {
-
-                throw new Error(
-
-                    result && result.message
-
-                        ? result.message
-
-                        : "Email service did not accept the message."
-
-                );
-
-            }
-
-
-
-            statusMessage.textContent =
-
-                "Thank you! Your message has been sent successfully.";
-
-
-
-            portfolioContactForm.reset();
-
-
-
-        } catch (error) {
-
-
-
-            statusMessage.classList.add("error");
-
-
-
-            statusMessage.textContent =
-
-                "Message could not be sent. Check your internet connection and confirm the FormSubmit activation email sent to rahulgaik999@gmail.com. You can also email me directly using the Email link.";
-
-
-
-        } finally {
-
-
-
-            submitButton.disabled = false;
-
-            submitButton.innerHTML = "➤ &nbsp; Send Message";
-
-
-
-        }
-
-
-
-    });
-
-
-
+const contactResultOverlay = document.getElementById("contactResultOverlay");
+const contactResultDialog = document.getElementById("contactResultDialog");
+const contactResultIcon = document.getElementById("contactResultIcon");
+const contactResultTitle = document.getElementById("contactResultTitle");
+const contactResultText = document.getElementById("contactResultText");
+const contactResultClose = document.getElementById("contactResultClose");
+
+function showContactResult(success, message) {
+    contactResultDialog.classList.toggle("error", !success);
+    contactResultIcon.textContent = success ? "✓" : "!";
+    contactResultTitle.textContent = success ? "Message sent successfully!" : "Message could not be sent";
+    contactResultText.textContent = message;
+    contactResultOverlay.classList.add("show");
+    document.body.style.overflow = "hidden";
 }
 
+function closeContactResult() {
+    contactResultOverlay.classList.remove("show");
+    document.body.style.overflow = "";
+}
+
+contactResultClose.addEventListener("click", closeContactResult);
+contactResultOverlay.addEventListener("click", event => {
+    if (event.target === contactResultOverlay) closeContactResult();
+});
+
+if (portfolioContactForm) {
+    portfolioContactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = document.getElementById("contactSubmit");
+        const statusMessage = document.getElementById("contactFormStatus");
+        const formData = new FormData(portfolioContactForm);
+        const payload = Object.fromEntries(formData.entries());
+        payload._subject = "Portfolio Contact: " + payload.subject;
+        payload._template = "table";
+        payload._captcha = "false";
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+        statusMessage.classList.remove("error");
+        statusMessage.textContent = "Sending your message... Please wait.";
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+        try {
+            const response = await fetch(
+                "https://formsubmit.co/ajax/rahulgaik999@gmail.com",
+                {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify(payload),
+                    signal: controller.signal
+                }
+            );
+            const result = await response.json();
+            const succeeded = result && (result.success === true || result.success === "true");
+
+            if (!response.ok || !succeeded) {
+                throw new Error(result && result.message ? result.message : "The email service did not accept your message.");
+            }
+
+            statusMessage.textContent = "Your message has been sent successfully.";
+            portfolioContactForm.reset();
+            showContactResult(true, "Thank you for reaching out. Your message has been delivered, and I will get back to you as soon as possible.");
+        } catch (error) {
+            statusMessage.classList.add("error");
+            const failureMessage = error.name === "AbortError"
+                ? "The request took too long and timed out. Please check your internet connection and try again, or contact me using the Email link."
+                : "Please check your internet connection and try again. If this is your first message, confirm the FormSubmit activation email sent to rahulgaik999@gmail.com. You can also contact me directly using the Email link.";
+            statusMessage.textContent = failureMessage;
+            showContactResult(false, failureMessage);
+        } finally {
+            clearTimeout(timeoutId);
+            submitButton.disabled = false;
+            submitButton.innerHTML = "➤ &nbsp; Send Message";
+        }
+    });
+}
 
 
 </script>
 
 
+
+
+<div class="contact-result-overlay" id="contactResultOverlay" role="dialog" aria-modal="true" aria-labelledby="contactResultTitle">
+    <div class="contact-result-dialog" id="contactResultDialog">
+        <div class="contact-result-icon" id="contactResultIcon">✓</div>
+        <h3 id="contactResultTitle">Message sent!</h3>
+        <p id="contactResultText">Thank you for contacting me. I will get back to you soon.</p>
+        <button class="contact-result-close" id="contactResultClose" type="button">Continue</button>
+    </div>
+</div>
 
 </body>
 
