@@ -1,2028 +1,5210 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="description" content="Rahul Gaikwad - Project Portfolio">
+
+
 
     <title>My Portfolio | Rahul Gaikwad</title>
 
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+
+
 <style>
 
+
+
 :root {
+
     --bg: #080912;
+
     --surface: #0d131c;
+
     --surface-2: #151d29;
+
     --text: #f5f7fb;
+
     --muted: #9aa7b8;
+
     --border: #253044;
+
     --violet: #8b5cf6;
+
     --purple: #a855f7;
+
     --violet-light: #c084fc;
+
     --max-width: 1280px;
+
 }
+
+
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+
 
 html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
 }
+
+
 
 body {
+
     font-family: "Inter", sans-serif;
+
     background:
+
         radial-gradient(
+
             circle at 50% -15%,
+
             rgba(139, 92, 246, .10),
+
             transparent 30%
+
         ),
+
         radial-gradient(
+
             circle at 100% 30%,
+
             rgba(168, 85, 247, .035),
+
             transparent 25%
+
         ),
+
         #080912;
+
     color: var(--text);
+
     line-height: 1.6;
+
     overflow-x: hidden;
+
     scroll-behavior: auto;
+
 }
+
+
 
 a {
+
     color: inherit;
+
     text-decoration: none;
+
 }
+
+
 
 button,
+
 input,
+
 select {
+
     font-family: inherit;
+
 }
+
+
 
 img {
+
     display: block;
+
     width: 100%;
+
 }
+
+
 
 .container {
+
     width: min(calc(100% - 40px), var(--max-width));
+
     margin: auto;
+
 }
 
+
+
 .navbar {
-    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    margin: 0;
+    padding: 13px 18px;
+    border: 0;
+    border-bottom: 1px solid rgba(139, 92, 246, .18);
+    border-radius: 0;
+    background: rgba(13, 19, 28, .96);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
+    backdrop-filter: blur(14px);
 }
+
+
+
+.navbar-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    width: 100%;
+
+}
+
+
+
+.navbar-brand {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    flex: 0 0 auto;
+
+    gap: 13px;
+
+    min-width: max-content;
+
+}
+
+
+
+.navbar-avatar {
+
+    width: 58px;
+
+    height: 58px;
+
+    flex: 0 0 58px;
+
+    object-fit: cover;
+
+    object-position: center 35%;
+
+    border: 2px solid #a855f7;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 15px rgba(168, 85, 247, .38);
+
+}
+
+
+
+.navbar-name {
+
+    color: #f8f7ff;
+
+    font-size: clamp(17px, 1.55vw, 23px);
+
+    font-weight: 800;
+
+    letter-spacing: -.6px;
+
+    white-space: nowrap;
+
+}
+
+
+
+.navbar-name span {
+
+    color: #c084fc;
+
+}
+
+
+
+.nav-divider {
+
+    width: 1px;
+
+    height: 42px;
+
+    flex: 0 0 1px;
+
+    background: rgba(210, 190, 255, .36);
+
+}
+
+
+
+.navbar-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(4px, .7vw, 12px);
+
+    flex: 1 1 auto;
+
+}
+
+
+
+.nav-link,
+
+.nav-social {
+
+    min-height: 48px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 10px 13px;
+
+    border: 1px solid transparent;
+
+    border-radius: 999px;
+
+    color: #f0edf8;
+
+    font-size: clamp(11px, .92vw, 14px);
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+
+}
+
+
+
+.nav-link svg,
+
+.nav-social svg {
+
+    width: 19px;
+
+    height: 19px;
+
+    flex: 0 0 19px;
+
+    stroke: currentColor;
+
+}
+
+
+
+.nav-link:hover,
+
+.nav-social:hover {
+
+    color: #ffffff;
+
+    border-color: rgba(192, 132, 252, .42);
+
+    background: rgba(139, 92, 246, .14);
+
+    transform: translateY(-1px);
+
+}
+
+
+
+.nav-link.active {
+
+    color: #ffffff;
+
+    border-color: rgba(216, 180, 254, .55);
+
+    background: linear-gradient(110deg, #7c2bd6, #a855f7);
+
+    box-shadow: 0 5px 18px rgba(139, 92, 246, .24);
+
+}
+
+
+
+.nav-socials {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    flex: 0 0 auto;
+
+}
+
+
+
+.nav-social {
+
+    min-height: 46px;
+
+    padding: 9px 13px;
+
+    border-color: rgba(216, 180, 254, .5);
+
+}
+
+
+
+.nav-social.linkedin {
+
+    border-color: transparent;
+
+    background: linear-gradient(110deg, #7c2bd6, #9333ea);
+
+    box-shadow: 0 4px 18px rgba(139, 92, 246, .25);
+
+}
+
+
+
+.nav-menu-toggle {
+
+    display: none;
+
+    width: 44px;
+
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(192, 132, 252, .55);
+
+    border-radius: 12px;
+
+    background: rgba(139, 92, 246, .12);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+}
+
+
+
+.nav-menu-toggle svg {
+
+    width: 23px;
+
+    height: 23px;
+
+    stroke: currentColor;
+
+}
+
+
+
+@media (max-width: 1100px) and (min-width: 721px) {
+
+    .navbar { width: 100%; margin: 0; padding: 11px 12px; }
+
+    .navbar-inner { gap: 9px; }
+
+    .navbar-avatar { width: 48px; height: 48px; flex-basis: 48px; }
+
+    .navbar-brand { gap: 9px; }
+
+    .navbar-name { font-size: 17px; }
+
+    .nav-link, .nav-social { gap: 6px; padding: 9px 8px; font-size: 11px; }
+
+    .nav-link svg, .nav-social svg { width: 16px; height: 16px; flex-basis: 16px; }
+
+    .nav-socials { gap: 5px; }
+
+}
+
+
+
+@media (max-width: 720px) {
+
+    .navbar {
+
+        position: sticky;
+
+        top: 8px;
+
+        width: calc(100% - 20px);
+
+        margin-top: 8px;
+
+        padding: 9px 11px;
+
+        border-radius: 19px;
+
+    }
+
+
+
+    .navbar-inner { gap: 10px; }
+
+    .navbar-avatar { width: 46px; height: 46px; flex-basis: 46px; }
+
+    .navbar-brand { gap: 10px; }
+
+    .navbar-name { font-size: 18px; }
+
+    .nav-divider { display: none; }
+
+    .nav-menu-toggle { display: inline-flex; }
+
+    .nav-socials, .desktop-social-divider { display: none; }
+
+
+
+    .navbar-menu {
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 2000;
+
+        width: 100%;
+
+        height: 100vh;
+
+        height: 100dvh;
+
+        padding: max(22px, env(safe-area-inset-top)) 24px max(28px, env(safe-area-inset-bottom));
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 11px;
+
+        overflow-y: auto;
+
+        background:
+
+            radial-gradient(circle at 85% 10%, rgba(139, 92, 246, .20), transparent 30%),
+
+            linear-gradient(145deg, #080912, #100d27 60%, #170d30);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition: opacity .22s ease, visibility .22s ease, transform .22s ease;
+
+    }
+
+
+
+    .navbar-menu.open {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+
+    }
+
+
+
+    .mobile-menu-top {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 12px;
+
+        padding: 4px 0 22px;
+
+        margin-bottom: 12px;
+
+        border-bottom: 1px solid rgba(192, 132, 252, .22);
+
+    }
+
+
+
+    .mobile-menu-brand {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 11px;
+
+        color: #fff;
+
+        font-size: 20px;
+
+        font-weight: 800;
+
+    }
+
+
+
+    .mobile-menu-brand img {
+
+        width: 48px;
+
+        height: 48px;
+
+        object-fit: cover;
+
+        object-position: center 35%;
+
+        border: 2px solid #a855f7;
+
+        border-radius: 50%;
+
+    }
+
+
+
+    .mobile-menu-close {
+
+        width: 44px;
+
+        height: 44px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border: 1px solid rgba(192, 132, 252, .5);
+
+        border-radius: 12px;
+
+        background: rgba(139, 92, 246, .13);
+
+        color: #fff;
+
+        font-size: 26px;
+
+        cursor: pointer;
+
+    }
+
+
+
+    .navbar-menu .nav-link {
+
+        width: 100%;
+
+        min-height: 58px;
+
+        justify-content: flex-start;
+
+        gap: 15px;
+
+        padding: 14px 17px;
+
+        border: 1px solid rgba(192, 132, 252, .12);
+
+        border-radius: 13px;
+
+        background: rgba(255, 255, 255, .025);
+
+        font-size: 16px;
+
+    }
+
+
+
+    .navbar-menu .nav-link svg { width: 22px; height: 22px; flex-basis: 22px; }
+
+    .navbar-menu .nav-link.active { background: linear-gradient(110deg, #7026c5, #9333ea); }
+
+
+
+    .mobile-menu-socials {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 11px;
+
+        margin-top: 15px;
+
+        padding-top: 20px;
+
+        border-top: 1px solid rgba(192, 132, 252, .22);
+
+    }
+
+
+
+    .mobile-menu-socials .nav-social {
+
+        width: 100%;
+
+        min-height: 54px;
+
+        justify-content: center;
+
+        font-size: 15px;
+
+    }
+
+
+
+    body.menu-open { overflow: hidden; }
+
+}
+
+
+
+@media (min-width: 721px) {
+
+    .mobile-menu-top, .mobile-menu-socials { display: none; }
+
+}
+
 
 
 /* HERO */
 
+
+
 .hero {
+
     position: relative;
+
     padding: 30px 0 20px;
+
     text-align: center;
+
     overflow: hidden;
+
 }
+
+
 
 .hero::before {
+
     content: "";
+
     position: absolute;
+
     width: 520px;
+
     height: 260px;
+
     left: 50%;
+
     top: -120px;
+
     transform: translateX(-50%);
+
     border-radius: 50%;
+
     background: rgba(139,92,246,.08);
+
     pointer-events: none;
+
 }
+
+
 
 .hero-content {
+
     position: relative;
+
     z-index: 2;
+
     max-width: 900px;
+
     margin: auto;
+
 }
+
+
 
 .hero-badge {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
+
     padding: 8px 15px;
+
     margin-bottom: 27px;
+
     border: 1px solid rgba(168,85,247,.15);
+
     border-radius: 999px;
+
     background: rgba(168,85,247,.035);
+
     color: #bca9d1;
+
     font-size: 17px;
+
     font-weight: 800;
+
     letter-spacing: 1.3px;
+
     text-transform: uppercase;
+
 }
+
+
 
 .hero-badge-dot {
+
     width: 6px;
+
     height: 6px;
+
     border-radius: 50%;
+
     background: #a855f7;
+
 }
+
+
 
 .hero h1 {
+
     max-width: 900px;
+
     margin: auto;
+
     font-size: clamp(44px, 7vw, 78px);
+
     line-height: .98;
+
     letter-spacing: -4px;
+
     font-weight: 800;
+
     color: #ffffff;
+
 }
+
+
 
 .hero h1 span {
+
     background:
+
         linear-gradient(
+
             90deg,
+
             #a78bfa,
+
             #c084fc,
+
             #d8b4fe
+
         );
+
     -webkit-background-clip: text;
+
     background-clip: text;
+
     color: transparent;
+
 }
 
+
+
 .hero-description {
+
     max-width: 680px;
+
     margin: 27px auto 0;
+
     color: #969eae;
+
     font-size: 15px;
+
     line-height: 1.85;
+
 }
+
 
 
 /* PROJECT HEADING */
 
+
+
 .projects-heading {
+
     padding: 20px 0 18px;
+
 }
+
+
 
 .projects-heading-top {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 25px;
+
 }
+
+
 
 .projects-heading-content {
+
     flex-shrink: 0;
+
 }
+
+
 
 .projects-label {
+
     margin-bottom: 8px;
+
     color: #b889e8;
+
     font-size: 10px;
+
     font-weight: 800;
+
     letter-spacing: 1.5px;
+
     text-transform: uppercase;
+
 }
+
+
 
 .projects-heading h2 {
+
     font-size: clamp(30px,4vw,43px);
+
     line-height: 1;
+
     letter-spacing: -1.8px;
+
 }
+
+
 
 .projects-heading p {
+
     margin-top: 10px;
+
     color: #7f899a;
+
     font-size: 13px;
+
 }
 
+
+
 .project-count {
+
     padding: 7px 12px;
+
     border: 1px solid rgba(168,85,247,.12);
+
     border-radius: 999px;
+
     background: rgba(168,85,247,.025);
+
     color: #aaa0b7;
+
     font-size: 10px;
+
     font-weight: 700;
+
     white-space: nowrap;
+
 }
+
 
 
 /* TOOLBAR */
 
+
+
 .toolbar {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 10px;
+
     padding: 10px;
+
     margin: 0;
+
     border: 1px solid rgba(168,85,247,.10);
+
     border-radius: 15px;
+
     background: rgba(10,12,21,.72);
+
     flex: 1;
+
     max-width: 610px;
+
 }
+
+
 
 .search-box {
+
     position: relative;
+
     flex: 1;
+
     max-width: 400px;
+
 }
+
+
 
 .search-box input {
+
     width: 100%;
+
     height: 45px;
+
     padding: 0 15px 0 43px;
+
     outline: none;
+
     border: 1px solid rgba(168,85,247,.10);
+
     border-radius: 10px;
+
     background: rgba(255,255,255,.02);
+
     color: white;
+
     font-size: 12px;
+
 }
+
+
 
 .search-box input::placeholder {
+
     color: #687588;
+
 }
+
+
 
 .search-box input:focus {
-    border-color: rgba(168,85,247,.30);
-    box-shadow: 0 0 0 3px rgba(168,85,247,.035);
+
+    border-color: #ffffff;
+
+    box-shadow: 0 0 0 2px rgba(255,255,255,.10);
+
 }
+
+
 
 .search-icon {
+
     position: absolute;
+
     left: 15px;
+
     top: 50%;
+
     transform: translateY(-50%);
+
     color: #a77bc9;
+
 }
 
+
+
 .filter-select {
+
     height: 45px;
+
     padding: 0 13px;
+
     outline: none;
+
     border: 1px solid rgba(168,85,247,.10);
+
     border-radius: 10px;
+
     background: #10121c;
+
     color: #b8b0bf;
+
     font-size: 11px;
+
     font-weight: 700;
+
 }
+
 
 
 /* PROJECT CARDS */
 
+
+
 .project-grid {
+
     display: grid;
+
     grid-template-columns: repeat(3,minmax(0,1fr));
+
     gap: 22px;
+
     padding-bottom: 55px;
+
     width: 100%;
+
 }
+
+
 
 .project-card {
+
     min-width: 0;
+
     overflow: hidden;
+
     border: 1px solid var(--border);
+
     border-radius: 18px;
+
     background: var(--surface);
+
     box-shadow: 0 1px 2px rgba(0,0,0,.03);
+
     transition:
+
         transform .22s ease,
+
         box-shadow .22s ease,
+
         border-color .22s ease;
+
 }
+
+
 
 .project-card:hover {
+
     transform: translateY(-5px);
+
     box-shadow: 0 25px 70px rgba(0,0,0,.45);
+
     border-color: rgba(109,124,255,.35);
+
 }
+
+
 
 .project-image {
+
     position: relative;
+
     aspect-ratio: 16 / 9;
+
     overflow: hidden;
+
     background: var(--surface-2);
+
 }
+
+
 
 .project-image img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
     transition: transform .35s ease;
+
 }
+
+
 
 .project-card:hover .project-image img {
+
     transform: scale(1.025);
+
 }
+
+
 
 .status {
+
     position: absolute;
+
     top: 13px;
+
     left: 13px;
+
     padding: 5px 9px;
+
     border-radius: 999px;
+
     background: rgba(0,0,0,.7);
+
     color: white;
+
     font-size: 10px;
+
     font-weight: 700;
+
 }
+
+
 
 .project-content {
+
     padding: 21px;
+
 }
+
+
 
 .project-title {
+
     margin-bottom: 7px;
+
     font-size: 17px;
+
     line-height: 1.3;
+
     letter-spacing: -.4px;
+
 }
+
+
 
 .project-description {
+
     min-height: 47px;
+
     margin-bottom: 17px;
+
     color: var(--muted);
+
     font-size: 13px;
+
     line-height: 1.7;
+
 }
+
+
 
 .technologies {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 6px;
+
     margin-bottom: 20px;
+
 }
+
+
 
 .tech {
+
     padding: 5px 8px;
+
     border: 1px solid var(--border);
+
     border-radius: 6px;
+
     background: var(--surface-2);
+
     color: var(--muted);
+
     font-size: 10px;
+
     font-weight: 600;
+
 }
+
+
 
 .actions {
+
     display: flex;
+
     gap: 8px;
+
 }
+
+
 
 .btn {
+
     min-height: 40px;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 6px;
+
     padding: 0 13px;
+
     border-radius: 8px;
+
     font-size: 11px;
+
     font-weight: 700;
+
     transition: .18s;
+
 }
+
+
 
 .primary {
+
     flex: 1;
+
     background: var(--violet);
+
     border: 1px solid var(--violet);
+
     color: white;
+
 }
+
+
 
 .primary:hover {
+
     background: #9b6cff;
+
 }
+
+
 
 .secondary {
+
     border: 1px solid var(--border);
+
     background: var(--surface);
+
     color: var(--text);
+
 }
 
+
+
 .secondary:hover {
+
     background: var(--surface-2);
+
 }
+
 
 
 /* EMPTY */
 
+
+
 .empty {
+
     display: none;
+
     padding: 70px 20px;
+
     margin-bottom: 70px;
+
     border: 1px dashed rgba(168,85,247,.18);
+
     border-radius: 18px;
+
     text-align: center;
+
     color: var(--muted);
+
     background: rgba(168,85,247,.025);
+
 }
+
+
 
 .empty.show {
+
     display: block;
+
 }
+
+
 
 .empty h3 {
+
     margin-bottom: 6px;
+
     color: var(--text);
+
     font-size: 18px;
+
 }
 
+
+
 .empty p {
+
     font-size: 13px;
+
 }
+
 
 
 /* DETAILS */
 
+
+
 .details-page {
+
     display: none;
+
     min-height: calc(100vh - 82px);
+
     padding: 45px 0 70px;
+
 }
+
+
 
 .details-page.active {
+
     display: block;
+
 }
+
+
 
 .library-page.hidden {
+
     display: none;
+
 }
+
+
 
 .back-btn {
+
     display: flex;
+
     margin: 0 0 35px auto;
+
     padding: 11px 17px;
+
     border: 1px solid rgba(192,132,252,.42);
+
     border-radius: 10px;
+
     background: rgba(139,92,246,.12);
+
     color: #d8b4fe;
+
     font-size: 12px;
+
     font-weight: 800;
+
     cursor: pointer;
+
     transition: .2s;
+
 }
+
+
 
 .back-btn:hover {
+
     background: rgba(139,92,246,.20);
+
     border-color: rgba(216,180,254,.60);
+
     color: #ffffff;
+
     transform: translateX(-4px);
+
 }
+
+
 
 .details-header {
+
     max-width: 900px;
+
     margin-bottom: 30px;
+
 }
 
+
+
 .details-label {
+
     margin-bottom: 10px;
+
     color: #b889e8;
+
     font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.details-title {
+
+    margin-bottom: 15px;
+
+    font-size: clamp(34px,5vw,56px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+
+}
+
+
+
+.details-description {
+
+    max-width: 760px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+
+.details-preview {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    overflow: hidden;
+
+    margin: 0 auto 35px;
+
+    border: 1px solid rgba(168,85,247,.10);
+
+    border-radius: 18px;
+
+}
+
+
+
+.details-preview img {
+
+    width: 100%;
+
+    max-height: 450px;
+
+    aspect-ratio: 16 / 8;
+
+    object-fit: cover;
+
+}
+
+
+
+.details-layout {
+
+    display: grid;
+
+    grid-template-columns: minmax(0,1.5fr) minmax(260px,.7fr);
+
+    gap: 50px;
+
+}
+
+
+
+.details-main h2,
+
+.details-sidebar h2 {
+
+    margin-bottom: 13px;
+
+    font-size: 17px;
+
+}
+
+
+
+.details-main p {
+
+    margin-bottom: 32px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.85;
+
+}
+
+
+
+.features {
+
+    list-style: none;
+
+    display: grid;
+
+    gap: 11px;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+.features li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+
+.check {
+
+    width: 20px;
+
+    height: 20px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(168,85,247,.10);
+
+    color: #b889e8;
+
+}
+
+
+
+/* PC / LAPTOP ONLY - DETAILS CENTER */
+
+
+
+@media (min-width: 1051px) {
+
+    .details-header {
+
+        max-width: 900px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        text-align: center;
+
+    }
+
+
+
+    .details-description {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+
+    .details-layout {
+
+        margin-left: 40px;
+
+        margin-right: 40px;
+
+    }
+
+}
+
+
+
+/* FOOTER */
+
+
+
+footer {
+
+    border-top: 1px solid rgba(168,85,247,.06);
+
+    padding: 45px 0 70px;
+
+    background:
+
+        radial-gradient(
+
+            circle at 20% 100%,
+
+            rgba(139,92,246,.07),
+
+            transparent 35%
+
+        ),
+
+        #080912;
+
+    color: #858b99;
+
+}
+
+
+
+.footer-inner {
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 0 28px;
+
+    display: grid;
+
+    grid-template-columns: 1.6fr .8fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+
+.footer-main {
+
+    max-width: 780px;
+
+}
+
+
+
+.footer-brand {
+
+    margin-left: 8px;
+
+    margin-bottom: 18px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+.footer-brand span {
+
+    color: #b889e8;
+
+}
+
+
+
+.footer-title {
+
+    max-width: 700px;
+
+    margin: 0 0 20px;
+
+    color: #ffffff;
+
+    font-size: clamp(30px,4vw,48px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+
+    font-weight: 800;
+
+}
+
+
+
+.footer-title span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #a78bfa,
+
+            #c084fc,
+
+            #d8b4fe
+
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+
+.footer-description {
+
+    max-width: 650px;
+
+    color: #949aaa;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+}
+
+
+
+.footer-side {
+
+    padding: 25px;
+
+    border-left: 1px solid rgba(168,85,247,.10);
+
+    background: rgba(168,85,247,.018);
+
+}
+
+
+
+.footer-small-title {
+
+    margin-bottom: 12px;
+
+    color: #b889e8;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+.footer-side p {
+
+    color: #777f90;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* TABLET */
+
+
+
+@media (max-width: 1050px) {
+
+    .navbar-inner {
+
+        gap: 6px;
+
+    }
+
+
+
+    .nav-link,
+
+    .nav-social {
+
+        font-size: 11px;
+
+        padding-left: 5px;
+
+        padding-right: 5px;
+
+    }
+
+
+
+    .project-grid {
+
+        grid-template-columns: repeat(2,minmax(0,1fr));
+
+        width: 100%;
+
+    }
+
+
+
+    .details-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+
+    .hero {
+
+        padding: 25px 0 20px;
+
+    }
+
+
+
+    .projects-heading {
+
+        padding-top: 20px;
+
+    }
+
+
+
+    .projects-heading-top {
+
+        gap: 15px;
+
+    }
+
+
+
+    .toolbar {
+
+        max-width: 500px;
+
+    }
+
+}
+
+
+
+/* MOBILE */
+
+
+
+@media (max-width: 720px) {
+
+    .navbar {
+
+        padding: 9px 0;
+
+    }
+
+
+
+    .navbar-inner {
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 7px;
+
+    }
+
+
+
+    .nav-link,
+
+    .nav-social {
+
+        min-height: 42px;
+
+        padding: 8px 5px;
+
+        font-size: 11px;
+
+    }
+
+
+
+    .container {
+
+        width: calc(100% - 28px);
+
+        max-width: none;
+
+    }
+
+
+
+    .hero {
+
+        min-height: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        padding: 20px 0 18px;
+
+    }
+
+
+
+    .hero::before {
+
+        width: 400px;
+
+        height: 200px;
+
+        top: -90px;
+
+    }
+
+
+
+    .hero-content {
+
+        width: 100%;
+
+    }
+
+
+
+    .hero-badge {
+
+        margin-bottom: 22px;
+
+        font-size: 10px;
+
+        padding: 8px 13px;
+
+    }
+
+
+
+    .hero h1 {
+
+        font-size: clamp(40px, 11vw, 52px);
+
+        line-height: 1.02;
+
+        letter-spacing: -2.8px;
+
+    }
+
+
+
+    .hero-description {
+
+        max-width: 600px;
+
+        margin-top: 20px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+
+    .projects-heading {
+
+        padding: 22px 0 18px;
+
+    }
+
+
+
+    .projects-heading-top {
+
+        width: 100%;
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 14px;
+
+    }
+
+
+
+    .projects-heading-content {
+
+        width: 100%;
+
+    }
+
+
+
+    .projects-heading h2 {
+
+        font-size: 34px;
+
+        line-height: 1.05;
+
+    }
+
+
+
+    .projects-heading p {
+
+        max-width: 100%;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+    }
+
+
+
+    .project-count {
+
+        align-self: flex-start;
+
+        font-size: 10px;
+
+    }
+
+
+
+    .toolbar {
+
+        width: 100%;
+
+        max-width: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 11px;
+
+        margin: 0;
+
+        gap: 10px;
+
+    }
+
+
+
+    .search-box {
+
+        width: 100%;
+
+        max-width: none;
+
+    }
+
+
+
+    .search-box input {
+
+        height: 46px;
+
+        font-size: 13px;
+
+    }
+
+
+
+    .filter-select {
+
+        width: 100%;
+
+        height: 46px;
+
+        font-size: 12px;
+
+    }
+
+
+
+    .project-grid {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        padding-bottom: 50px;
+
+        margin-left: 0;
+
+        margin-right: 0;
+
+    }
+
+
+
+    .project-card {
+
+        width: 100%;
+
+        max-width: 100%;
+
+    }
+
+
+
+    .project-content {
+
+        padding: 18px;
+
+    }
+
+
+
+    .project-title {
+
+        font-size: 18px;
+
+    }
+
+
+
+    .project-description {
+
+        font-size: 13px;
+
+        min-height: auto;
+
+    }
+
+
+
+    .details-page {
+
+        padding: 26px 0 65px;
+
+        min-height: auto;
+
+    }
+
+
+
+    .back-btn {
+
+        margin: 0 0 27px auto;
+
+        padding: 11px 16px;
+
+        color: #d8b4fe;
+
+        border-color: rgba(192,132,252,.45);
+
+        background: rgba(139,92,246,.12);
+
+        font-size: 12px;
+
+    }
+
+
+
+    .details-title {
+
+        font-size: clamp(34px, 9vw, 48px);
+
+        letter-spacing: -1.8px;
+
+    }
+
+
+
+    .details-description {
+
+        font-size: 14px;
+
+        line-height: 1.75;
+
+    }
+
+
+
+    .details-preview {
+
+        margin-bottom: 28px;
+
+    }
+
+
+
+    .details-preview img {
+
+        aspect-ratio: 16 / 9;
+
+        max-height: 260px;
+
+    }
+
+
+
+    .detail-actions {
+
+        flex-direction: column;
+
+    }
+
+
+
+    footer {
+
+        padding: 40px 0 50px;
+
+    }
+
+
+
+    .footer-inner {
+
+        width: 100%;
+
+        padding: 0 16px;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+
+
+    .footer-title {
+
+        font-size: 31px;
+
+        letter-spacing: -1px;
+
+    }
+
+
+
+    .footer-description {
+
+        font-size: 13px;
+
+        text-align: left;
+
+    }
+
+
+
+    .footer-side {
+
+        padding: 20px 0;
+
+        border-left: 0;
+
+        border-top: 1px solid rgba(168,85,247,.08);
+
+    }
+
+}
+
+
+
+/* SMALL MOBILE */
+
+
+
+@media (max-width: 420px) {
+
+    .container {
+
+        width: calc(100% - 22px);
+
+    }
+
+
+
+    .hero {
+
+        min-height: auto;
+
+        padding: 18px 0 16px;
+
+    }
+
+
+
+    .hero h1 {
+
+        font-size: 39px;
+
+        letter-spacing: -2.1px;
+
+    }
+
+
+
+    .hero-description {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+
+
+    .projects-heading {
+
+        padding-top: 20px;
+
+    }
+
+
+
+    .projects-heading h2 {
+
+        font-size: 31px;
+
+    }
+
+
+
+    .project-content {
+
+        padding: 15px;
+
+    }
+
+}
+
+
+
+/* VERY SMALL MOBILE */
+
+
+
+@media (max-width: 350px) {
+
+    .hero {
+
+        min-height: auto;
+
+        padding: 15px 0 14px;
+
+    }
+
+
+
+    .hero h1 {
+
+        font-size: 35px;
+
+        letter-spacing: -1.8px;
+
+    }
+
+
+
+    .hero-description {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+
+/* ABOUT ME AND CONTACT SECTIONS */
+
+.about-section,
+.contact-section {
+    min-height: calc(100vh - 105px);
+    min-height: calc(100svh - 105px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 42px 0;
+    scroll-margin-top: 105px;
+}
+
+.about-section > .container,
+.contact-section > .container {
+    width: min(calc(100% - 40px), var(--max-width));
+    margin: 0 auto;
+}
+
+.section-kicker {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 17px;
+    color: #c084fc;
+    font-size: 16px;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-.details-title {
-    margin-bottom: 15px;
-    font-size: clamp(34px,5vw,56px);
-    line-height: 1.05;
-    letter-spacing: -2.5px;
+.section-kicker::before,
+.section-kicker::after {
+    content: "";
+    width: 74px;
+    height: 3px;
+    background: #a855f7;
 }
 
-.details-description {
-    max-width: 760px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-.details-preview {
-    width: 100%;
-    max-width: 720px;
-    overflow: hidden;
-    margin: 0 auto 35px;
-    border: 1px solid rgba(168,85,247,.10);
-    border-radius: 18px;
-}
-
-.details-preview img {
-    width: 100%;
-    max-height: 450px;
-    aspect-ratio: 16 / 8;
-    object-fit: cover;
-}
-
-.details-layout {
-    display: grid;
-    grid-template-columns: minmax(0,1.5fr) minmax(260px,.7fr);
-    gap: 50px;
-}
-
-.details-main h2,
-.details-sidebar h2 {
-    margin-bottom: 13px;
-    font-size: 17px;
-}
-
-.details-main p {
-    margin-bottom: 32px;
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.85;
-}
-
-.features {
-    list-style: none;
-    display: grid;
-    gap: 11px;
-    margin-bottom: 35px;
-}
-
-.features li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.check {
-    width: 20px;
-    height: 20px;
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: rgba(168,85,247,.10);
-    color: #b889e8;
-}
-
-.sidebar-box {
-    padding: 20px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(168,85,247,.10);
-    border-radius: 14px;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(13,19,28,.95),
-            rgba(27,16,36,.86)
-        );
-}
-
-.info {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-}
-
-.info:last-child {
-    border-bottom: 0;
-}
-
-.info-label {
-    color: var(--muted);
-}
-
-.info-value {
-    text-align: right;
-    font-weight: 700;
-}
-
-.status-completed {
-    color: #22c55e;
-}
-
-.detail-techs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.detail-actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 22px;
-}
-
-.detail-actions .btn {
-    flex: 1;
-}
-
-
-/* =========================================================
-   PC / LAPTOP ONLY
-   DETAILS CENTER
-========================================================= */
-
-@media (min-width: 1051px) {
-
-    .details-header {
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-
-    .details-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .details-layout {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-
-}
-
-
-/* FOOTER */
-
-footer {
-    border-top: 1px solid rgba(168,85,247,.06);
-    padding: 45px 0 70px;
-    background:
-        radial-gradient(
-            circle at 20% 100%,
-            rgba(139,92,246,.07),
-            transparent 35%
-        ),
-        #080912;
-    color: #858b99;
-}
-
-.footer-inner {
-    max-width: var(--max-width);
-    margin: auto;
-    padding: 0 28px;
-    display: grid;
-    grid-template-columns: 1.6fr .8fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.footer-main {
-    max-width: 780px;
-}
-
-.footer-brand {
-    margin-left: 8px;
-    margin-bottom: 18px;
-    color: #ffffff;
-    font-size: 20px;
+.about-section h2,
+.contact-section h2 {
+    margin-bottom: 20px;
+    color: #f8f7ff;
+    font-size: clamp(36px, 4.5vw, 56px);
     font-weight: 800;
-    letter-spacing: 1.5px;
+    line-height: 1.12;
+    letter-spacing: -2px;
 }
 
-.footer-brand span {
-    color: #b889e8;
-}
-
-.footer-title {
-    max-width: 700px;
-    margin: 0 0 20px;
-    color: #ffffff;
-    font-size: clamp(30px,4vw,48px);
-    line-height: 1.08;
-    letter-spacing: -1.8px;
-    font-weight: 800;
-}
-
-.footer-title span {
-    display: block;
-    margin-top: 4px;
-    background:
-        linear-gradient(
-            90deg,
-            #a78bfa,
-            #c084fc,
-            #d8b4fe
-        );
+.about-section h2 span,
+.contact-section h2 span {
+    background: linear-gradient(90deg, #a78bfa, #c084fc);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
-.footer-description {
-    max-width: 650px;
-    color: #949aaa;
+.about-section p,
+.contact-intro {
+    color: #aeb8ca;
     font-size: 15px;
-    line-height: 1.8;
-    text-align: left;
+    line-height: 1.85;
 }
 
-.footer-side {
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+    margin-top: 24px;
+}
+
+.about-details,
+.about-skills {
     padding: 25px;
-    border-left: 1px solid rgba(168,85,247,.10);
-    background: rgba(168,85,247,.018);
+    border: 1px solid rgba(168,85,247,.28);
+    border-radius: 18px;
+    background: rgba(13,19,28,.68);
 }
 
-.footer-small-title {
-    margin-bottom: 12px;
-    color: #b889e8;
+.about-details h3,
+.about-skills h3 {
+    margin-bottom: 14px;
+    color: #f8f7ff;
+    font-size: 20px;
+}
+
+.about-fact {
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(168,85,247,.14);
+}
+
+.about-fact:last-child { border-bottom: 0; }
+.about-fact strong { display: block; margin-bottom: 4px; color: #f5f3ff; }
+.about-fact span { color: #9aa7b8; font-size: 14px; line-height: 1.7; }
+.about-skill-group { margin-top: 15px; }
+.about-skill-group h4 { margin-bottom: 9px; color: #d8b4fe; font-size: 13px; }
+.about-skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+.about-skill-tags span {
+    padding: 6px 9px;
+    border: 1px solid #354057;
+    border-radius: 7px;
+    background: #151d29;
+    color: #cbd5e1;
+    font-size: 11px;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: .92fr 1.08fr;
+    gap: 42px;
+    align-items: center;
+}
+
+.contact-intro { margin: 20px 0 27px; }
+
+.contact-social-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 82px;
+    padding: 13px 17px;
+    margin-top: 17px;
+    border: 1px solid #7042a8;
+    border-radius: 14px;
+    background: rgba(13,19,28,.62);
+    transition: background .2s ease, transform .2s ease, border-color .2s ease;
+}
+
+.contact-social-card:hover {
+    background: rgba(139,92,246,.12);
+    border-color: #a855f7;
+    transform: translateY(-2px);
+}
+
+.contact-social-icon {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #252d45, #171d30);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.contact-social-card.linkedin .contact-social-icon {
+    background: linear-gradient(145deg, #51277f, #28163e);
+}
+
+.contact-social-text { min-width: 0; }
+
+.contact-social-text strong {
+    display: block;
+    color: #f8f7ff;
+    font-size: 18px;
+}
+
+.contact-social-text small {
+    display: block;
+    margin-top: 3px;
+    color: #aeb8ca;
+    font-size: 13px;
+}
+
+.contact-social-arrow {
+    margin-left: auto;
+    color: #c084fc;
+    font-size: 24px;
+}
+
+.contact-form-card {
+    width: 100%;
+    max-width: 690px;
+    justify-self: end;
+    padding: 27px 30px;
+    border: 1px solid rgba(139,92,246,.75);
+    border-radius: 21px;
+    background: rgba(15,17,34,.76);
+    box-shadow: 0 0 30px rgba(139,92,246,.07);
+}
+
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.contact-field.full { grid-column: 1 / -1; }
+
+.contact-field label {
+    color: #f5f3ff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    min-height: 47px;
+    padding: 12px 15px;
+    border: 1px solid #46516d;
+    border-radius: 11px;
+    outline: none;
+    background: #1a2033;
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder { color: #aab3c5; }
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 3px rgba(168,85,247,.12);
+}
+
+.contact-field textarea {
+    min-height: 112px;
+    resize: vertical;
+}
+
+.contact-submit {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(100deg, #a855f7, #6b2ca8);
+    color: #fff;
+    font: inherit;
     font-size: 16px;
     font-weight: 800;
-    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: filter .2s ease, transform .2s ease;
 }
 
-.footer-side p {
-    color: #777f90;
+.contact-submit:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+}
+
+.contact-submit:disabled {
+    opacity: .65;
+    cursor: wait;
+    transform: none;
+}
+
+.contact-form-status {
+    min-height: 22px;
+    margin-top: 12px;
+    color: #86efac;
     font-size: 13px;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
+.contact-form-status.error { color: #fca5a5; }
 
-/* TABLET */
-
-@media (max-width: 1050px) {
-
-    .project-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
-        width: 100%;
+@media (max-width: 900px) {
+    .about-section,
+    .contact-section {
+        min-height: auto;
+        padding: 55px 0;
     }
 
-    .details-layout {
+    .about-layout,
+    .contact-layout {
         grid-template-columns: 1fr;
         gap: 25px;
     }
 
-    .hero {
-        padding: 25px 0 20px;
-    }
-
-    .projects-heading {
-        padding-top: 20px;
-    }
-
-    .projects-heading-top {
-        gap: 15px;
-    }
-
-    .toolbar {
-        max-width: 500px;
+    .contact-form-card {
+        max-width: none;
+        justify-self: stretch;
     }
 }
 
-
-/* MOBILE */
-
-@media (max-width: 720px) {
-
-    .container {
-        width: calc(100% - 28px);
-        max-width: none;
+@media (max-width: 560px) {
+    .about-section,
+    .contact-section {
+        padding: 42px 0;
     }
 
-    .hero {
-        min-height: auto;
-        display: flex;
-        align-items: center;
-        padding: 20px 0 18px;
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 37px;
+        letter-spacing: -1.4px;
     }
 
-    .hero::before {
-        width: 400px;
-        height: 200px;
-        top: -90px;
+    .about-details,
+    .about-skills {
+        padding: 19px;
     }
 
-    .hero-content {
-        width: 100%;
+    .contact-form-card {
+        padding: 21px 17px;
+        border-radius: 16px;
     }
 
-    .hero-badge {
-        margin-bottom: 22px;
-        font-size: 10px;
-        padding: 8px 13px;
-    }
-
-    .hero h1 {
-        font-size: clamp(40px, 11vw, 52px);
-        line-height: 1.02;
-        letter-spacing: -2.8px;
-    }
-
-    .hero-description {
-        max-width: 600px;
-        margin-top: 20px;
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    .projects-heading {
-        padding: 22px 0 18px;
-    }
-
-    .projects-heading-top {
-        width: 100%;
-        align-items: stretch;
-        flex-direction: column;
+    .contact-form-grid {
+        grid-template-columns: 1fr;
         gap: 14px;
     }
 
-    .projects-heading-content {
-        width: 100%;
+    .contact-field.full { grid-column: auto; }
+
+    .contact-social-card { padding: 12px; }
+}
+
+
+
+
+/* ABOUT SECTION: keep the complete content centred in its own viewport */
+@media (min-width: 901px) {
+    .about-section {
+        min-height: calc(100svh - 90px);
+        padding: 24px 0;
+        scroll-margin-top: 90px;
     }
 
-    .projects-heading h2 {
-        font-size: 34px;
-        line-height: 1.05;
+    .about-section > .container {
+        max-width: 1120px;
     }
 
-    .projects-heading p {
-        max-width: 100%;
+    .about-section .section-kicker {
+        margin-bottom: 8px;
         font-size: 13px;
-        line-height: 1.6;
     }
 
-    .project-count {
-        align-self: flex-start;
-        font-size: 10px;
+    .about-section h2 {
+        margin-bottom: 12px;
+        font-size: clamp(34px, 3.5vw, 44px);
     }
 
-    .toolbar {
-        width: 100%;
-        max-width: none;
-        flex-direction: column;
+    .about-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 12px;
         align-items: stretch;
-        padding: 11px;
-        margin: 0;
-        gap: 10px;
     }
 
-    .search-box {
-        width: 100%;
-        max-width: none;
+    .about-details,
+    .about-skills {
+        height: 100%;
+        box-sizing: border-box;
+        padding: 18px 21px;
     }
 
-    .search-box input {
-        height: 46px;
-        font-size: 13px;
-    }
-
-    .filter-select {
-        width: 100%;
-        height: 46px;
-        font-size: 12px;
-    }
-
-    .project-grid {
-        width: 100%;
-        max-width: 100%;
-        grid-template-columns: 1fr;
-        gap: 16px;
-        padding-bottom: 50px;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .project-card {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .project-content {
-        padding: 18px;
-    }
-
-    .project-title {
+    .about-details h3,
+    .about-skills h3 {
+        margin-bottom: 8px;
         font-size: 18px;
     }
 
-    .project-description {
+    .about-section p {
         font-size: 13px;
-        min-height: auto;
+        line-height: 1.55;
     }
 
-    .details-page {
-        padding: 26px 0 65px;
-        min-height: auto;
+    .about-fact {
+        padding: 8px 0;
     }
 
-    .back-btn {
-        margin: 0 0 27px auto;
-        padding: 11px 16px;
-        color: #d8b4fe;
-        border-color: rgba(192,132,252,.45);
-        background: rgba(139,92,246,.12);
+    .about-fact span {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .about-skill-group {
+        margin-top: 9px;
+    }
+
+    .about-skill-group h4 {
+        margin-bottom: 6px;
         font-size: 12px;
     }
 
-    .details-title {
-        font-size: clamp(34px, 9vw, 48px);
-        letter-spacing: -1.8px;
+    .about-skill-tags {
+        gap: 5px;
     }
 
-    .details-description {
-        font-size: 14px;
-        line-height: 1.75;
-    }
-
-    .details-preview {
-        margin-bottom: 28px;
-    }
-
-    .details-preview img {
-        aspect-ratio: 16 / 9;
-        max-height: 260px;
-    }
-
-    .detail-actions {
-        flex-direction: column;
-    }
-
-    footer {
-        padding: 40px 0 50px;
-    }
-
-    .footer-inner {
-        width: 100%;
-        padding: 0 16px;
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-title {
-        font-size: 31px;
-        letter-spacing: -1px;
-    }
-
-    .footer-description {
-        font-size: 13px;
-        text-align: left;
-    }
-
-    .footer-side {
-        padding: 20px 0;
-        border-left: 0;
-        border-top: 1px solid rgba(168,85,247,.08);
-    }
-}
-
-
-/* SMALL MOBILE */
-
-@media (max-width: 420px) {
-
-    .container {
-        width: calc(100% - 22px);
-    }
-
-    .hero {
-        min-height: auto;
-        padding: 18px 0 16px;
-    }
-
-    .hero h1 {
-        font-size: 39px;
-        letter-spacing: -2.1px;
-    }
-
-    .hero-description {
-        font-size: 13px;
-        line-height: 1.7;
-    }
-
-    .projects-heading {
-        padding-top: 20px;
-    }
-
-    .projects-heading h2 {
-        font-size: 31px;
-    }
-
-    .project-content {
-        padding: 15px;
-    }
-}
-
-
-/* VERY SMALL MOBILE */
-
-@media (max-width: 350px) {
-
-    .hero {
-        min-height: auto;
-        padding: 15px 0 14px;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-        letter-spacing: -1.8px;
-    }
-
-    .hero-description {
-        font-size: 12px;
+    .about-skill-tags span {
+        padding: 5px 8px;
+        font-size: 10px;
     }
 }
 
 </style>
+
 </head>
+
+
 
 <body>
 
-<nav class="navbar">
-    <div class="container navbar-inner">
 
-        <a href="#home" class="navbar-brand">
-            MY PORTFOLIO
+
+<nav class="navbar" aria-label="Main navigation">
+
+    <div class="navbar-inner">
+
+        <a href="#home" class="navbar-brand" id="navbarHomeBrand" aria-label="Rahul Gaikwad - Home">
+
+            <img src="rahul-profile.jpg" alt="Rahul Gaikwad" class="navbar-avatar">
+
+            <span class="navbar-name">Rahul Gaikwad</span>
+
         </a>
 
-        <div class="navbar-links">
 
-            <a href="#home" class="nav-link active">
-                Home
+
+        <span class="nav-divider" aria-hidden="true"></span>
+
+
+
+        <div class="navbar-menu" id="navbarMenu">
+
+            <div class="mobile-menu-top">
+
+                <div class="mobile-menu-brand">
+
+                    <img src="rahul-profile.jpg" alt="">
+
+                    <span>Rahul <span style="color:#c084fc">Gaikwad</span></span>
+
+                </div>
+
+                <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Close menu">&times;</button>
+
+            </div>
+
+
+
+            <a href="#home" class="nav-link active" aria-current="page">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+                <span>Home</span>
             </a>
 
             <a href="#projects" class="nav-link">
-                Projects
+
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6H10l2 2h7.5A1.5 1.5 0 0 1 21 9.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 18.5z"/><path d="M3 10h18"/></svg>
+
+                <span>Projects</span>
+
             </a>
 
-            <a
-                href="https://github.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="nav-github"
-            >
+            <a href="https://rahulgaik999.github.io/Certificates/" class="nav-link" target="_blank" rel="noopener noreferrer">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="m8.2 13-1 8 4.8-2.8 4.8 2.8-1-8"/><path d="m9.5 8 1.7 1.7L14.8 6"/></svg>
+
+                <span>Certifications</span>
+
+            </a>
+
+            <a href="#about" class="nav-link">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2z"/></svg>
+
+                <span>About Me</span>
+
+            </a>
+
+            <a href="#contact" class="nav-link">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+
+                <span>Contact Me</span>
+
+            </a>
+
+
+
+            <div class="mobile-menu-socials">
+
+                <a href="https://github.com/rahulgaik999" target="_blank" rel="noopener noreferrer" class="nav-social" aria-label="GitHub">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.7c3-.3 6.2-1.5 6.2-6.8a5.3 5.3 0 0 0-1.4-3.7 4.9 4.9 0 0 0-.1-3.7S17.6.9 15 2.8a13.2 13.2 0 0 0-7 0C5.4.9 4.2 1.2 4.2 1.2a4.9 4.9 0 0 0-.1 3.7 5.3 5.3 0 0 0-1.4 3.7c0 5.3 3.2 6.5 6.2 6.8A3.4 3.4 0 0 0 8 18v4"/></svg>
+
+                    GitHub ↗
+
+                </a>
+
+                <a href="https://www.linkedin.com/in/rahul-gaikwad-2196b7366/" target="_blank" rel="noopener noreferrer" class="nav-social linkedin" aria-label="LinkedIn">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h.01M4 8v12M9 20v-7a4 4 0 0 1 8 0v7M9 11v9M3 3h2v2H3z"/></svg>
+
+                    LinkedIn ↗
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <span class="nav-divider desktop-social-divider" aria-hidden="true"></span>
+
+        <div class="nav-socials">
+
+            <a href="https://github.com/rahulgaik999" target="_blank" rel="noopener noreferrer" class="nav-social" aria-label="GitHub">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.7c3-.3 6.2-1.5 6.2-6.8a5.3 5.3 0 0 0-1.4-3.7 4.9 4.9 0 0 0-.1-3.7S17.6.9 15 2.8a13.2 13.2 0 0 0-7 0C5.4.9 4.2 1.2 4.2 1.2a4.9 4.9 0 0 0-.1 3.7 5.3 5.3 0 0 0-1.4 3.7c0 5.3 3.2 6.5 6.2 6.8A3.4 3.4 0 0 0 8 18v4"/></svg>
+
                 GitHub ↗
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/rahul-gaikwad-2196b7366/" target="_blank" rel="noopener noreferrer" class="nav-social linkedin" aria-label="LinkedIn">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h.01M4 8v12M9 20v-7a4 4 0 0 1 8 0v7M9 11v9M3 3h2v2H3z"/></svg>
+
+                LinkedIn ↗
+
             </a>
 
         </div>
 
+
+
+        <button class="nav-menu-toggle" id="navMenuToggle" type="button" aria-label="Open menu" aria-controls="navbarMenu" aria-expanded="false">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+
+        </button>
+
     </div>
+
 </nav>
+
 
 
 <main class="library-page" id="libraryPage">
 
+
+
 <header class="hero" id="home">
+
+
 
     <div class="container hero-content">
 
+
+
         <div class="hero-badge">
+
             <!-- <span class="hero-badge"></span> -->
+
             Personal Project Showcase
+
         </div>
 
+
+
         <h1>
+
             Building Ideas Into
+
             Real Projects
+
         </h1>
 
+
+
         <p class="hero-description">
+
             Explore my collection of applications,
+
             websites and development projects —
+
             including the technologies, features and
+
             experiences behind each project.
+
         </p>
 
+
+
     </div>
+
+
 
 </header>
 
 
+
 <section id="projects">
+
+
 
     <div class="container">
 
+
+
         <div class="projects-heading">
+
+
 
             <div class="projects-heading-top">
 
+
+
                 <div class="projects-heading-content">
 
+
+
                     <div class="projects-label">
+
                         My Work
+
                     </div>
 
+
+
                     <h2>
+
                         Featured Projects
+
                     </h2>
 
+
+
                     <p>
+
                         A collection of projects I've built and developed.
+
                     </p>
+
+
 
                 </div>
 
 
+
+
+
                 <div class="toolbar" id="projectToolbar">
+
+
 
                     <div class="search-box">
 
+
+
                         <span class="search-icon">
 
+
+
                             <svg
+
                                 width="16"
+
                                 height="16"
+
                                 viewBox="0 0 24 24"
+
                                 fill="none"
+
                                 stroke="currentColor"
+
                                 stroke-width="2"
+
                                 stroke-linecap="round"
+
                                 stroke-linejoin="round"
+
                             >
 
+
+
                                 <circle
+
                                     cx="11"
+
                                     cy="11"
+
                                     r="7"
+
                                 ></circle>
+
+
 
                                 <path d="m20 20-4-4"></path>
 
+
+
                             </svg>
+
+
 
                         </span>
 
+
+
                         <input
+
                             type="text"
+
                             id="searchInput"
+
                             placeholder="Search projects, technologies..."
+
                             autocomplete="off"
+
+                        >
+
+
+
+                    </div>
+
+
+
+
+
+                    <select
+
+                        class="filter-select"
+
+                        id="technologyFilter"
+
+                    >
+
+
+
+                        <option value="all">
+
+                            All Technologies
+
+                        </option>
+
+
+
+                    </select>
+
+
+
+                </div>
+
+
+
+
+
+                <div
+
+                    class="project-count"
+
+                    id="projectCount"
+
+                >
+
+                    0 projects
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div
+
+            class="project-grid"
+
+            id="projectGrid"
+
+        ></div>
+
+
+
+
+
+        <div
+
+            class="empty"
+
+            id="emptyState"
+
+        >
+
+
+
+            <h3>
+
+                No projects found
+
+            </h3>
+
+
+
+            <p>
+
+                Try another project name or technology.
+
+            </p>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- ABOUT ME -->
+
+<section class="about-section" id="about">
+
+    <div class="container">
+
+        <div class="section-kicker">ABOUT ME</div>
+
+        <h2>A Little <span>About Me</span></h2>
+
+        <div class="about-layout">
+
+            <div class="about-details">
+
+                <h3>Introduction</h3>
+
+                <p>I'm interested in software development with a passion for learning through practical projects and problem-solving. I have knowledge of programming, web development and databases, and I'm looking for an opportunity to apply my knowledge, gain real-world experience and grow as a software developer.</p>
+
+                <div class="about-fact">
+
+                    <strong>Education</strong>
+
+                    <span>Bachelor of Computer Science (B.Sc in Computer Science)<br>Arts, Commerce And Science College Sonai, Ahilyanagar<br>2024 – 2027</span>
+
+                </div>
+
+                <div class="about-fact">
+
+                    <strong>Focus</strong>
+
+                    <span>Software Development and Full Stack Development</span>
+
+                </div>
+
+                <div class="about-fact">
+
+                    <strong>Career Goal</strong>
+
+                    <span>To apply my technical knowledge, contribute to a team and grow as a software developer.</span>
+
+                </div>
+
+            </div>
+
+            <div class="about-skills">
+
+                <h3>Technical Skills</h3>
+
+                <p>I work across frontend development, backend development and databases, with a focus on building practical and reliable applications.</p>
+
+                <div class="about-skill-group">
+                    <h4>Programming</h4>
+                    <div class="about-skill-tags">
+                        <span>Java</span>
+                        <span>C</span>
+                    </div>
+                </div>
+
+                <div class="about-skill-group">
+                    <h4>Frontend</h4>
+                    <div class="about-skill-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>React.js</span>
+                    </div>
+                </div>
+
+                <div class="about-skill-group">
+                    <h4>Backend & Database</h4>
+                    <div class="about-skill-tags">
+                        <span>Spring Boot</span>
+                        <span>JDBC</span>
+                        <span>REST APIs</span>
+                        <span>MySQL</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+
+                <div class="about-skill-group">
+                    <h4>Tools & Core Concepts</h4>
+                    <div class="about-skill-tags">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>Postman</span>
+                        <span>VS Code</span>
+                        <span>OOP</span>
+                        <span>DSA</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT ME -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container contact-layout">
+
+        <div class="contact-copy">
+
+            <div class="section-kicker">CONTACT</div>
+
+            <h2>Let's Work <span>Together</span></h2>
+
+            <p class="contact-intro">
+
+                Have a project idea or an opportunity to discuss? Feel free to
+
+                connect with me. I'm always open to collaborating, learning
+
+                and new opportunities.
+
+            </p>
+
+            <a class="contact-social-card" href="mailto:rahulgaik999@gmail.com">
+
+                <span class="contact-social-icon" aria-hidden="true">@</span>
+
+                <span class="contact-social-text">
+
+                    <strong>Email</strong>
+
+                    <small>rahulgaik999@gmail.com</small>
+
+                </span>
+
+                <span class="contact-social-arrow" aria-hidden="true">↗</span>
+
+            </a>
+
+            <a class="contact-social-card"
+
+               href="https://github.com/rahulgaik999"
+
+               target="_blank"
+
+               rel="noopener noreferrer">
+
+                <span class="contact-social-icon" aria-hidden="true">GH</span>
+
+                <span class="contact-social-text">
+
+                    <strong>GitHub</strong>
+
+                    <small>Check out my projects and code</small>
+
+                </span>
+
+                <span class="contact-social-arrow" aria-hidden="true">↗</span>
+
+            </a>
+
+            <a class="contact-social-card linkedin"
+
+               href="https://www.linkedin.com/in/rahul-gaikwad-2196b7366/"
+
+               target="_blank"
+
+               rel="noopener noreferrer">
+
+                <span class="contact-social-icon" aria-hidden="true">in</span>
+
+                <span class="contact-social-text">
+
+                    <strong>LinkedIn</strong>
+
+                    <small>Connect with me professionally</small>
+
+                </span>
+
+                <span class="contact-social-arrow" aria-hidden="true">↗</span>
+
+            </a>
+
+        </div>
+
+
+
+        <div class="contact-form-card">
+
+            <form id="portfolioContactForm">
+
+                <div class="contact-form-grid">
+
+                    <div class="contact-field">
+
+                        <label for="contactName">Your Name</label>
+
+                        <input
+
+                            id="contactName"
+
+                            name="name"
+
+                            type="text"
+
+                            placeholder="Enter your name"
+
+                            autocomplete="name"
+
+                            required
+
                         >
 
                     </div>
 
 
-                    <select
-                        class="filter-select"
-                        id="technologyFilter"
-                    >
 
-                        <option value="all">
-                            All Technologies
-                        </option>
+                    <div class="contact-field">
 
-                    </select>
+                        <label for="contactEmail">Email Address</label>
+
+                        <input
+
+                            id="contactEmail"
+
+                            name="email"
+
+                            type="email"
+
+                            placeholder="Enter your email"
+
+                            autocomplete="email"
+
+                            required
+
+                        >
+
+                    </div>
+
+
+
+                    <div class="contact-field full">
+
+                        <label for="contactSubject">Subject</label>
+
+                        <input
+
+                            id="contactSubject"
+
+                            name="subject"
+
+                            type="text"
+
+                            placeholder="Enter subject"
+
+                            required
+
+                        >
+
+                    </div>
+
+
+
+                    <div class="contact-field full">
+
+                        <label for="contactMessage">Message</label>
+
+                        <textarea
+
+                            id="contactMessage"
+
+                            name="message"
+
+                            placeholder="Write your message here..."
+
+                            required
+
+                        ></textarea>
+
+                    </div>
 
                 </div>
 
 
-                <div
-                    class="project-count"
-                    id="projectCount"
+
+                <button
+
+                    class="contact-submit"
+
+                    id="contactSubmit"
+
+                    type="submit"
+
                 >
-                    0 projects
-                </div>
 
-            </div>
+                    ➤ &nbsp; Send Message
 
-        </div>
+                </button>
 
 
-        <div
-            class="project-grid"
-            id="projectGrid"
-        ></div>
 
+                <p
 
-        <div
-            class="empty"
-            id="emptyState"
-        >
+                    class="contact-form-status"
 
-            <h3>
-                No projects found
-            </h3>
+                    id="contactFormStatus"
 
-            <p>
-                Try another project name or technology.
-            </p>
+                    role="status"
+
+                    aria-live="polite"
+
+                ></p>
+
+            </form>
 
         </div>
 
     </div>
 
 </section>
+
+
 
 </main>
 
 
+
 <section
+
     class="details-page"
+
     id="detailsPage"
+
 >
+
+
 
     <div class="container">
 
+
+
         <button
+
             class="back-btn"
+
             onclick="showLibrary()"
+
         >
+
             Back to Projects
+
         </button>
+
+
 
         <div id="detailsContent"></div>
 
+
+
     </div>
+
+
 
 </section>
 
 
+
 <footer id="siteFooter">
+
+
 
     <div class="footer-inner">
 
+
+
         <div class="footer-main">
 
+
+
             <div class="footer-brand">
+
                 MY PORTFOLIO
+
             </div>
 
+
+
             <h2 class="footer-title">
+
                 Turning Ideas Into
+
                 <span>Real Digital Experiences.</span>
+
             </h2>
 
+
+
             <p class="footer-description">
+
                 A collection of projects, applications and creative work
+
                 built with modern technologies, thoughtful design and
+
                 a focus on creating useful digital experiences.
+
             </p>
 
+
+
         </div>
+
 
 
         <div class="footer-side">
 
+
+
             <div class="footer-small-title">
+
                 PROJECT SHOWCASE
+
             </div>
 
+
+
             <p style="color: white;font-size: 14px;">
+
                 Explore my work, discover the technologies behind each
+
                 project and see how ideas become working applications.
+
             </p>
+
+
 
         </div>
 
+
+
     </div>
+
+
 
 </footer>
 
 
+
 <script>
+
+
 
 const projects = [
 
+
+
     {
+
         id: "online-polling",
+
         name: "Online Polling System",
+
         description:
+
             "A web-based polling application for creating polls, collecting votes and viewing results.",
+
         longDescription:
+
             "A complete polling platform designed to simplify the process of creating, managing and participating in online polls. The application provides a structured interface for users to create polls, vote on available options and review results.",
+
         image:
+
             "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85",
+
         technologies: [
+
             "HTML",
+
             "CSS",
+
             "JavaScript",
+
             "Node.js",
+
             "MongoDB"
+
         ],
+
         features: [
+
             "User authentication",
+
             "Create and manage polls",
+
             "Online voting system",
+
             "Results dashboard",
+
             "Responsive interface"
+
         ],
+
         developmentTime: "2 Months",
+
         status: "Completed",
+
         github: "https://github.com/",
+
         live: "https://example.com/"
+
     },
 
+
+
     {
+
         id: "hospital-management",
+
         name: "Hospital Management System",
+
         description:
+
             "A centralized application for managing patients, doctors, appointments and hospital records.",
+
         longDescription:
+
             "A management platform designed to organize common hospital workflows in one centralized system. The application focuses on structured data management, appointment handling and improving access to important information.",
+
         image:
+
             "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
+
         technologies: [
+
             "HTML",
+
             "CSS",
+
             "JavaScript",
+
             "Bootstrap",
+
             "PHP",
+
             "MySQL"
+
         ],
+
         features: [
+
             "Patient management",
+
             "Doctor management",
+
             "Appointment scheduling",
+
             "Medical record management",
+
             "Administrative dashboard"
+
         ],
+
         developmentTime: "6 Weeks",
+
         status: "Completed",
+
         github: "https://github.com/",
+
         live: "https://example.com/"
+
     },
 
+
+
     {
+
         id: "developer-portfolio",
+
         name: "Developer Portfolio",
+
         description:
+
             "A responsive developer portfolio designed to present projects, technical skills and professional information.",
+
         longDescription:
+
             "A modern responsive portfolio website focused on presenting development work in a clean and structured interface. The website is optimized for desktop and mobile devices.",
+
         image:
+
             "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=85",
+
         technologies: [
+
             "HTML",
+
             "CSS",
+
             "JavaScript",
+
             "Bootstrap",
+
             "Netlify"
+
         ],
+
         features: [
+
             "Responsive design",
+
             "Project showcase",
+
             "Interactive navigation",
+
             "Mobile-friendly layout",
+
             "Netlify deployment"
+
         ],
+
         developmentTime: "2 Weeks",
+
         status: "Completed",
+
         github: "https://github.com/",
+
         live: "https://example.com/"
+
     },
 
-    {
-        id: "task-management",
-        name: "Task Management Application",
-        description:
-            "A productivity application for creating, organizing and tracking personal tasks.",
-        longDescription:
-            "A task management application focused on organizing daily work through a simple and efficient interface. Users can create tasks, categorize them and track progress from a centralized dashboard.",
-        image:
-            "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1400&q=85",
-        technologies: [
-            "React",
-            "Node.js",
-            "Express",
-            "MongoDB"
-        ],
-        features: [
-            "Create and edit tasks",
-            "Task categories",
-            "Progress tracking",
-            "REST API integration",
-            "Responsive dashboard"
-        ],
-        developmentTime: "5 Weeks",
-        status: "Completed",
-        github: "https://github.com/",
-        live: "https://example.com/"
-    },
 
-    {
-        id: "ecommerce-platform",
-        name: "E-Commerce Platform",
-        description:
-            "A modern shopping platform with product browsing, cart management and checkout functionality.",
-        longDescription:
-            "A full-stack e-commerce platform developed around a modern shopping experience. The project demonstrates product management, shopping cart workflows and a responsive user interface.",
-        image:
-            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85",
-        technologies: [
-            "React",
-            "Node.js",
-            "Express",
-            "MongoDB"
-        ],
-        features: [
-            "Product browsing",
-            "Product search",
-            "Shopping cart",
-            "User authentication",
-            "Order management"
-        ],
-        developmentTime: "2 Months",
-        status: "In Development",
-        github: "https://github.com/",
-        live: "https://example.com/"
-    },
-
-    {
-        id: "weather-dashboard",
-        name: "Weather Dashboard",
-        description:
-            "A responsive weather application displaying real-time weather information through an external API.",
-        longDescription:
-            "A lightweight weather dashboard that consumes an external weather API to present current conditions and useful weather information in a clean interface.",
-        image:
-            "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=1400&q=85",
-        technologies: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "REST API"
-        ],
-        features: [
-            "City search",
-            "Real-time weather data",
-            "API integration",
-            "Responsive interface",
-            "Dynamic weather information"
-        ],
-        developmentTime: "2 Weeks",
-        status: "Completed",
-        github: "https://github.com/",
-        live: "https://example.com/"
-    }
 
 ];
 
 
+
+
+
 const grid =
+
     document.getElementById("projectGrid");
 
+
+
 const empty =
+
     document.getElementById("emptyState");
 
+
+
 const searchInput =
+
     document.getElementById("searchInput");
 
+
+
 const technologyFilter =
+
     document.getElementById("technologyFilter");
 
+
+
 const projectCount =
+
     document.getElementById("projectCount");
 
+
+
 const libraryPage =
+
     document.getElementById("libraryPage");
 
+
+
 const detailsPage =
+
     document.getElementById("detailsPage");
 
+
+
 const siteFooter =
+
     document.getElementById("siteFooter");
+
+
+
 
 
 function createTechnologyFilter() {
 
+
+
     const technologies = [
+
         ...new Set(
+
             projects.flatMap(
+
                 project => project.technologies
+
             )
+
         )
+
     ].sort();
 
 
+
+
+
     technologies.forEach(
+
         technology => {
 
+
+
             const option =
+
                 document.createElement("option");
 
+
+
             option.value = technology;
+
             option.textContent = technology;
+
+
 
             technologyFilter.appendChild(option);
 
+
+
         }
+
     );
+
 }
+
+
+
 
 
 function renderProjects() {
 
-    const search =
-        searchInput.value
-            .toLowerCase()
-            .trim();
+
+
+    const query =
+
+        searchInput.value.toLowerCase().trim();
+
+
 
     const selectedTechnology =
+
         technologyFilter.value;
 
 
+
     const filtered =
-        projects.filter(
-            project => {
 
-                const matchesSearch =
-                    project.name
-                        .toLowerCase()
-                        .includes(search)
-
-                    ||
-
-                    project.description
-                        .toLowerCase()
-                        .includes(search)
-
-                    ||
-
-                    project.technologies.some(
-                        tech =>
-                            tech
-                                .toLowerCase()
-                                .includes(search)
-                    );
+        projects.filter(project => {
 
 
-                const matchesTechnology =
-                    selectedTechnology === "all"
 
-                    ||
+            const matchesSearch =
 
-                    project.technologies.includes(
-                        selectedTechnology
-                    );
+                project.name.toLowerCase().includes(query) ||
 
+                project.description.toLowerCase().includes(query) ||
 
-                return (
-                    matchesSearch &&
-                    matchesTechnology
+                project.technologies.some(
+
+                    tech => tech.toLowerCase().includes(query)
+
                 );
 
-            }
-        );
+
+
+            const matchesTechnology =
+
+                selectedTechnology === "all" ||
+
+                project.technologies.includes(selectedTechnology);
+
+
+
+            return matchesSearch && matchesTechnology;
+
+
+
+        });
+
 
 
     grid.innerHTML = "";
 
 
-    filtered.forEach(
-        project => {
 
-            const card =
-                document.createElement("article");
-
-            card.className =
-                "project-card";
+    filtered.forEach(project => {
 
 
-            card.innerHTML = `
 
-                <div class="project-image">
+        const card = document.createElement("article");
 
-                    <img
-                        src="${project.image}"
-                        alt="${project.name} preview"
-                        loading="lazy"
-                        onclick="openDetails('${project.id}')"
-                        style="cursor:pointer;"
-                    >
 
-                    <span class="status">
-                        ${project.status}
-                    </span>
+
+        card.className = "project-card";
+
+
+
+        card.innerHTML = `
+
+            <div class="project-image">
+
+                <img
+
+                    src="${project.image}"
+
+                    alt="${project.name}"
+
+                    loading="lazy"
+
+                >
+
+                <span class="status">${project.status}</span>
+
+            </div>
+
+
+
+            <div class="project-content">
+
+
+
+                <h3 class="project-title">
+
+                    ${project.name}
+
+                </h3>
+
+
+
+                <p class="project-description">
+
+                    ${project.description}
+
+                </p>
+
+
+
+                <div class="technologies">
+
+
+
+                    ${project.technologies
+
+                        .slice(0,5)
+
+                        .map(
+
+                            tech =>
+
+                                `
+
+                                <span class="tech">
+
+                                    ${tech}
+
+                                </span>
+
+                                `
+
+                        )
+
+                        .join("")
+
+                    }
+
+
 
                 </div>
 
 
-                <div class="project-content">
 
-                    <h3
-                        class="project-title"
-                        onclick="openDetails('${project.id}')"
-                        style="cursor:pointer;"
+                <div class="actions">
+
+
+
+                    <a
+
+                        href="${project.live}"
+
+                        target="_blank"
+
+                        rel="noopener noreferrer"
+
+                        class="btn primary"
+
                     >
-                        ${project.name}
-                    </h3>
+
+                        Visit Project
+
+                    </a>
 
 
-                    <p class="project-description">
-                        ${project.description}
-                    </p>
+
+                    <button
+
+                        class="btn secondary"
+
+                        onclick="openDetails('${project.id}')"
+
+                    >
+
+                        Details
+
+                    </button>
 
 
-                    <div class="technologies">
-
-                        ${project.technologies
-                            .slice(0,5)
-                            .map(
-                                tech =>
-                                    `
-                                    <span class="tech">
-                                        ${tech}
-                                    </span>
-                                    `
-                            )
-                            .join("")
-                        }
-
-                    </div>
-
-
-                    <div class="actions">
-
-                        <a
-                            href="${project.live}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn primary"
-                        >
-                            Visit Project
-                        </a>
-
-
-                        <button
-                            class="btn secondary"
-                            onclick="openDetails('${project.id}')"
-                        >
-                            Details
-                        </button>
-
-                    </div>
 
                 </div>
 
-            `;
 
 
-            grid.appendChild(card);
+            </div>
 
-        }
-    );
+
+
+        `;
+
+
+
+        grid.appendChild(card);
+
+
+
+    });
+
 
 
     projectCount.textContent =
+
         `${filtered.length} ${
+
             filtered.length === 1
+
                 ? "project"
+
                 : "projects"
+
         }`;
 
 
+
     if (filtered.length === 0) {
+
         empty.classList.add("show");
+
     } else {
+
         empty.classList.remove("show");
+
     }
+
+
 
 }
 
 
+
+
+
 searchInput.addEventListener(
+
     "input",
+
     renderProjects
+
 );
+
+
 
 technologyFilter.addEventListener(
+
     "change",
+
     renderProjects
+
 );
 
 
-document
-    .querySelectorAll(".nav-link")
-    .forEach(
-        link => {
 
-            link.addEventListener(
-                "click",
-                () => {
 
-                    showLibrary();
 
-                    document
-                        .querySelectorAll(".nav-link")
-                        .forEach(
-                            item =>
-                                item.classList.remove(
-                                    "active"
-                                )
-                        );
+const navbarMenu = document.getElementById("navbarMenu");
 
-                    link.classList.add("active");
+const navMenuToggle = document.getElementById("navMenuToggle");
 
+const mobileMenuClose = document.getElementById("mobileMenuClose");
+
+
+
+function closeMobileMenu() {
+
+    navbarMenu.classList.remove("open");
+
+    document.body.classList.remove("menu-open");
+
+    navMenuToggle.setAttribute("aria-expanded", "false");
+
+    navMenuToggle.setAttribute("aria-label", "Open menu");
+
+}
+
+
+
+function openMobileMenu() {
+
+    navbarMenu.classList.add("open");
+
+    document.body.classList.add("menu-open");
+
+    navMenuToggle.setAttribute("aria-expanded", "true");
+
+    navMenuToggle.setAttribute("aria-label", "Close menu");
+
+}
+
+
+
+navMenuToggle.addEventListener("click", () => {
+
+
+
+    if (navbarMenu.classList.contains("open")) {
+
+        closeMobileMenu();
+
+    } else {
+
+        openMobileMenu();
+
+    }
+
+});
+
+
+
+mobileMenuClose.addEventListener("click", closeMobileMenu);
+
+const navbarHomeBrand = document.getElementById("navbarHomeBrand");
+navbarHomeBrand.addEventListener("click", event => {
+    event.preventDefault();
+    showLibrary(true, false);
+    navbarMenu.querySelectorAll(".nav-link").forEach(item => {
+        item.classList.toggle("active", item.getAttribute("href") === "#home");
+        if (item.getAttribute("href") === "#home") item.setAttribute("aria-current", "page");
+        else item.removeAttribute("aria-current");
+    });
+    closeMobileMenu();
+    requestAnimationFrame(() => {
+        const home = document.getElementById("home");
+        if (home) window.scrollTo({ top: Math.max(0, home.getBoundingClientRect().top + window.scrollY - document.querySelector(".navbar").getBoundingClientRect().height - 18), behavior: "smooth" });
+    });
+});
+
+navbarMenu.querySelectorAll(".nav-link").forEach(link => {
+
+
+
+    link.addEventListener("click", event => {
+
+
+
+        const target = link.getAttribute("href");
+
+
+
+        if (target && target.startsWith("#")) {
+
+
+
+            event.preventDefault();
+            showLibrary(true, false);
+
+
+
+            document.querySelectorAll(".navbar-menu .nav-link").forEach(item => {
+                item.classList.remove("active");
+                item.removeAttribute("aria-current");
+            });
+
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+            closeMobileMenu();
+
+            requestAnimationFrame(() => {
+                const section = document.querySelector(target);
+                const navbar = document.querySelector(".navbar");
+                if (section) {
+                    const navbarOffset = navbar ? navbar.getBoundingClientRect().height + 18 : 100;
+                    const sectionTop = section.getBoundingClientRect().top + window.scrollY - navbarOffset;
+                    window.scrollTo({ top: Math.max(0, sectionTop), behavior: "smooth" });
                 }
-            );
+            });
+
+
+
+        } else {
+
+
+
+            closeMobileMenu();
+
+
 
         }
-    );
+
+
+
+    });
+
+
+
+});
+
+
+
+document.addEventListener("keydown", event => {
+
+
+
+    if (event.key === "Escape") closeMobileMenu();
+
+
+
+});
+
+
+
 
 
 function openDetails(id, addHistory = true) {
 
+
+
     const project =
+
         projects.find(
+
             project =>
+
                 project.id === id
+
         );
+
 
 
     if (!project) return;
 
 
-    /*
-     * Add a browser history entry when opening
-     * project details.
-     *
-     * This makes Chrome Back and mobile Back
-     * return to the project list instead of
-     * exiting the browser.
-     */
+
     if (addHistory) {
 
+
+
         history.pushState(
+
             { projectId: id },
+
             "",
+
             "#project-" + id
+
         );
+
+
 
     }
 
 
+
     libraryPage.style.display = "none";
 
+
+
     siteFooter.style.display = "none";
+
+
 
     detailsPage.classList.add("active");
 
 
+
     const content =
+
         document.getElementById("detailsContent");
+
 
 
     content.innerHTML = `
 
+
+
         <div class="details-header">
 
+
+
             <div class="details-label">
+
                 Project Details
+
             </div>
 
 
+
             <h1 class="details-title">
+
                 ${project.name}
+
             </h1>
 
 
+
             <p class="details-description">
+
                 ${project.description}
+
             </p>
 
+
+
         </div>
+
 
 
         <div class="details-preview">
 
+
+
             <img
+
                 src="${project.image}"
+
                 alt="${project.name} preview"
+
             >
 
+
+
         </div>
+
 
 
         <div class="details-layout">
 
 
+
             <div class="details-main">
 
+
+
                 <h2>
+
                     Description
+
                 </h2>
+
 
 
                 <p>
+
                     ${project.longDescription}
+
                 </p>
 
 
+
                 <h2>
+
                     Main Features
+
                 </h2>
+
 
 
                 <ul class="features">
 
+
+
                     ${project.features
+
                         .map(
+
                             feature =>
+
                                 `
+
                                 <li>
 
+
+
                                     <span class="check">
+
                                         ✓
+
                                     </span>
+
+
 
                                     <span>
+
                                         ${feature}
+
                                     </span>
 
+
+
                                 </li>
+
                                 `
+
                         )
+
                         .join("")
+
                     }
+
+
 
                 </ul>
 
+
+
             </div>
+
 
 
             <aside class="details-sidebar">
 
 
+
                 <div class="sidebar-box">
 
+
+
                     <h2>
+
                         Project Information
+
                     </h2>
 
 
+
                     <div class="info">
 
+
+
                         <span class="info-label">
+
                             Development
+
                         </span>
+
+
 
                         <span class="info-value">
+
                             ${project.developmentTime}
+
                         </span>
 
+
+
                     </div>
+
 
 
                     <div class="info">
 
+
+
                         <span class="info-label">
+
                             Status
+
                         </span>
+
+
 
                         <span class="info-value status-completed">
+
                             ${project.status}
+
                         </span>
 
+
+
                     </div>
+
+
 
                 </div>
 
 
+
                 <div class="sidebar-box">
 
+
+
                     <h2>
+
                         Technologies
+
                     </h2>
+
 
 
                     <div class="detail-techs">
 
+
+
                         ${project.technologies
+
                             .map(
+
                                 tech =>
+
                                     `
+
                                     <span class="tech">
+
                                         ${tech}
+
                                     </span>
+
                                     `
+
                             )
+
                             .join("")
+
                         }
 
+
+
                     </div>
+
 
 
                     <div class="detail-actions">
 
+
+
                         <a
+
                             href="${project.live}"
+
                             target="_blank"
+
                             rel="noopener noreferrer"
+
                             class="btn primary"
+
                         >
+
                             Live Project
+
                         </a>
+
 
 
                         <a
+
                             href="${project.github}"
+
                             target="_blank"
+
                             rel="noopener noreferrer"
+
                             class="btn secondary"
+
                         >
+
                             GitHub
+
                         </a>
+
+
 
                     </div>
 
+
+
                 </div>
+
+
 
             </aside>
 
+
+
         </div>
+
+
 
     `;
 
 
+
     window.scrollTo({
+
         top: 0,
+
         left: 0,
+
         behavior: "auto"
+
     });
+
+
 
 }
 
 
-function showLibrary(updateHistory = true) {
 
-    /*
-     * When the user clicks the website's own
-     * "Back to Projects" button, remove the
-     * project history entry.
-     *
-     * When Chrome/mobile Back triggers this
-     * function, updateHistory is false.
-     */
+
+
+function showLibrary(updateHistory = true, scrollToTop = true) {
+
+
+
     if (updateHistory) {
 
+
+
         history.replaceState(
+
             null,
+
             "",
+
             window.location.pathname +
+
             window.location.search
+
         );
 
+
+
     }
+
 
 
     detailsPage.classList.remove("active");
 
+
+
     libraryPage.style.display = "block";
+
+
 
     siteFooter.style.display = "block";
 
+
+
     window.scrollTo({
+
         top: 0,
+
         left: 0,
+
         behavior: "auto"
+
     });
+
+
 
 }
 
 
-/*
- * Browser Back button / Mobile Back button
- */
+
+
+
+/* Browser Back button / Mobile Back button */
+
 window.addEventListener(
+
     "popstate",
+
     function (event) {
+
+
 
         if (event.state && event.state.projectId) {
 
+
+
             openDetails(
+
                 event.state.projectId,
+
                 false
+
             );
+
+
 
         } else {
 
+
+
             showLibrary(false);
+
+
 
         }
 
+
+
     }
+
 );
 
 
-/*
- * Keep the initial page as the browser's
- * starting history state.
- */
+
+
+
+/* Keep the initial page as the browser's starting history state. */
+
 history.replaceState(
+
     null,
+
     "",
+
     window.location.pathname +
+
     window.location.search
+
 );
+
+
+// Start at the main portfolio content whenever the site is freshly loaded or refreshed.
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+
+function resetPortfolioScroll() {
+    if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+}
+
+window.addEventListener("load", resetPortfolioScroll);
+window.addEventListener("pageshow", () => {
+    requestAnimationFrame(() => requestAnimationFrame(resetPortfolioScroll));
+});
+
+
+
 
 
 createTechnologyFilter();
 
+
+
 renderProjects();
+
+
+
+
+
+/* CONTACT FORM - FormSubmit email delivery */
+
+const portfolioContactForm =
+
+    document.getElementById("portfolioContactForm");
+
+
+
+if (portfolioContactForm) {
+
+
+
+    portfolioContactForm.addEventListener("submit", async function (event) {
+
+
+
+        event.preventDefault();
+
+
+
+        const submitButton =
+
+            document.getElementById("contactSubmit");
+
+
+
+        const statusMessage =
+
+            document.getElementById("contactFormStatus");
+
+
+
+        const formData =
+
+            new FormData(portfolioContactForm);
+
+
+
+        const payload =
+
+            Object.fromEntries(formData.entries());
+
+
+
+        payload._subject =
+
+            "Portfolio Contact: " + payload.subject;
+
+
+
+        payload._template = "table";
+
+
+
+        payload._captcha = "false";
+
+
+
+        submitButton.disabled = true;
+
+        submitButton.textContent = "Sending...";
+
+
+
+        statusMessage.classList.remove("error");
+
+        statusMessage.textContent = "Sending your message...";
+
+
+
+        try {
+
+
+
+            const response = await fetch(
+
+                "https://formsubmit.co/ajax/rahulgaik999@gmail.com",
+
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type": "application/json",
+
+                        "Accept": "application/json"
+
+                    },
+
+                    body: JSON.stringify(payload)
+
+                }
+
+            );
+
+
+
+            const result = await response.json();
+
+
+
+            const succeeded = result && (
+
+                result.success === true ||
+
+                result.success === "true"
+
+            );
+
+
+
+            if (!response.ok || !succeeded) {
+
+                throw new Error(
+
+                    result && result.message
+
+                        ? result.message
+
+                        : "Email service did not accept the message."
+
+                );
+
+            }
+
+
+
+            statusMessage.textContent =
+
+                "Thank you! Your message has been sent successfully.";
+
+
+
+            portfolioContactForm.reset();
+
+
+
+        } catch (error) {
+
+
+
+            statusMessage.classList.add("error");
+
+
+
+            statusMessage.textContent =
+
+                "Message could not be sent. Check your internet connection and confirm the FormSubmit activation email sent to rahulgaik999@gmail.com. You can also email me directly using the Email link.";
+
+
+
+        } finally {
+
+
+
+            submitButton.disabled = false;
+
+            submitButton.innerHTML = "➤ &nbsp; Send Message";
+
+
+
+        }
+
+
+
+    });
+
+
+
+}
+
+
 
 </script>
 
+
+
 </body>
+
 </html>
