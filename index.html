@@ -1112,7 +1112,7 @@ opacity: 1;
 
     border-radius: 10px;
 
-    background: #10121c;
+   background: #061426 !important;
 
     color: #b8b0bf;
 
@@ -2287,6 +2287,7 @@ footer {
         height: 46px;
 
         font-size: 12px;
+         background: #061426;
 
     }
 
@@ -3051,6 +3052,271 @@ footer {
     .contact-result-dialog { padding: 32px 22px 24px; }
 }
 
+
+
+
+/* ONLY REQUESTED PORTFOLIO HEADING AND PROJECT TOOLBAR ADJUSTMENTS */
+.hero h1 {
+    font-size: clamp(38px, 5.5vw, 62px);
+    color: #ffffff;
+}
+
+.hero h1 span {
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+}
+
+.toolbar {
+    border: 1px solid #ffffff;
+}
+
+.search-box input,
+.filter-select {
+    border: 1px solid #ffffff;
+}
+
+.project-count {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+@media (max-width: 720px) {
+    .hero h1 {
+        font-size: clamp(32px, 8vw, 42px);
+        line-height: 1.08;
+        letter-spacing: -1.5px;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .projects-heading-top {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .projects-heading-content {
+        width: 100%;
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .projects-heading-content .projects-label,
+    .projects-heading-content h2,
+    .projects-heading-content p {
+        text-align: center;
+    }
+
+    .toolbar {
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        flex: 1 1 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 7px;
+        gap: 7px;
+        border: 1px solid #ffffff;
+    }
+
+    .search-box {
+        width: auto;
+        min-width: 0;
+        max-width: none;
+        flex: 1 1 50%;
+    }
+
+    .search-box input {
+        height: 42px;
+        padding-left: 36px;
+        font-size: 11px;
+        border: 1px solid #ffffff;
+    }
+
+    .search-icon {
+        left: 11px;
+    }
+
+    .filter-select {
+        width: auto;
+        min-width: 0;
+        max-width: 45%;
+        height: 42px;
+        padding: 0 7px;
+        font-size: 10px;
+        border: 1px solid #ffffff;
+    }
+
+    .project-count {
+        align-self: center;
+        flex: 0 0 auto;
+        padding: 7px 9px;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        text-align: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .toolbar {
+        gap: 5px;
+        padding: 6px;
+    }
+
+    .search-box input {
+        padding-left: 31px;
+        font-size: 10px;
+    }
+
+    .search-icon {
+        left: 9px;
+    }
+
+    .filter-select {
+        padding: 0 5px;
+        font-size: 9px;
+    }
+
+    .project-count {
+        padding: 6px 7px;
+        font-size: 9px;
+    }
+}
+
+
+/* FINAL REQUESTED FIX: keep controls separate and project count out of the center */
+.toolbar {
+    border: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    gap: 10px;
+}
+
+.search-box input {
+    border: 1px solid #ffffff !important;
+}
+
+.filter-select {
+    border: 1px solid #ffffff !important;
+}
+
+.project-count {
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 720px) {
+    .projects-heading-top {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+    }
+
+    .projects-heading-content {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+        text-align: center !important;
+    }
+
+    .toolbar {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: 0 0 auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 !important;
+        gap: 8px !important;
+    }
+
+    .search-box {
+        flex: 1 1 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+    }
+
+    .search-box input {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .filter-select {
+        flex: 0 1 42% !important;
+        width: 42% !important;
+        min-width: 0 !important;
+        max-width: 42% !important;
+    }
+
+    .project-count {
+        display: inline-flex !important;
+        align-self: flex-end !important;
+        justify-self: flex-end !important;
+        width: max-content !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .toolbar { gap: 6px !important; }
+    .filter-select {
+        flex-basis: 40% !important;
+        width: 40% !important;
+        max-width: 40% !important;
+    }
+}
+
+
+
+
+/* TECHNOLOGY FILTER: match search field and give the arrow clear separation */
+.filter-select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    background-color: rgba(255, 255, 255, .02) !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 13px center !important;
+    background-size: 14px 14px !important;
+    padding-right: 34px !important;
+}
+
+
+
+/* ONLY THE REQUESTED MOBILE COUNT AND FILTER TEXT/COLOR FIXES */
+.search-box input {
+    color: #ffffff !important;
+}
+
+.filter-select {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, .02) !important;
+    color-scheme: dark;
+}
+
+.filter-select option {
+    background-color: #061426 !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 720px) {
+    .project-count {
+        display: none !important;
+    }
+}
 
 </style>
 
