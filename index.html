@@ -171,7 +171,29 @@ padding: 13px 18px;
 border: 0;
 border-bottom: 1px solid rgba(14, 165, 233, 0.18);
 border-radius: 0;
-background: #07182f;
+background:
+
+        radial-gradient(
+
+            circle at 50% -15%,
+
+            rgba(14, 165, 233, .10),
+
+            transparent 30%
+
+        ),
+
+        radial-gradient(
+
+            circle at 100% 30%,
+
+            rgba(2, 132, 199, .035),
+
+            transparent 25%
+
+        ),
+
+        #061830;
 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
 backdrop-filter: none;
 -webkit-backdrop-filter: none;
@@ -3319,6 +3341,9 @@ footer {
         display: none !important;
     }
 }
+.project-image .status {
+    display: none !important;
+}
 
 </style>
 
@@ -4217,51 +4242,54 @@ const projects = [
 
     {
 
-        id: "online-polling",
+        id: "AI Agent",
 
-        name: "Online Polling System",
+        name: "AI Agents and Intelligence",
 
         description:
 
-            "A web-based polling application for creating polls, collecting votes and viewing results.",
+            " Intelligent AI agents designed to understand user requests, solve complex tasks, integrate smart tools, and automate workflows with enhanced accuracy and efficiency.",
 
         longDescription:
 
-            "A complete polling platform designed to simplify the process of creating, managing and participating in online polls. The application provides a structured interface for users to create polls, vote on available options and review results.",
+            "AI Agents and Intelligence is an advanced AI-powered platform that brings multiple specialized AI agents together in one unified workspace. It enables users to automate complex tasks, analyze documents, generate code, conduct web research, and solve problems through intelligent AI conversations. With features like autonomous task execution, contextual memory, multi-agent collaboration, and customizable workflows, the platform aims to make everyday tasks smarter, faster, and more efficient. Its main goal is to bring multiple AI capabilities into a single platform, helping users save time, improve productivity, and automate everyday digital tasks.",
 
         image:
 
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85",
-
+           "Images/ai2.webp",
         technologies: [
 
-            "HTML",
-
-            "CSS",
+            "ReacrJs",
 
             "JavaScript",
 
-            "Node.js",
+            "PostgreSQL",
 
-            "MongoDB"
+            "Java",
+
+            "Spring Boot"
 
         ],
 
         features: [
 
-            "User authentication",
+            "Multiple specialized AI agents",
 
-            "Create and manage polls",
+            "Autonomous task planning and execution",
 
-            "Online voting system",
+            "Document upload and analysis",
 
-            "Results dashboard",
+            "AI code generation and assistance",
 
-            "Responsive interface"
+            "Real-time AI responses",
+
+            "Contextual memory and chat history",
+
+            "Secure user authentication"
 
         ],
 
-        developmentTime: "2 Months",
+        developmentTime: "5 Months",
 
         status: "Completed",
 
@@ -4275,33 +4303,33 @@ const projects = [
 
     {
 
-        id: "hospital-management",
+        id: "Smart Agriculture",
 
-        name: "Hospital Management System",
+        name: "Smart Agriculture System",
 
         description:
 
-            "A centralized application for managing patients, doctors, appointments and hospital records.",
+            "A smart farming platform that helps farmers monitor crop health, manage irrigation, track weather, and improve productivity through modern technology.",
 
         longDescription:
 
-            "A management platform designed to organize common hospital workflows in one centralized system. The application focuses on structured data management, appointment handling and improving access to important information.",
+            " Smart Agriculture System is a technology-driven platform designed to make farming smarter and more efficient. It helps farmers monitor crop health and manage farm activities. The system provides real-time soil moisture and temperature monitoring. It supports smart irrigation and weather tracking. Farmers can access crop disease detection and fertilizer recommendations. It also helps optimize water usage and agricultural resources. With intelligent monitoring and data-driven insights, the platform aims to improve crop productivity and support sustainable farming.",
 
         image:
 
-            "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
+            "Images/Smart Agriculture System Banner.png",
 
         technologies: [
 
-            "HTML",
+            "ReactJs",
 
-            "CSS",
+            "Hibernate",
 
             "JavaScript",
 
             "Bootstrap",
 
-            "PHP",
+            "REST APIs",
 
             "MySQL"
 
@@ -4309,19 +4337,25 @@ const projects = [
 
         features: [
 
-            "Patient management",
+            "Farmer registration and authentication",
 
-            "Doctor management",
+            "Farmer and farm profile management",
 
-            "Appointment scheduling",
+            "Real-time soil moisture monitoring",
 
-            "Medical record management",
+            "Soil temperature and humidity tracking",
 
-            "Administrative dashboard"
+            "Weather forecasting and alerts",
+
+            "AI-based crop disease detection",
+
+            "Farming reports and analytics",
+
+            "Market price tracking"
 
         ],
 
-        developmentTime: "6 Weeks",
+        developmentTime: "3 Months",
 
         status: "Completed",
 
@@ -4335,51 +4369,54 @@ const projects = [
 
     {
 
-        id: "developer-portfolio",
+        id: "Apex Banking & Finance",
 
-        name: "Developer Portfolio",
+        name: "Apex Banking & Finance System",
 
         description:
 
-            "A responsive developer portfolio designed to present projects, technical skills and professional information.",
-
+            "Apex Banking & Finance System is a digital platform that enables users to manage bank accounts, transfer money and make payments, investment and secure, user-friendly interface.",
         longDescription:
 
-            "A modern responsive portfolio website focused on presenting development work in a clean and structured interface. The website is optimized for desktop and mobile devices.",
+            "Apex Banking & Finance System is a modern digital banking platform designed to simplify financial management through a single, secure interface. It allows users to manage bank accounts, transfer funds, make online payments, pay bills, and monitor transaction history. The system also provides investment management features, including stock tracking, mutual funds, SIPs, and portfolio monitoring. With secure authentication, real-time transaction updates, and an easy-to-use dashboard, Apex Bank aims to provide a convenient and efficient digital banking experience.",
 
         image:
 
-            "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1400&q=85",
+            "Images/Apex Bank Digital Banking Mockup.png",
 
         technologies: [
 
-            "HTML",
+            "JWT Authentication",
 
-            "CSS",
+            "Java",
 
-            "JavaScript",
+            "React.js",
 
-            "Bootstrap",
+            "Spring Security",
 
-            "Netlify"
+            "SQL"
 
         ],
 
         features: [
 
-            "Responsive design",
+            "User Authentication & Security – Registration, login, OTP and secure access.",
 
-            "Project showcase",
+            "Bank Account Management – Account creation, balance checking and account management.",
 
-            "Interactive navigation",
+            "Money Transfers – Fund transfers, deposits, withdrawals and beneficiary management.",
 
-            "Mobile-friendly layout",
+            "Online Payments – UPI, QR payments, mobile recharge and bill payments.",
 
-            "Netlify deployment"
+            "Admin Dashboard & Analytics – User management, transaction monitoring and financial reports.",
+
+            "Transaction Management – Transaction history, status tracking and bank statements.",
+
+            "Investment Management – Stocks, mutual funds, SIPs, fixed deposits and portfolio tracking."
 
         ],
 
-        developmentTime: "2 Weeks",
+        developmentTime: "6 Months",
 
         status: "Completed",
 
