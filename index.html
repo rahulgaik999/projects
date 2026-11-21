@@ -4834,6 +4834,21 @@ const navMenuToggle = document.getElementById("navMenuToggle");
 
 const mobileMenuClose = document.getElementById("mobileMenuClose");
 
+// Update the highlighted navbar item for the current portfolio view.
+function setActiveNav(target) {
+    navbarMenu.querySelectorAll(".nav-link").forEach(item => {
+        const isActive = item.getAttribute("href") === target;
+        item.classList.toggle("active", isActive);
+
+        if (isActive) {
+            item.setAttribute("aria-current", "page");
+        } else {
+            item.removeAttribute("aria-current");
+        }
+    });
+}
+
+
 
 
 function closeMobileMenu() {
@@ -4993,6 +5008,10 @@ function openDetails(id, addHistory = true) {
 
 
     if (!project) return;
+
+    // Keep Projects highlighted whenever a project details page is displayed.
+    setActiveNav("#projects");
+
 
 
 
