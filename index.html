@@ -5465,54 +5465,63 @@ window.addEventListener(
 
 
 
-/* Keep the initial page as the browser's starting history state. */
-
-history.replaceState(
-
-    null,
-
-    "",
-
-    window.location.pathname +
-
-    window.location.search
-
+/* Preserve the current project-details view when the page is refreshed. */
+const projectHashMatch = window.location.hash.match(/^#project-(.+)$/);
+const requestedProjectId = projectHashMatch
+    ? decodeURIComponent(projectHashMatch[1])
+    : null;
+const requestedProject = projects.find(
+    project => project.id === requestedProjectId
 );
 
-// Add one in-page history entry so a mobile Back tap returns to the portfolio first.
-history.pushState(
-    { portfolioHomeSentinel: true },
-    "",
-    window.location.pathname + window.location.search
-);
+if (requestedProject) {
+    // Keep a portfolio-home history entry behind a directly opened project.
+    const portfolioUrl = window.location.pathname + window.location.search;
 
+    history.replaceState(
+        { portfolioHomeSentinel: true },
+        "",
+        portfolioUrl
+    );
 
-// Start at the main portfolio content whenever the site is freshly loaded or refreshed.
+    history.pushState(
+        { projectId: requestedProject.id },
+        "",
+        portfolioUrl + "#project-" + encodeURIComponent(requestedProject.id)
+    );
+} else {
+    // Preserve other existing URL fragments and keep normal browser history.
+    const currentUrl = window.location.pathname +
+        window.location.search +
+        window.location.hash;
+
+    history.replaceState(
+        { portfolioHomeSentinel: true },
+        "",
+        currentUrl
+    );
+
+    history.pushState(
+        { portfolioHomeSentinel: true },
+        "",
+        currentUrl
+    );
+}
+
 if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
+    history.scrollRestoration = "auto";
 }
-
-function resetPortfolioScroll() {
-    if (window.location.hash) {
-        history.replaceState(null, "", window.location.pathname + window.location.search);
-    }
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-}
-
-window.addEventListener("load", resetPortfolioScroll);
-window.addEventListener("pageshow", () => {
-    requestAnimationFrame(() => requestAnimationFrame(resetPortfolioScroll));
-});
-
-
-
-
 
 createTechnologyFilter();
 
 
 
 renderProjects();
+
+// Reopen a project when its direct URL is loaded or refreshed.
+if (requestedProject) {
+    openDetails(requestedProject.id, false);
+}
 
 
 
