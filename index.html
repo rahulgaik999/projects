@@ -4299,7 +4299,7 @@ const projects = [
            "Images/ai2.webp",
         technologies: [
 
-            "ReacrJs",
+            "React.Js",
 
             "JavaScript",
 
@@ -4333,7 +4333,7 @@ const projects = [
 
         status: "Completed",
 
-        github: "https://github.com/",
+        github: "https://github.com/rahulgaik999",
 
         live: "https://example.com/"
 
@@ -4399,7 +4399,7 @@ const projects = [
 
         status: "Completed",
 
-        github: "https://github.com/",
+        github: "https://github.com/rahulgaik999",
 
         live: "https://example.com/"
 
@@ -4415,9 +4415,9 @@ const projects = [
 
         description:
 
-            "Apex Banking & Finance System is a digital platform that enables users to manage bank accounts, transfer money and make payments, investment and secure, user-friendly interface.",
+            "Apex Banking & Finance System is a digital platform that enables users to manage bank accounts, transfer money and make payments, investment and secure user-friendly interface.",
         longDescription:
-
+ 
             "Apex Banking & Finance System is a modern digital banking platform designed to simplify financial management through a single, secure interface. It allows users to manage bank accounts, transfer funds, make online payments, pay bills, and monitor transaction history. The system also provides investment management features, including stock tracking, mutual funds, SIPs, and portfolio monitoring. With secure authentication, real-time transaction updates, and an easy-to-use dashboard, Apex Bank aims to provide a convenient and efficient digital banking experience.",
 
         image:
@@ -4460,7 +4460,7 @@ const projects = [
 
         status: "Completed",
 
-        github: "https://github.com/",
+        github: "https://github.com/rahulgaik999",
 
         live: "https://example.com/"
 
@@ -4834,21 +4834,6 @@ const navMenuToggle = document.getElementById("navMenuToggle");
 
 const mobileMenuClose = document.getElementById("mobileMenuClose");
 
-// Update the highlighted navbar item for the current portfolio view.
-function setActiveNav(target) {
-    navbarMenu.querySelectorAll(".nav-link").forEach(item => {
-        const isActive = item.getAttribute("href") === target;
-        item.classList.toggle("active", isActive);
-
-        if (isActive) {
-            item.setAttribute("aria-current", "page");
-        } else {
-            item.removeAttribute("aria-current");
-        }
-    });
-}
-
-
 
 
 function closeMobileMenu() {
@@ -4977,6 +4962,72 @@ navbarMenu.querySelectorAll(".nav-link").forEach(link => {
 
 
 
+// Keep the active navbar link matched to the section currently in view.
+function updateActiveNavOnScroll() {
+    if (detailsPage.classList.contains("active")) {
+        navbarMenu.querySelectorAll(".nav-link").forEach(item => {
+            const isProjects = item.getAttribute("href") === "#projects";
+
+            item.classList.toggle("active", isProjects);
+
+            if (isProjects) {
+                item.setAttribute("aria-current", "page");
+            } else {
+                item.removeAttribute("aria-current");
+            }
+        });
+
+        return;
+    }
+
+    if (libraryPage.style.display === "none") {
+        return;
+    }
+
+    const navbar = document.querySelector(".navbar");
+    const marker = (navbar ? navbar.getBoundingClientRect().height : 0) + 40;
+    const sectionIds = ["home", "projects", "about", "contact"];
+
+    let currentSection = "home";
+
+    sectionIds.forEach(id => {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= marker) {
+            currentSection = id;
+        }
+    });
+
+    navbarMenu.querySelectorAll(".nav-link").forEach(item => {
+        const isActive = item.getAttribute("href") === "#" + currentSection;
+        item.classList.toggle("active", isActive);
+
+        if (isActive) {
+            item.setAttribute("aria-current", "page");
+        } else {
+            item.removeAttribute("aria-current");
+        }
+    });
+}
+
+let navScrollUpdatePending = false;
+
+window.addEventListener("scroll", () => {
+    if (navScrollUpdatePending) return;
+
+    navScrollUpdatePending = true;
+    requestAnimationFrame(() => {
+        updateActiveNavOnScroll();
+        navScrollUpdatePending = false;
+    });
+}, { passive: true });
+
+window.addEventListener("resize", updateActiveNavOnScroll);
+window.addEventListener("load", updateActiveNavOnScroll);
+
+// Also set the correct item on initial page load.
+updateActiveNavOnScroll();
+
+
 document.addEventListener("keydown", event => {
 
 
@@ -5008,10 +5059,6 @@ function openDetails(id, addHistory = true) {
 
 
     if (!project) return;
-
-    // Keep Projects highlighted whenever a project details page is displayed.
-    setActiveNav("#projects");
-
 
 
 
