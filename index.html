@@ -4653,7 +4653,8 @@ function renderProjects() {
                 <img
     src="${project.image}"
     alt="${project.name}"
-    loading="lazy"
+    loading="eager"
+    decoding="async"
     onclick="openDetails('${project.id}')"
     style="cursor: pointer;"
 >
