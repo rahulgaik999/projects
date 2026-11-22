@@ -5545,63 +5545,30 @@ window.addEventListener(
 
 
 
-/* Preserve the current project-details view when the page is refreshed. */
-const projectHashMatch = window.location.hash.match(/^#project-(.+)$/);
-const requestedProjectId = projectHashMatch
-    ? decodeURIComponent(projectHashMatch[1])
-    : null;
-const requestedProject = projects.find(
-    project => project.id === requestedProjectId
+/* Always open the main portfolio page when the site is loaded or refreshed. */
+const portfolioUrl = window.location.pathname + window.location.search;
+
+// Remove a previously opened project hash so project details do not reopen.
+history.replaceState(
+    { portfolioHomeSentinel: true },
+    "",
+    portfolioUrl
 );
 
-if (requestedProject) {
-    // Keep a portfolio-home history entry behind a directly opened project.
-    const portfolioUrl = window.location.pathname + window.location.search;
-
-    history.replaceState(
-        { portfolioHomeSentinel: true },
-        "",
-        portfolioUrl
-    );
-
-    history.pushState(
-        { projectId: requestedProject.id },
-        "",
-        portfolioUrl + "#project-" + encodeURIComponent(requestedProject.id)
-    );
-} else {
-    // Preserve other existing URL fragments and keep normal browser history.
-    const currentUrl = window.location.pathname +
-        window.location.search +
-        window.location.hash;
-
-    history.replaceState(
-        { portfolioHomeSentinel: true },
-        "",
-        currentUrl
-    );
-
-    history.pushState(
-        { portfolioHomeSentinel: true },
-        "",
-        currentUrl
-    );
-}
+// Keep the existing in-site browser Back behavior.
+history.pushState(
+    { portfolioHomeSentinel: true },
+    "",
+    portfolioUrl
+);
 
 if ("scrollRestoration" in history) {
-    history.scrollRestoration = "auto";
+    history.scrollRestoration = "manual";
 }
 
 createTechnologyFilter();
 
-
-
 renderProjects();
-
-// Reopen a project when its direct URL is loaded or refreshed.
-if (requestedProject) {
-    openDetails(requestedProject.id, false);
-}
 
 
 
