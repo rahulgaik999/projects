@@ -3386,6 +3386,12 @@ footer {
 
 </style>
 
+
+    <!-- Preload project images so they are ready as early as possible on refresh -->
+    <link rel="preload" as="image" href="Images/ai2.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="Images/Smart Agriculture System Banner.png" fetchpriority="high">
+    <link rel="preload" as="image" href="Images/Apex Bank Digital Banking Mockup.png" fetchpriority="high">
+
 </head>
 
 
@@ -4654,7 +4660,8 @@ function renderProjects() {
     src="${project.image}"
     alt="${project.name}"
     loading="eager"
-    decoding="async"
+    decoding="sync"
+    fetchpriority="high"
     onclick="openDetails('${project.id}')"
     style="cursor: pointer;"
 >
@@ -5146,6 +5153,12 @@ function openDetails(id, addHistory = true, scrollToTop = true) {
                 src="${project.image}"
 
                 alt="${project.name} preview"
+
+                loading="eager"
+
+                decoding="sync"
+
+                fetchpriority="high"
 
             >
 
