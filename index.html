@@ -5043,7 +5043,7 @@ document.addEventListener("keydown", event => {
 
 
 
-function openDetails(id, addHistory = true) {
+function openDetails(id, addHistory = true, scrollToTop = true) {
 
 
 
@@ -5412,10 +5412,12 @@ function openDetails(id, addHistory = true) {
 
 
     if (scrollToTop) {
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "auto"
+    requestAnimationFrame(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "auto"
+        });
     });
 }
 
